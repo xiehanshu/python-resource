@@ -1,32 +1,35 @@
 import requests
 
 
-def req01():
-    url = 'http://localhost:3000/sample/api05'
-    params = {
-        'a': 1,
-        'b': 2,
-        'key01': 'value01'
-    }
-    res = requests.get(url=url, params=params)
-    print(res.json())
-    print(res.status_code)
-    res01 = requests.get(url=url, data=params)
-    print(res01.json())
+def getParam(url, data):
+    res = requests.get(url=url, params=data)
+    print(res.text)
     print(res.status_code)
 
 
-def req02():
-    url = 'http://localhost:3000/sample/api03'
-    data = {
-        'a': 1,
-        'b': 2
-    }
+def getData(url, data):
+    res = requests.get(url=url, data=data)
+    print(res.text)
+    print(res.status_code)
+
+
+def postData(url, data):
     res = requests.post(url=url, data=data)
     print(res.text)
     print(res.status_code)
 
 
+def getRoute(url, *args):
+    url = url.format(args[0], args[1])
+    res = requests.get(url=url)
+    print(res.text)
+    print(res.status_code)
+
+
 if __name__ == '__main__':
-    req01()
-    # req02()
+    url = 'http://localhost:3000/user/get01'
+    data = {
+        "name": "xiehanshu",
+        "age": 30
+    }
+    getData(url, data)
