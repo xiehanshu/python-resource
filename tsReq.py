@@ -30,6 +30,6 @@ if __name__ == '__main__':
     url = 'http://localhost:3000/user/get01'
     data = {
         "name": "xiehanshu",
-        "age": 30
+        "age": "111"
     }
     getData(url, data)
