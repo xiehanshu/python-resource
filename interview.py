@@ -66,9 +66,88 @@ def rev_num():
         return False
 
 
+def roma_num():
+    dict01 = {
+        'I': 1,
+        'V': 5,
+        'X': 10,
+        'L': 50,
+        'C': 100,
+        'D': 500,
+        'M': 1000
+    }
+
+    s = "MCMXCIV"
+    sum = 0
+    for i in range(len(s) - 1):
+        if dict01[s[i]] >= dict01[s[i + 1]]:
+            sum += dict01[s[i]]
+        elif dict01[s[i]] < dict01[s[i + 1]]:
+            sum -= dict01[s[i]]
+    sum += dict01[s[len(s) - 1]]
+    print(sum)
+
+
+def most_prefix():
+    strs = ["flower", "flow", "flight"]
+    if len(strs) == 0:
+        return ''
+    firstStr = strs[0]
+    for i in range(len(strs)):
+        while strs[i].find(firstStr, 0) != 0:
+            firstStr = firstStr[0:len(firstStr) - 1]
+    if firstStr == '':
+        return ''
+    else:
+        print(firstStr)
+
+
+def brack():
+    s = "(])"
+    list01 = []
+
+    for i in range(len(s)):
+        if s[i] in ['(', '{', '[']:
+            list01.append(s[i])
+        if s[i] == ')':
+            if len(list01) == 0:
+                print(False)
+                break
+            if list01[len(list01) - 1] == '(':
+                list01.pop()
+            else:
+                print(False)
+                break
+        if s[i] == '}':
+            if len(list01) == 0:
+                print(False)
+                break
+            if list01[len(list01) - 1] == '{':
+                list01.pop()
+            else:
+                print(False)
+                break
+        if s[i] == ']':
+            if len(list01) == 0:
+                print(False)
+                break
+            if list01[len(list01) - 1] == '[':
+                list01.pop()
+            else:
+                print(False)
+                break
+    if len(list01) == 0:
+        print(True)
+    else:
+        print(False)
+
+
 if __name__ == '__main__':
     # list_sort()
     # list_search()
     # list_dis_dup()
     # two_sum()
-    rev_num()
+    # rev_num()
+    # roma_num()
+    # most_prefix()
+    brack()
