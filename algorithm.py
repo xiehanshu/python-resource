@@ -1,3 +1,6 @@
+from ListNodeClass import ListNode
+
+
 def list_sort():
     list01 = [8, 7, 1, 2, 5, 4, 0, 9]
 
@@ -141,23 +144,24 @@ def brack():
         print(False)
 
 
-def link_node_conn():
-    print('1')
-    # res = ListNode()
-    # node = res
-    # while list1 and list2:
-    #     if list1.val < list2.val:
-    #         node.next = list1
-    #         list1 = list1.next
-    #     else:
-    #         node.next = list2
-    #         list2 = list2.next
-    #     node = node.next
-    # if list1:
-    #     node.next = list1
-    # else:
-    #     node.next = list2
-    # return res.next
+def list_node_conn():
+    res = ListNode()
+    node = res
+    list1 = ListNode()
+    list2 = ListNode()
+    while list1 and list2:
+        if list1.val < list2.val:
+            node.next = list1
+            list1 = list1.next
+        else:
+            node.next = list2
+            list2 = list2.next
+        node = node.next
+    if list1:
+        node.next = list1
+    else:
+        node.next = list2
+    print(res.next)
 
 
 def del_dup_list():
@@ -285,6 +289,19 @@ def climb_stairs():
     print(b)
 
 
+def list_node_del_dup():
+    head = ListNode()
+    if head is None:
+        return None
+    cur = head
+    while cur.next:
+        if cur.val == cur.next.val:
+            cur.next = cur.next.next
+        else:
+            cur = cur.next
+    return head
+
+
 if __name__ == '__main__':
     # list_sort()
     # list_search_two_part()
@@ -302,4 +319,5 @@ if __name__ == '__main__':
     # plus_one()
     # binary_plus()
     # plus_plus()
-    climb_stairs()
+    # climb_stairs()
+    list_node_conn()
