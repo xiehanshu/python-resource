@@ -230,6 +230,47 @@ def find_last_word():
             break
 
 
+def plus_one():
+    digits = [0]
+    str01 = ''
+    for i in range(len(digits)):
+        str01 = str01 + str(digits[i])
+    int01 = int(str01) + 1
+    list01 = []
+    for i in str(int01):
+        list01.append(int(i))
+    print(list01)
+
+
+def binary_plus():
+    a = "11"
+    b = "1"
+
+    res = bin(int(a, 2) + int(b, 2))[2:]
+    print(res)
+
+
+def plus_plus():
+    x = 8
+    if x == 0:
+        print(0)
+    start = 1
+    end = x
+
+    while start <= end:
+        mid = (start + end) // 2
+        square = mid * mid
+
+        if x == square:
+            print(mid)
+            break
+        if square > x:
+            end = mid - 1
+        else:
+            start = mid + 1
+    print(start - 1)
+
+
 if __name__ == '__main__':
     # list_sort()
     # list_search_two_part()
@@ -243,4 +284,7 @@ if __name__ == '__main__':
     # rem_ele_list()
     # find_first_index()
     # search_insert_index()
-    find_last_word()
+    # find_last_word()
+    # plus_one()
+    # binary_plus()
+    plus_plus()
