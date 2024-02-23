@@ -9,7 +9,7 @@ def list_sort():
     print(list01)
 
 
-def list_search():
+def list_search_two_part():
     list01 = [11, 8, 7, 1, 2, 5, 4, 0, 9, 12]
     for i in range(len(list01)):
         for j in range(len(list01) - 1):
@@ -199,9 +199,28 @@ def find_first_index():
     print(-1)
 
 
+def search_insert_index():
+    nums = [1, 3, 5, 6]
+    target = 7
+
+    start = 0
+    end = len(nums) - 1
+
+    while start <= end:
+        mid = (start + end) // 2
+        if nums[mid] == target:
+            print(mid)
+            break
+        elif nums[mid] < target:
+            start = mid + 1
+        elif nums[mid] > target:
+            end = mid - 1
+    print(start)
+
+
 if __name__ == '__main__':
     # list_sort()
-    # list_search()
+    # list_search_two_part()
     # list_dis_dup()
     # two_sum()
     # rev_num()
@@ -210,4 +229,5 @@ if __name__ == '__main__':
     # brack()
     # del_dup_list()
     # rem_ele_list()
-    find_first_index()
+    # find_first_index()
+    search_insert_index()
