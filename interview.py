@@ -271,6 +271,20 @@ def plus_plus():
     print(start - 1)
 
 
+def climb_stairs():
+    n = 3
+
+    if n == 1:
+        print(1)
+    elif n == 2:
+        print(2)
+    a, b = 1, 2
+
+    for i in range(3, n + 1):
+        a, b = b, a + b
+    print(b)
+
+
 if __name__ == '__main__':
     # list_sort()
     # list_search_two_part()
@@ -287,4 +301,5 @@ if __name__ == '__main__':
     # find_last_word()
     # plus_one()
     # binary_plus()
-    plus_plus()
+    # plus_plus()
+    climb_stairs()
