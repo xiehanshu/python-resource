@@ -218,6 +218,18 @@ def search_insert_index():
     print(start)
 
 
+def find_last_word():
+    s = "luffy is still joyboy"
+
+    list01 = s.split(' ')
+    for i in range(len(list01) - 1, -1, -1):
+        if list01[i] == '':
+            continue
+        else:
+            print(len(list01[i]))
+            break
+
+
 if __name__ == '__main__':
     # list_sort()
     # list_search_two_part()
@@ -230,4 +242,5 @@ if __name__ == '__main__':
     # del_dup_list()
     # rem_ele_list()
     # find_first_index()
-    search_insert_index()
+    # search_insert_index()
+    find_last_word()
