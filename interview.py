@@ -169,6 +169,36 @@ def del_dup_list():
     print(len(nums))
 
 
+def rem_ele_list():
+    nums = [0, 1, 2, 2, 3, 0, 4, 2]
+    val = 2
+    for i in range(len(nums) - 1, -1, -1):
+        if nums[i] == val:
+            nums.pop(i)
+    print(nums)
+
+
+def find_first_index():
+    haystack = "mississippi"
+    needle = "pi"
+
+    res = haystack.find(needle, 0)
+    # print(res)
+
+    for i in range(len(haystack)):
+        if haystack[0:i + 1] == needle:
+            print(0)
+            break
+        if haystack[len(haystack) - 1:len(haystack)] == needle:
+            print(len(haystack) - 1)
+            break
+        for j in range(i + 1, len(haystack)):
+            if haystack[i:j + 1] == needle:
+                print(i)
+                break
+    print(-1)
+
+
 if __name__ == '__main__':
     # list_sort()
     # list_search()
@@ -178,4 +208,6 @@ if __name__ == '__main__':
     # roma_num()
     # most_prefix()
     # brack()
-    del_dup_list()
+    # del_dup_list()
+    # rem_ele_list()
+    find_first_index()
