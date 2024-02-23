@@ -3,7 +3,6 @@ def list_sort():
 
     for i in range(len(list01)):
         for j in range(len(list01) - 1):
-            # print('{}-{}'.format(list01[i], list01[j]))
             if list01[j] > list01[j + 1]:
                 list01[j], list01[j + 1] = list01[j + 1], list01[j]
 
@@ -142,6 +141,34 @@ def brack():
         print(False)
 
 
+def link_node_conn():
+    print('1')
+    # res = ListNode()
+    # node = res
+    # while list1 and list2:
+    #     if list1.val < list2.val:
+    #         node.next = list1
+    #         list1 = list1.next
+    #     else:
+    #         node.next = list2
+    #         list2 = list2.next
+    #     node = node.next
+    # if list1:
+    #     node.next = list1
+    # else:
+    #     node.next = list2
+    # return res.next
+
+
+def del_dup_list():
+    nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
+
+    for i in range(len(nums) - 1, -1, -1):
+        if nums[i] in nums[0:i]:
+            nums.pop(i)
+    print(len(nums))
+
+
 if __name__ == '__main__':
     # list_sort()
     # list_search()
@@ -150,4 +177,5 @@ if __name__ == '__main__':
     # rev_num()
     # roma_num()
     # most_prefix()
-    brack()
+    # brack()
+    del_dup_list()
