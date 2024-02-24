@@ -319,6 +319,25 @@ def tree_mid():
     return res
 
 
+def max_income():
+    prices = [2, 4, 1]
+    # dist = 0
+    #
+    # for i in range(len(prices)):
+    #     for j in range(i + 1, len(prices)):
+    #         if prices[j] - prices[i] > dist:
+    #             dist = prices[j] - prices[i]
+    # print(dist)
+    minV = prices[0]
+    maxV = 0
+
+    for i in range(1, len(prices)):
+        maxV = max(maxV, prices[i] - minV)
+        minV = min(minV, prices[i])
+
+    print(maxV)
+
+
 if __name__ == '__main__':
     # list_sort()
     # list_search_two_part()
@@ -337,4 +356,5 @@ if __name__ == '__main__':
     # binary_plus()
     # plus_plus()
     # climb_stairs()
-    list_node_conn()
+    # list_node_conn()
+    max_income()
