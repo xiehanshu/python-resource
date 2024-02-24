@@ -1,4 +1,5 @@
-from ListNodeClass import ListNode
+from ListNode import ListNode
+from TreeNode import TreeNode
 
 
 def list_sort():
@@ -300,6 +301,22 @@ def list_node_del_dup():
         else:
             cur = cur.next
     return head
+
+
+def tree_mid():
+    root = TreeNode()
+    cur = root
+    tmp = []
+    res = []
+
+    while cur or tmp:
+        while cur:
+            tmp.append(cur)
+            cur = cur.left
+        cur = tmp.pop()
+        res.append(cur.val)
+        cur = cur.right
+    return res
 
 
 if __name__ == '__main__':
