@@ -354,6 +354,56 @@ def back_to_end_str():
         print(False)
 
 
+def only_one():
+    nums = [2, 2, 1]
+    list01 = []
+
+    for i in nums:
+        if i not in list01:
+            list01.append(i)
+        elif i in list01:
+            list01.remove(i)
+    print(list01)
+
+
+def appear_half():
+    nums = [2, 2, 1, 1, 1, 2, 2]
+    times = len(nums) / 2
+    dict01 = {}
+
+    for i in range(len(nums)):
+        if nums[i] not in dict01.keys():
+            dict01[nums[i]] = 1
+        elif nums[i] in dict01.keys():
+            dict01[nums[i]] += 1
+    for i, j in dict01.items():
+        if j > times:
+            print(i)
+
+
+def happy_num():
+    n = 19
+
+    def a(n):
+        sum = 0
+        for i in str(n):
+            sum += int(i) * int(i)
+        return sum
+
+    rec = set()
+
+    while True:
+        n = a(n)
+
+        if n == 1:
+            return True
+
+        if n in rec:
+            return False
+        else:
+            rec.add(n)
+
+
 if __name__ == '__main__':
     # list_sort()
     # list_search_two_part()
@@ -374,4 +424,7 @@ if __name__ == '__main__':
     # climb_stairs()
     # list_node_conn()
     # max_income()
-    back_to_end_str()
+    # back_to_end_str()
+    # only_one()
+    # appear_half()
+    happy_num()
