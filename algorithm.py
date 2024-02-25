@@ -338,6 +338,22 @@ def max_income():
     print(maxV)
 
 
+def back_to_end_str():
+    s = "0P"
+    s = s.lower()
+    print(s)
+    tmpList = []
+    tmpStr = ''
+    for i in s:
+        if i.isalpha() or i.isnumeric():
+            tmpList.append(i)
+    tmpStr = ''.join(tmpList)
+    if tmpStr == tmpStr[::-1]:
+        print(True)
+    else:
+        print(False)
+
+
 if __name__ == '__main__':
     # list_sort()
     # list_search_two_part()
@@ -357,4 +373,5 @@ if __name__ == '__main__':
     # plus_plus()
     # climb_stairs()
     # list_node_conn()
-    max_income()
+    # max_income()
+    back_to_end_str()
