@@ -105,7 +105,7 @@ def most_prefix():
         print(firstStr)
 
 
-def brack():
+def bracket():
     s = "(])"
     list01 = []
 
@@ -404,6 +404,88 @@ def happy_num():
             rec.add(n)
 
 
+def if_dup_ele_list():
+    nums = [1, 2, 3, 1]
+    dict01 = {}
+
+    for i in nums:
+        if i not in dict01.keys():
+            dict01[i] = 1
+        else:
+            dict01[i] += 1
+    for i, j in dict01.items():
+        if j > 1:
+            print(True)
+            break
+    print(False)
+
+
+def if_dup_ele_list_s():
+    nums = [1, 2, 3, 1, 2, 3]
+    k = 2
+
+    for i in range(len(nums)):
+        for j in range(i + 1, len(nums)):
+            if nums[i] == nums[j] and abs(i - j) <= k:
+                print(True)
+                break
+    print(False)
+
+    start = 0
+    end = len(nums) - 1
+
+
+def one_pos_num():
+    num = 38
+    # sum = 0
+
+    while len(str(num)) != 1:
+        sum = 0
+        for i in str(num):
+            sum += int(i)
+        num = sum
+    print(num)
+
+
+def lost_num_in_list():
+    nums = [0]
+    length = len(nums)
+    list01 = []
+    for i in range(length + 1):
+        list01.append(i)
+    print(list01)
+
+    for i in list01:
+        if 0 <= i <= length and i not in nums:
+            print(i)
+
+
+def move_zero():
+    nums = [0, 1, 0, 3, 12]
+    numIndex = 0
+    for i in range(len(nums) - 1, -1, -1):
+        if nums[i] == 0:
+            nums.pop(i)
+            numIndex += 1
+
+    for i in range(numIndex):
+        nums.append(0)
+
+    print(nums)
+
+
+def rev_str():
+    s = ["h", "e", "l", "l", "o"]
+    start = 0
+    end = len(s) - 1
+
+    while start < end:
+        s[start], s[end] = s[end], s[start]
+        start += 1
+        end -= 1
+    print(s)
+
+
 if __name__ == '__main__':
     # list_sort()
     # list_search_two_part()
@@ -412,7 +494,7 @@ if __name__ == '__main__':
     # rev_num()
     # roma_num()
     # most_prefix()
-    # brack()
+    # bracket()
     # del_dup_list()
     # rem_ele_list()
     # find_first_index()
@@ -427,4 +509,10 @@ if __name__ == '__main__':
     # back_to_end_str()
     # only_one()
     # appear_half()
-    happy_num()
+    # happy_num()
+    # if_dup_ele_list()
+    # if_dup_ele_list_s()
+    # one_pos_num()
+    # lost_num_in_list()
+    # move_zero()
+    rev_str()
