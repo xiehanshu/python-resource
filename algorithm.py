@@ -540,6 +540,29 @@ def perfect_square():
         print(False)
 
 
+def list_cons():
+    ransomNote = "bg"
+    magazine = "efjbdfbdgfjhhaiigfhbaejahgfbbgbjagbddfgdiaigdadhcfcj"
+
+    dict01 = {}
+
+    for i in ransomNote:
+        if i not in dict01.keys():
+            dict01[i] = 1
+        else:
+            dict01[i] += 1
+
+    for i in magazine:
+        if i in dict01.keys() and dict01[i] > 0:
+            dict01[i] -= 1
+
+    for i, j in dict01.items():
+        if j != 0:
+            print(False)
+            break
+    print(True)
+
+
 if __name__ == '__main__':
     # list_sort()
     # list_search_two_part()
@@ -572,4 +595,5 @@ if __name__ == '__main__':
     # rev_str()
     # list_cross()
     # list_cross_s()
-    perfect_square()
+    # perfect_square()
+    list_cons()
