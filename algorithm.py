@@ -605,6 +605,32 @@ def dif_str():
     print(-1)
 
 
+def long_rev_str():
+    s = "bb"
+    dict01 = {}
+
+    for i in s:
+        if i not in dict01.keys():
+            dict01[i] = 1
+        else:
+            dict01[i] += 1
+
+    length = 0
+    two = 0
+    for i, j in dict01.items():
+        if j % 2 == 0:
+            length += j
+        elif j > 2 and j % 2 == 1:
+            length += j - 1
+            two += 1
+        elif j < 2 and j % 2 == 1:
+            two += 1
+    if two != 0:
+        print(length + 1)
+    else:
+        print(length)
+
+
 if __name__ == '__main__':
     # list_sort()
     # list_search_two_part()
@@ -640,4 +666,5 @@ if __name__ == '__main__':
     # perfect_square()
     # list_cons()
     # only_char_in_str()
-    dif_str()
+    # dif_str()
+    long_rev_str()
