@@ -1,3 +1,5 @@
+import sys
+
 from ListNode import ListNode
 from TreeNode import TreeNode
 
@@ -631,6 +633,94 @@ def long_rev_str():
         print(length)
 
 
+def three_five():
+    n = 15
+    list01 = []
+
+    for i in range(1, n + 1):
+        if i % 3 == 0 and i % 5 == 0:
+            list01.append('FizzBuzz')
+        elif i % 3 == 0 and i % 5 != 0:
+            list01.append('Fizz')
+        elif i % 3 != 0 and i % 5 == 0:
+            list01.append('Buzz')
+        else:
+            list01.append(str(i))
+    print(list01)
+
+
+def most_third():
+    nums = [1, 2]
+    list01 = []
+
+    for i in nums:
+        if i not in list01:
+            list01.append(i)
+    for i in range(len(list01)):
+        for j in range(i, len(list01)):
+            if list01[i] < list01[j]:
+                list01[i], list01[j] = list01[j], list01[i]
+    if len(list01) >= 3:
+        print(list01[2])
+    else:
+        print(list01[0])
+
+
+def str_to_int():
+    sys.set_int_max_str_digits(10000)
+    num1 = "11"
+    num2 = "123"
+    len2 = len(num2)
+    num2Tmp = 0
+    len1 = len(num1)
+    num1Tmp = 0
+
+    for i in range(len2):
+        num2Tmp += int(num2[i]) * int('1' + '0' * (len2 - 1 - i))
+
+    for i in range(len1):
+        num1Tmp += int(num1[i]) * int('1' + '0' * (len1 - 1 - i))
+
+    print(str(num1Tmp + num2Tmp))
+
+
+def word_in_str():
+    s = "                "
+    if s == '':
+        print(0)
+    s = s.split(' ')
+    for i in range(len(s) - 1, -1, -1):
+        if s[i] == '':
+            s.pop(i)
+    print(len(s))
+
+
+def arrange_nums():
+    n = 8
+    i = 1
+    sum = 0
+    while True:
+        sum += i
+        i += 1
+        if n - sum < i:
+            break
+    print(i - 1)
+
+
+def gone_nums_in_list():
+    nums = [1, 1]
+    len01 = len(nums)
+    nums = set(nums)
+    tmp = []
+    for i in range(1, len01 + 1):
+        tmp.append(i)
+
+    for i in range(len(tmp) - 1, -1, -1):
+        if tmp[i] in nums:
+            tmp.pop(i)
+    print(tmp)
+
+
 if __name__ == '__main__':
     # list_sort()
     # list_search_two_part()
@@ -667,4 +757,10 @@ if __name__ == '__main__':
     # list_cons()
     # only_char_in_str()
     # dif_str()
-    long_rev_str()
+    # long_rev_str()
+    # three_five()
+    # most_third()
+    # str_to_int()
+    # word_in_str()
+    # arrange_nums()
+    gone_nums_in_list()
