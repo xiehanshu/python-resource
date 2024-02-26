@@ -563,6 +563,24 @@ def list_cons():
     print(True)
 
 
+def only_char_in_str():
+    s = "aabb"
+    dict01 = {}
+
+    for i in s:
+        if i not in dict01.keys():
+            dict01[i] = 0
+        else:
+            dict01[i] += 1
+
+    for i in range(len(s)):
+        if dict01[s[i]] == 0:
+            print(i)
+            break
+    print(-1)
+
+
+
 if __name__ == '__main__':
     # list_sort()
     # list_search_two_part()
@@ -596,4 +614,5 @@ if __name__ == '__main__':
     # list_cross()
     # list_cross_s()
     # perfect_square()
-    list_cons()
+    # list_cons()
+    only_char_in_str()
