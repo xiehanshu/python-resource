@@ -486,6 +486,60 @@ def rev_str():
     print(s)
 
 
+def list_cross():
+    nums1 = [1, 2, 2, 1]
+    nums2 = [2, 2]
+    listRes = []
+    nums1 = list(set(nums1))
+    nums2 = list(set(nums2))
+
+    for i in nums1:
+        for j in nums2:
+            if j == i:
+                listRes.append(j)
+    print(listRes)
+
+
+def list_cross_s():
+    nums1 = [1, 2, 2, 1]
+    nums2 = [2, 2]
+    tmp = {}
+    res = []
+
+    for i in nums1:
+        if i not in tmp.keys():
+            tmp[i] = 1
+        else:
+            tmp[i] += 1
+
+    for i in nums2:
+        if i in tmp.keys() and tmp[i] > 0:
+            res.append(i)
+            tmp[i] -= 1
+    print(res)
+
+
+def perfect_square():
+    num = 17
+    start = 0
+    end = num
+
+    while start <= end:
+        mid = (start + end) // 2
+        sq = mid * mid
+
+        if sq == num:
+            print(mid)
+            break
+        if sq > num:
+            end = mid - 1
+        else:
+            start = mid + 1
+    print(mid)
+    if mid * mid != num:
+        print(False)
+
+
 if __name__ == '__main__':
     # list_sort()
     # list_search_two_part()
@@ -515,4 +569,7 @@ if __name__ == '__main__':
     # one_pos_num()
     # lost_num_in_list()
     # move_zero()
-    rev_str()
+    # rev_str()
+    # list_cross()
+    # list_cross_s()
+    perfect_square()
