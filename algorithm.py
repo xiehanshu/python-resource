@@ -564,21 +564,45 @@ def list_cons():
 
 
 def only_char_in_str():
-    s = "aabb"
+    s = "loveleetcode"
     dict01 = {}
 
     for i in s:
         if i not in dict01.keys():
-            dict01[i] = 0
+            dict01[i] = 1
         else:
             dict01[i] += 1
 
     for i in range(len(s)):
-        if dict01[s[i]] == 0:
+        if dict01[s[i]] == 1:
             print(i)
             break
     print(-1)
 
+
+def dif_str():
+    s = "a"
+    t = "aa"
+
+    dict01 = {}
+
+    for i in t:
+        if i not in dict01.keys():
+            dict01[i] = 1
+        else:
+            dict01[i] += 1
+    print(dict01)
+
+    for i in s:
+        if i in dict01.keys() and dict01[i] > 0:
+            dict01[i] -= 1
+    print(dict01)
+
+    for i, j in dict01.items():
+        if j > 0:
+            print(i)
+            break
+    print(-1)
 
 
 if __name__ == '__main__':
@@ -615,4 +639,5 @@ if __name__ == '__main__':
     # list_cross_s()
     # perfect_square()
     # list_cons()
-    only_char_in_str()
+    # only_char_in_str()
+    dif_str()
