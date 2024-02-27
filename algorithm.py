@@ -897,6 +897,16 @@ def rev_word():
     print(s_r)
 
 
+def split_candy():
+    candyType = [6,6,6,6]
+    candyNum = len(set(candyType))
+
+    if (len(candyType) / 2) < candyNum:
+        print(int(len(candyType) / 2))
+    elif (len(candyType) / 2) >= candyNum:
+        print(candyNum)
+
+
 if __name__ == '__main__':
     # list_sort()
     # list_search_two_part()
@@ -948,4 +958,5 @@ if __name__ == '__main__':
     # fib_num()
     # upper_in_word()
     # stu_on()
-    rev_word()
+    # rev_word()
+    split_candy()
