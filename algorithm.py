@@ -822,6 +822,30 @@ def list_rank():
     print(res)
 
 
+def fib_num():
+    n = 4
+
+    def fib(n):
+        if n == 0:
+            return 0
+        if n == 1:
+            return 1
+        else:
+            return fib(n - 2) + fib(n - 1)
+
+    print(fib(n))
+
+    if n == 0:
+        return 0
+    if n == 1:
+        return 1
+    a = 0
+    b = 1
+    for i in range(2, n + 1):
+        a, b = b, a + b
+    print(b)
+
+
 if __name__ == '__main__':
     # list_sort()
     # list_search_two_part()
@@ -869,4 +893,5 @@ if __name__ == '__main__':
     # most_appear_one()
     # attack_duration()
     # large_ele_in_list()
-    list_rank()
+    # list_rank()
+    fib_num()
