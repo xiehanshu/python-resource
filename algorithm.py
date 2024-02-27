@@ -794,11 +794,32 @@ def large_ele_in_list():
                 break
     print(res)
 
-# def keyboard_word():
-#     one = 'qwertyuiop'
-#     two = 'asdfghjkl'
-#     three = 'zxcvbnm'
 
+def list_rank():
+    score = [10, 3, 8, 9, 4]
+    tmp = score.copy()
+    dict01 = {}
+    res = []
+    c = 0
+    for i in range(len(tmp)):
+        for j in range(i + 1, len(tmp)):
+            if tmp[i] < tmp[j]:
+                tmp[i], tmp[j] = tmp[j], tmp[i]
+    for i in tmp:
+        if c == 0:
+            dict01[i] = 'Gold Medal'
+        elif c == 1:
+            dict01[i] = 'Silver Medal'
+        elif c == 2:
+            dict01[i] = 'Bronze Medal'
+        elif c > 2:
+            dict01[i] = str(c + 1)
+        c += 1
+
+    for i in score:
+        res.append(dict01[i])
+
+    print(res)
 
 
 if __name__ == '__main__':
@@ -847,4 +868,5 @@ if __name__ == '__main__':
     # format_password()
     # most_appear_one()
     # attack_duration()
-    large_ele_in_list()
+    # large_ele_in_list()
+    list_rank()
