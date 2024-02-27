@@ -759,6 +759,25 @@ def most_appear_one():
     print(res)
 
 
+def attack_duration():
+    timeSeries = [1, 3, 5, 7, 9, 11, 13, 15]
+    duration = 3
+    poison = 0
+
+    for i in range(len(timeSeries) - 1):
+        if i == 0:
+            poison = duration
+        if timeSeries[i + 1] - timeSeries[i] >= duration:
+            poison += duration
+        else:
+            poison += (timeSeries[i + 1] - timeSeries[i])
+
+    if len(timeSeries) == 1:
+        poison = duration
+
+    print(poison)
+
+
 if __name__ == '__main__':
     # list_sort()
     # list_search_two_part()
@@ -803,4 +822,5 @@ if __name__ == '__main__':
     # arrange_nums()
     # gone_nums_in_list()
     # format_password()
-    most_appear_one()
+    # most_appear_one()
+    attack_duration()
