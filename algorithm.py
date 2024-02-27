@@ -910,11 +910,22 @@ def split_candy():
 def most_same_least_index():
     list1 = ["Shogun", "Tapioca Express", "Burger King", "KFC"]
     list2 = ["KFC", "Shogun", "Burger King"]
+    indexDict = {}
     res = []
-    indexList = []
-    
 
+    tmp = list(set(list1) & set(list2))
 
+    for i in tmp:
+        indexDict[i] = list1.index(i) + list2.index(i)
+    print(indexDict)
+    indexList = sorted(indexDict, reverse=True)
+    print(indexList)
+    minV = indexDict[indexList[0]]
+
+    for i, j in indexDict.items():
+        if j == minV and i not in res:
+            res.append(i)
+    print(res)
 
 
 if __name__ == '__main__':
@@ -969,4 +980,5 @@ if __name__ == '__main__':
     # upper_in_word()
     # stu_on()
     # rev_word()
-    split_candy()
+    # split_candy()
+    most_same_least_index()
