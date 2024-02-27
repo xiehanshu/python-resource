@@ -898,13 +898,23 @@ def rev_word():
 
 
 def split_candy():
-    candyType = [6,6,6,6]
+    candyType = [6, 6, 6, 6]
     candyNum = len(set(candyType))
 
     if (len(candyType) / 2) < candyNum:
         print(int(len(candyType) / 2))
     elif (len(candyType) / 2) >= candyNum:
         print(candyNum)
+
+
+def most_same_least_index():
+    list1 = ["Shogun", "Tapioca Express", "Burger King", "KFC"]
+    list2 = ["KFC", "Shogun", "Burger King"]
+    res = []
+    indexList = []
+    
+
+
 
 
 if __name__ == '__main__':
