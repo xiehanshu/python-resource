@@ -721,6 +721,44 @@ def gone_nums_in_list():
     print(tmp)
 
 
+def format_password():
+    s = "--a-a-a-a--"
+    k = 2
+    res = ''
+    mark = 0
+
+    for i in range(len(s) - 1, -1, -1):
+        if s[i].isalpha() or s[i].isnumeric():
+            mark += 1
+            res += s[i]
+            if mark == k:
+                res += '-'
+                mark = 0
+    while True:
+        if res.endswith('-'):
+            res = res[0:len(res) - 1]
+        else:
+            break
+    print(res)
+    print(res[::-1].upper())
+
+
+def most_appear_one():
+    nums = [1, 0, 1, 1, 0, 1]
+    res = 0
+    tmp = 0
+
+    for i in range(len(nums)):
+        if nums[i] == 1:
+            tmp += 1
+        if nums[i] != 1 or i == (len(nums) - 1):
+            if tmp > res:
+                res = tmp
+            tmp = 0
+
+    print(res)
+
+
 if __name__ == '__main__':
     # list_sort()
     # list_search_two_part()
@@ -763,4 +801,6 @@ if __name__ == '__main__':
     # str_to_int()
     # word_in_str()
     # arrange_nums()
-    gone_nums_in_list()
+    # gone_nums_in_list()
+    # format_password()
+    most_appear_one()
