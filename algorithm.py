@@ -864,6 +864,39 @@ def upper_in_word():
         print(False)
 
 
+def stu_on():
+    s = "PPALLL"
+    a = 0
+    l = 0
+
+    for i in range(len(s)):
+        if s[i] == 'A':
+            a += 1
+        if s[i] == 'L':
+            l += 1
+        elif s[i] != 'L' and l != 0 and l < 3:
+            l = 0
+
+    if a < 2 and l < 3:
+        print(True)
+    else:
+        print(False)
+
+
+def rev_word():
+    s = "Mr Ding"
+    list_s = s.split(' ')
+    list_r = []
+
+    for i in list_s:
+        str_r = ''
+        for j in range(len(i) - 1, -1, -1):
+            str_r += i[j]
+        list_r.append(str_r)
+    s_r = ' '.join(list_r)
+    print(s_r)
+
+
 if __name__ == '__main__':
     # list_sort()
     # list_search_two_part()
@@ -913,4 +946,6 @@ if __name__ == '__main__':
     # large_ele_in_list()
     # list_rank()
     # fib_num()
-    upper_in_word()
+    # upper_in_word()
+    # stu_on()
+    rev_word()
