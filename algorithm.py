@@ -846,6 +846,24 @@ def fib_num():
     print(b)
 
 
+def upper_in_word():
+    word = "USA"
+    upC = 0
+
+    for i in word:
+        if i.isupper():
+            upC += 1
+
+    if upC == 0:
+        print(True)
+    elif upC == len(word):
+        print(True)
+    elif upC == 1 and word[0].isupper():
+        print(True)
+    else:
+        print(False)
+
+
 if __name__ == '__main__':
     # list_sort()
     # list_search_two_part()
@@ -894,4 +912,5 @@ if __name__ == '__main__':
     # attack_duration()
     # large_ele_in_list()
     # list_rank()
-    fib_num()
+    # fib_num()
+    upper_in_word()
