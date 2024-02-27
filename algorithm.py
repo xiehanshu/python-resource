@@ -918,9 +918,9 @@ def most_same_least_index():
     for i in tmp:
         indexDict[i] = list1.index(i) + list2.index(i)
     print(indexDict)
-    indexList = sorted(indexDict, reverse=True)
+    indexList = sorted(indexDict.items(), key=lambda x: x[1])
     print(indexList)
-    minV = indexDict[indexList[0]]
+    minV = indexDict[indexList[0][0]]
 
     for i, j in indexDict.items():
         if j == minV and i not in res:
@@ -971,14 +971,4 @@ if __name__ == '__main__':
     # word_in_str()
     # arrange_nums()
     # gone_nums_in_list()
-    # format_password()
-    # most_appear_one()
-    # attack_duration()
-    # large_ele_in_list()
-    # list_rank()
-    # fib_num()
-    # upper_in_word()
-    # stu_on()
-    # rev_word()
-    # split_candy()
     most_same_least_index()
