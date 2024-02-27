@@ -778,6 +778,29 @@ def attack_duration():
     print(poison)
 
 
+def large_ele_in_list():
+    nums1 = [4, 1, 2]
+    nums2 = [1, 3, 4, 2]
+    res = []
+
+    for i in range(len(nums1)):
+        pos = nums2.index(nums1[i])
+        for j in range(pos, len(nums2)):
+            if nums2[j] > nums1[i]:
+                res.append(nums2[j])
+                break
+            elif j == (len(nums2) - 1) and nums2[j] <= nums1[i]:
+                res.append(-1)
+                break
+    print(res)
+
+# def keyboard_word():
+#     one = 'qwertyuiop'
+#     two = 'asdfghjkl'
+#     three = 'zxcvbnm'
+
+
+
 if __name__ == '__main__':
     # list_sort()
     # list_search_two_part()
@@ -823,4 +846,5 @@ if __name__ == '__main__':
     # gone_nums_in_list()
     # format_password()
     # most_appear_one()
-    attack_duration()
+    # attack_duration()
+    large_ele_in_list()
