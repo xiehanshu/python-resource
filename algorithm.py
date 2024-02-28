@@ -998,6 +998,25 @@ def conti_asec_sub_list():
     print(res)
 
 
+def two_div():
+    nums = [-1, 0, 3, 5, 9, 12]
+    target = 9
+
+    start = 0
+    end = len(nums) - 1
+
+    while start <= end:
+        mid = (start + end) // 2
+        if nums[mid] == target:
+            print(mid)
+            break
+        if nums[mid] > target:
+            end = mid - 1
+        else:
+            start = mid + 1
+    print(-1)
+
+
 if __name__ == '__main__':
     # list_sort()
     # list_search_two_part()
@@ -1044,4 +1063,5 @@ if __name__ == '__main__':
     # most_same_least_index()
     # sub_str_avg()
     # list_lost_num()
-    conti_asec_sub_list()
+    # conti_asec_sub_list()
+    two_div()
