@@ -1054,6 +1054,48 @@ def self_div():
     print(res)
 
 
+def small_char():
+    letters = ["x", "x", "y", "y"]
+    target = "z"
+
+    list01 = []
+    index = 0
+
+    for i in letters:
+        list01.append(ord(i))
+    for i in range(len(list01)):
+        if list01[i] > ord(target):
+            index = i
+            break
+    print(letters[index])
+
+
+def twice_other_num():
+    nums = [1, 2, 16, 35, 44, 100, 27, 0]
+    maxNum = sorted(nums, reverse=True)[0]
+    nums_tmp = []
+    for i in nums:
+        if i != 0 and i != maxNum:
+            nums_tmp.append(i)
+    mark = False
+
+    if len(nums_tmp) == 0:
+        print(nums.index(maxNum))
+
+    for i in nums_tmp:
+        tmpRes = maxNum / i
+        if tmpRes >= 2:
+            mark = True
+        else:
+            mark = False
+            break
+
+    if mark == True:
+        print(nums.index(maxNum))
+    else:
+        print(-1)
+
+
 if __name__ == '__main__':
     # list_sort()
     # list_search_two_part()
@@ -1103,4 +1145,6 @@ if __name__ == '__main__':
     # conti_asec_sub_list()
     # two_div()
     # turn_to_lower()
-    self_div()
+    # self_div()
+    # small_char()
+    twice_other_num()
