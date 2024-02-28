@@ -928,6 +928,21 @@ def most_same_least_index():
     print(res)
 
 
+def sub_str_avg():
+    nums = [-1]
+    k = 1
+
+    w_sum = sum(nums[0:k])
+    avg = w_sum / k
+
+    for i in range(k, len(nums)):
+        w_sum -= nums[i - k]
+        w_sum += nums[i]
+        avg = max(avg, w_sum / k)
+
+    print(avg)
+
+
 if __name__ == '__main__':
     # list_sort()
     # list_search_two_part()
@@ -971,4 +986,5 @@ if __name__ == '__main__':
     # word_in_str()
     # arrange_nums()
     # gone_nums_in_list()
-    most_same_least_index()
+    # most_same_least_index()
+    sub_str_avg()
