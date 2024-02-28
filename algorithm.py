@@ -980,6 +980,24 @@ def list_ele_num_same():
         print(False)
 
 
+def conti_asec_sub_list():
+    nums = [1, 3, 5, 7]
+    length = 1
+    res = 1
+
+    for i in range(len(nums) - 1):
+        if nums[i + 1] - nums[i] > 0:
+            length += 1
+            if i == (len(nums) - 2):
+                if length >= res:
+                    res = length
+        elif nums[i + 1] - nums[i] <= 0:
+            if length >= res:
+                res = length
+            length = 1
+    print(res)
+
+
 if __name__ == '__main__':
     # list_sort()
     # list_search_two_part()
@@ -1025,4 +1043,5 @@ if __name__ == '__main__':
     # gone_nums_in_list()
     # most_same_least_index()
     # sub_str_avg()
-    list_lost_num()
+    # list_lost_num()
+    conti_asec_sub_list()
