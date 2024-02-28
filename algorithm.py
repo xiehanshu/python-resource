@@ -1017,6 +1017,43 @@ def two_div():
     print(-1)
 
 
+def turn_to_lower():
+    s = "Hello"
+    res = ''
+
+    for i in s:
+        if i.isupper():
+            res += i.lower()
+        else:
+            res += i
+    print(res)
+
+
+def self_div():
+    left = 47
+    right = 85
+    list01 = []
+    res = []
+    div = False
+
+    for i in range(left, right + 1):
+        list01.append(i)
+
+    for i in list01:
+        for j in range(len(str(i))):
+            if int(str(i)[j]) == 0:
+                div = False
+                break
+            if i % int(str(i)[j]) == 0:
+                div = True
+            else:
+                div = False
+                break
+        if div == True:
+            res.append(i)
+    print(res)
+
+
 if __name__ == '__main__':
     # list_sort()
     # list_search_two_part()
@@ -1064,4 +1101,6 @@ if __name__ == '__main__':
     # sub_str_avg()
     # list_lost_num()
     # conti_asec_sub_list()
-    two_div()
+    # two_div()
+    # turn_to_lower()
+    self_div()
