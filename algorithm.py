@@ -943,6 +943,43 @@ def sub_str_avg():
     print(avg)
 
 
+def list_lost_num():
+    nums = [1, 3, 3]
+    list_sum = sum(nums)
+    set_sum = sum(set(nums))
+    dup_num = list_sum - set_sum
+    tmp = 0
+
+    for i in range(1, len(nums) + 1):
+        tmp += i
+
+    res = [dup_num, tmp - set_sum]
+
+    print(res)
+
+
+def list_ele_num_same():
+    moves = "UD"
+    uC = 0
+    dC = 0
+    lC = 0
+    rC = 0
+
+    for i in moves:
+        if i == 'U':
+            uC += 1
+        elif i == 'D':
+            dC += 1
+        elif i == 'L':
+            lC += 1
+        elif i == 'R':
+            rC += 1
+    if uC == dC and lC == rC:
+        print(True)
+    else:
+        print(False)
+
+
 if __name__ == '__main__':
     # list_sort()
     # list_search_two_part()
@@ -987,4 +1024,5 @@ if __name__ == '__main__':
     # arrange_nums()
     # gone_nums_in_list()
     # most_same_least_index()
-    sub_str_avg()
+    # sub_str_avg()
+    list_lost_num()
