@@ -1305,6 +1305,40 @@ def bin_two_dis():
     print(list02[0])
 
 
+def only_once_word():
+    s1 = "apple apple"
+    s2 = "banana"
+    dict01 = {}
+    dict02 = {}
+    list01 = s1.split(' ')
+    list02 = s2.split(' ')
+    res = []
+
+    for i in list01:
+        if i not in dict01.keys():
+            dict01[i] = 1
+        else:
+            dict01[i] += 1
+
+    for i in list02:
+        if i not in dict02.keys():
+            dict02[i] = 1
+        else:
+            dict02[i] += 1
+
+    for i, j in dict01.items():
+        if j == 1:
+            if i not in dict02.keys():
+                res.append(i)
+
+    for i, j in dict02.items():
+        if j == 1:
+            if i not in dict01.keys():
+                res.append(i)
+
+    print(res)
+
+
 if __name__ == '__main__':
     # list_sort()
     # list_search_two_part()
@@ -1366,4 +1400,5 @@ if __name__ == '__main__':
     # rev_list_twice()
     # str_back()
     # lemon_exchange()
-    bin_two_dis()
+    # bin_two_dis()
+    only_once_word()
