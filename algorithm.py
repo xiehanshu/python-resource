@@ -1107,6 +1107,20 @@ def how_many_jewels():
     print(c)
 
 
+def rotate_str():
+    s = "abcde"
+    goal = "cdeab"
+
+    for i in range(len(s)):
+        s = s[1:len(s)] + s[0]
+        if s == goal:
+            print(True)
+            break
+        if i == (len(s) - 1) and s != goal:
+            print(False)
+            break
+
+
 if __name__ == '__main__':
     # list_sort()
     # list_search_two_part()
@@ -1159,4 +1173,5 @@ if __name__ == '__main__':
     # self_div()
     # small_char()
     # twice_other_num()
-    how_many_jewels()
+    # how_many_jewels()
+    rotate_str()
