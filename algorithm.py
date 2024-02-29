@@ -1360,11 +1360,52 @@ def one_way_list():
         print(True)
     elif nums[0] == nums[len(nums) - 1]:
         for i in range(len(nums) - 1):
-            if nums[i] == nums[i+1]:
+            if nums[i] == nums[i + 1]:
                 continue
             else:
                 print(False)
                 break
+        print(True)
+
+
+def odd_even_list():
+    nums = [0]
+    nums01 = []
+    nums02 = []
+    res = []
+
+    for i in nums:
+        if i % 2 == 0:
+            nums01.append(i)
+        else:
+            nums02.append(i)
+    res = nums01 + nums02
+    print(res)
+
+
+def list_ele_count_same():
+    deck = [1, 1, 2, 2, 2, 2]
+    dict01 = {}
+
+    if len(deck) == 1:
+        print(True)
+
+    for i in deck:
+        if i not in dict01.keys():
+            dict01[i] = 1
+        else:
+            dict01[i] += 1
+    list01 = dict01.values()
+    list02 = sorted(list01, reverse=True)
+
+    if len(set(list01)) == 1:
+        print(True)
+    else:
+        for i in range(len(list02) - 1):
+            if list02[i] % list02[i + 1] == 0:
+                continue
+            else:
+                print(False)
         print(True)
 
 
@@ -1431,4 +1472,6 @@ if __name__ == '__main__':
     # lemon_exchange()
     # bin_two_dis()
     # only_once_word()
-    one_way_list()
+    # one_way_list()
+    # odd_even_list()
+    list_ele_count_same()
