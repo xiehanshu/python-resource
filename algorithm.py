@@ -1214,6 +1214,22 @@ def goat_latin():
     print(res)
 
 
+def rev_list_twice():
+    image = [[1, 1, 0, 0], [1, 0, 0, 1], [0, 1, 1, 1], [1, 0, 1, 0]]
+    tmp = []
+
+    for i in image:
+        sub = []
+        for j in range(len(i) - 1, -1, -1):
+            if i[j] == 1:
+                sub.append(0)
+            else:
+                sub.append(1)
+            # sub.append(i[j])
+        tmp.append(sub)
+    print(tmp)
+
+
 if __name__ == '__main__':
     # list_sort()
     # list_search_two_part()
@@ -1271,4 +1287,5 @@ if __name__ == '__main__':
     # mos_code()
     # most_row()
     # sec_appear_word()
-    goat_latin()
+    # goat_latin()
+    rev_list_twice()
