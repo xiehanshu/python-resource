@@ -1339,6 +1339,35 @@ def only_once_word():
     print(res)
 
 
+def one_way_list():
+    nums = [1, 3, 2]
+
+    if nums[0] < nums[len(nums) - 1]:
+        for i in range(len(nums) - 1):
+            if nums[i] <= nums[i + 1]:
+                continue
+            else:
+                print(False)
+                break
+        print(True)
+    elif nums[0] > nums[len(nums) - 1]:
+        for i in range(len(nums) - 1):
+            if nums[i] >= nums[i + 1]:
+                continue
+            else:
+                print(False)
+                break
+        print(True)
+    elif nums[0] == nums[len(nums) - 1]:
+        for i in range(len(nums) - 1):
+            if nums[i] == nums[i+1]:
+                continue
+            else:
+                print(False)
+                break
+        print(True)
+
+
 if __name__ == '__main__':
     # list_sort()
     # list_search_two_part()
@@ -1401,4 +1430,5 @@ if __name__ == '__main__':
     # str_back()
     # lemon_exchange()
     # bin_two_dis()
-    only_once_word()
+    # only_once_word()
+    one_way_list()
