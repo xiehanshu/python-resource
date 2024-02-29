@@ -1121,6 +1121,31 @@ def rotate_str():
             break
 
 
+def mos_code():
+    mos = [".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---",
+           ".--.",
+           "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.."]
+    dict_mos = {}
+
+    first = 97
+    i = 0
+    while True:
+        dict_mos[chr(first)] = mos[i]
+        first += 1
+        i += 1
+        if i == len(mos):
+            break
+    words = ["a"]
+    res = []
+
+    for word in words:
+        str01 = ''
+        for i in word:
+            str01 += dict_mos[i]
+        res.append(str01)
+    print(len(set(res)))
+
+
 if __name__ == '__main__':
     # list_sort()
     # list_search_two_part()
@@ -1174,4 +1199,5 @@ if __name__ == '__main__':
     # small_char()
     # twice_other_num()
     # how_many_jewels()
-    rotate_str()
+    # rotate_str()
+    mos_code()
