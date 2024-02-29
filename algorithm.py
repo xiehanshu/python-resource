@@ -1286,6 +1286,25 @@ def lemon_exchange():
     print(True)
 
 
+def bin_two_dis():
+    n = 8
+    binV = bin(n)[2:]
+    list01 = []
+    list02 = []
+
+    for i in range(len(str(binV))):
+        if str(binV)[i] == '1':
+            list01.append(i)
+
+    if len(list01) == 1:
+        print(0)
+
+    for j in range(len(list01) - 1, 0, -1):
+        list02.append(list01[j] - list01[j - 1])
+    list02.sort(reverse=True)
+    print(list02[0])
+
+
 if __name__ == '__main__':
     # list_sort()
     # list_search_two_part()
@@ -1346,4 +1365,5 @@ if __name__ == '__main__':
     # goat_latin()
     # rev_list_twice()
     # str_back()
-    lemon_exchange()
+    # lemon_exchange()
+    bin_two_dis()
