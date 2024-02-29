@@ -1248,7 +1248,6 @@ def str_back():
         elif i != '#':
             list_t.append(i)
 
-    print(list_s, list_t)
     if list_s == list_t:
         print(True)
     else:
