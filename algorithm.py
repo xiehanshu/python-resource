@@ -1230,6 +1230,31 @@ def rev_list_twice():
     print(tmp)
 
 
+def str_back():
+    s = "y#fo##f"
+    t = "y#f#o##f"
+    list_s = []
+    list_t = []
+
+    for i in s:
+        if i == '#' and list_s != []:
+            list_s.pop()
+        elif i != '#':
+            list_s.append(i)
+
+    for i in t:
+        if i == '#' and list_t != []:
+            list_t.pop()
+        elif i != '#':
+            list_t.append(i)
+
+    print(list_s, list_t)
+    if list_s == list_t:
+        print(True)
+    else:
+        print(False)
+
+
 if __name__ == '__main__':
     # list_sort()
     # list_search_two_part()
@@ -1288,4 +1313,5 @@ if __name__ == '__main__':
     # most_row()
     # sec_appear_word()
     # goat_latin()
-    rev_list_twice()
+    # rev_list_twice()
+    str_back()
