@@ -1096,6 +1096,17 @@ def twice_other_num():
         print(-1)
 
 
+def how_many_jewels():
+    jewels = "z"
+    stones = "ZZ"
+    c = 0
+
+    for i in stones:
+        if i in jewels:
+            c += 1
+    print(c)
+
+
 if __name__ == '__main__':
     # list_sort()
     # list_search_two_part()
@@ -1147,4 +1158,5 @@ if __name__ == '__main__':
     # turn_to_lower()
     # self_div()
     # small_char()
-    twice_other_num()
+    # twice_other_num()
+    how_many_jewels()
