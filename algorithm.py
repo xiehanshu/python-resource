@@ -1197,6 +1197,23 @@ def sec_appear_word():
             break
 
 
+def goat_latin():
+    m = ['a', 'e', 'i', 'o', 'u']
+    sentence = "The quick brown fox jumped over the lazy dog"
+    sentence = sentence.split(' ')
+    res = ''
+
+    for i in range(len(sentence)):
+        if sentence[i][0].lower() in m:
+            sentence[i] += 'ma'
+        else:
+            sentence[i] = sentence[i][1:len(sentence[i])] + sentence[i][0]
+            sentence[i] += 'ma'
+        sentence[i] += 'a' * (i + 1)
+        res = ' '.join(sentence)
+    print(res)
+
+
 if __name__ == '__main__':
     # list_sort()
     # list_search_two_part()
@@ -1253,4 +1270,5 @@ if __name__ == '__main__':
     # rotate_str()
     # mos_code()
     # most_row()
-    sec_appear_word()
+    # sec_appear_word()
+    goat_latin()
