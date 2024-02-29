@@ -1146,6 +1146,57 @@ def mos_code():
     print(len(set(res)))
 
 
+def most_row():
+    widths = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+    s = "abcdefghijklmnopqrstuvwxyz"
+
+    first = 97
+    dict_widths = {}
+    j = 0
+    for i in range(first, first + 26):
+        dict_widths[chr(i)] = widths[j]
+        j += 1
+    # print(dict_widths)
+
+    length = 0
+    row = 1
+
+    for i in s:
+        length += dict_widths[i]
+        if length <= 100:
+            continue
+        else:
+            length = 0
+            row += 1
+            length = dict_widths[i]
+    print(row, length)
+
+
+def sec_appear_word():
+    paragraph = "a."
+    banned = []
+
+    dots = ',.:;!?\''
+    for i in dots:
+        paragraph = paragraph.replace(i, ' ')
+    paragraph = paragraph.lower()
+    para_list = paragraph.split(' ')
+    dict_para = {}
+    for i in para_list:
+        if i == '':
+            continue
+        if i not in dict_para.keys():
+            dict_para[i] = 1
+        else:
+            dict_para[i] += 1
+    times_list = sorted(dict_para.items(), key=lambda x: x[1], reverse=True)
+
+    for i in times_list:
+        if i[0] not in banned:
+            print(i[0])
+            break
+
+
 if __name__ == '__main__':
     # list_sort()
     # list_search_two_part()
@@ -1200,4 +1251,6 @@ if __name__ == '__main__':
     # twice_other_num()
     # how_many_jewels()
     # rotate_str()
-    mos_code()
+    # mos_code()
+    # most_row()
+    sec_appear_word()
