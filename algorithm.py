@@ -1614,8 +1614,32 @@ def bin_one_zero():
     print(True)
 
 
+def up_down_list():
+    arr = [0, 3, 2, 1]
+    up = False
+    down = False
+
+    for i in range(len(arr) - 1):
+        if arr[i] == arr[i + 1]:
+            print(False)
+            break
+        if arr[i] < arr[i + 1]:
+            up = True
+            if down == True:
+                print(False)
+                break
+        elif arr[i] > arr[i + 1]:
+            down = True
+
+    if up == True and down == True:
+        print(True)
+    else:
+        print(False)
+
+
 if __name__ == '__main__':
-    bin_one_zero()
+    up_down_list()
+    # bin_one_zero()
     # list_sort()
     # list_search_two_part()
     # list_dis_dup()
