@@ -1656,8 +1656,35 @@ def make_of_str():
     print(list02)
 
 
+def reformat_list():
+    strs = ["a", "b"]
+    list01 = []
+
+    for i in range(len(strs)):
+        for j in range(len(strs[i])):
+            if len(list01) == len(strs[i]):
+                list01[j] = list01[j] + strs[i][j]
+            else:
+                list01.append(strs[i][j])
+    res = 0
+    tmp = False
+
+    for i in range(len(list01)):
+        for j in range(len(list01[i]) - 1):
+            if ord(list01[i][j]) <= ord(list01[i][j + 1]):
+                tmp = True
+            else:
+                tmp = False
+                break
+        if tmp == True:
+            res += 1
+    res = len(list01) - res
+    print(res)
+
+
 if __name__ == '__main__':
-    make_of_str()
+    reformat_list()
+    # make_of_str()
     # up_down_list()
     # bin_one_zero()
     # list_sort()
