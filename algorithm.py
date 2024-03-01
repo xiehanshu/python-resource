@@ -1588,6 +1588,21 @@ def two_word_same_char():
         print(False)
 
 
+def int_bin_rev_int():
+    num = 5
+    bin_s = bin(num)[2:]
+    list_s = []
+
+    for i in str(bin_s):
+        if i == '1':
+            list_s.append('0')
+        elif i == '0':
+            list_s.append('1')
+    bin_n = ''.join(list_s)
+    res = int(bin_n, 2)
+    print(res)
+
+
 if __name__ == '__main__':
     # list_sort()
     # list_search_two_part()
