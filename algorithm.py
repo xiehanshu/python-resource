@@ -1603,7 +1603,19 @@ def int_bin_rev_int():
     print(res)
 
 
+def bin_one_zero():
+    n = 11
+    bin_a = bin(n)[2:]
+
+    for i in range(len(str(bin_a)) - 1):
+        if str(bin_a)[i] == str(bin_a)[i + 1]:
+            print(False)
+            break
+    print(True)
+
+
 if __name__ == '__main__':
+    bin_one_zero()
     # list_sort()
     # list_search_two_part()
     # list_dis_dup()
@@ -1679,4 +1691,4 @@ if __name__ == '__main__':
     # four_square()
     # cont_sub_str()
     # list_period()
-    two_word_same_char()
+    # two_word_same_char()
