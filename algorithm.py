@@ -1445,6 +1445,20 @@ def odd_even_sort():
     print(num_res)
 
 
+def ava_email():
+    emails = ["a@leetcode.com", "b@leetcode.com", "c@leetcode.com"]
+    res = []
+
+    for i in range(len(emails)):
+        pre = emails[i].split('@')[0]
+        suf = emails[i].split('@')[1]
+        pre = pre.replace('.', '')
+        if '+' in pre:
+            pre = pre.split('+')[0]
+        emails[i] = pre + '@' + suf
+    print(len(set(emails)))
+
+
 if __name__ == '__main__':
     # list_sort()
     # list_search_two_part()
@@ -1512,4 +1526,5 @@ if __name__ == '__main__':
     # odd_even_list()
     # list_ele_count_same()
     # rev_str_with_dot()
-    odd_even_sort()
+    # odd_even_sort()
+    ava_email()
