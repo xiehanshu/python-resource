@@ -1459,6 +1459,45 @@ def ava_email():
     print(len(set(emails)))
 
 
+def rev_bin_sort():
+    n = 100101
+    n = str(n)
+    n = n[::-1]
+    res = int(n, 2)
+    print(res)
+
+
+def list_bin_one_count():
+    n = 5
+    res = []
+
+    for i in range(n + 1):
+        binV = bin(i)[2:]
+        binV = str(binV)
+        oc = 0
+        for i in binV:
+            if '1' in i:
+                oc += 1
+        res.append(oc)
+    print(res)
+
+
+def three_square():
+    n = 6
+
+    if n == 0:
+        print(False)
+
+    while True:
+        n = n / 3
+        if n == 3:
+            print(True)
+            break
+        if n % 3 != 0:
+            print(False)
+            break
+
+
 if __name__ == '__main__':
     # list_sort()
     # list_search_two_part()
@@ -1527,4 +1566,7 @@ if __name__ == '__main__':
     # list_ele_count_same()
     # rev_str_with_dot()
     # odd_even_sort()
-    ava_email()
+    # ava_email()
+    # rev_bin_sort()
+    # list_bin_one_count()
+    three_square()
