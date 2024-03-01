@@ -1398,6 +1398,53 @@ def list_ele_count_same():
     return False
 
 
+def rev_str_with_dot():
+    s = "Test1ng-Leet=code-Q!"
+
+    list_s = []
+    list_n = []
+    for i in s:
+        list_n.append(i)
+        if i.isalpha():
+            list_s.append(i)
+    list_s.reverse()
+
+    for i in range(len(list_n)):
+        if not list_n[i].isalpha():
+            list_s.insert(i, list_n[i])
+    res = ''.join(list_s)
+    print(res)
+
+
+def odd_even_sort():
+    nums = [2, 3]
+    num_one = []
+    num_two = []
+    nums.sort()
+    num_res = []
+
+    for i in nums:
+        if i % 2 == 0:
+            num_two.append(i)
+        else:
+            num_one.append(i)
+
+    for i in range(len(nums)):
+        num_res.append(0)
+
+    o = 0
+    t = 0
+
+    for i in range(len(num_res)):
+        if i % 2 == 0:
+            num_res[i] = num_two[t]
+            t += 1
+        else:
+            num_res[i] = num_one[o]
+            o += 1
+    print(num_res)
+
+
 if __name__ == '__main__':
     # list_sort()
     # list_search_two_part()
@@ -1463,4 +1510,6 @@ if __name__ == '__main__':
     # only_once_word()
     # one_way_list()
     # odd_even_list()
-    list_ele_count_same()
+    # list_ele_count_same()
+    # rev_str_with_dot()
+    odd_even_sort()
