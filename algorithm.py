@@ -1488,12 +1488,52 @@ def three_square():
     if n == 0:
         print(False)
 
+    if n == 1:
+        print(True)
+
     while True:
         n = n / 3
         if n == 3:
             print(True)
             break
         if n % 3 != 0:
+            print(False)
+            break
+
+
+def two_square():
+    n = 4
+
+    if n == 0:
+        print(False)
+
+    if n == 1:
+        print(True)
+
+    while True:
+        if n == 2:
+            print(True)
+            break
+        n = n / 2
+        if n % 2 != 0:
+            print(False)
+            break
+
+
+def four_square():
+    n = 1
+
+    if n == 0:
+        print(False)
+    if n == 1:
+        print(True)
+
+    while True:
+        if n == 4:
+            print(True)
+            break
+        n = n / 4
+        if n % 4 != 0:
             print(False)
             break
 
@@ -1569,4 +1609,6 @@ if __name__ == '__main__':
     # ava_email()
     # rev_bin_sort()
     # list_bin_one_count()
-    three_square()
+    # three_square()
+    # two_square()
+    four_square()
