@@ -1637,8 +1637,28 @@ def up_down_list():
         print(False)
 
 
+def make_of_str():
+    s = "DDI"
+    list01 = []
+    list02 = []
+
+    for i in range(len(s) + 1):
+        list01.append(i)
+    for i in range(len(s)):
+        if s[i] == 'I':
+            list02.append(list01[0])
+            list01.pop(0)
+        elif s[i] == 'D':
+            list02.append(list01[len(list01) - 1])
+            list01.pop()
+    list02.append(list01[0])
+
+    print(list02)
+
+
 if __name__ == '__main__':
-    up_down_list()
+    make_of_str()
+    # up_down_list()
     # bin_one_zero()
     # list_sort()
     # list_search_two_part()
