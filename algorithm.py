@@ -1571,6 +1571,23 @@ def list_period():
     print(list_res)
 
 
+def two_word_same_char():
+    s = "anagram"
+    t = "nagaram"
+    dict_s = collections.Counter(s)
+    dict_t = {}
+
+    for i in t:
+        if i not in dict_t.keys():
+            dict_t[i] = 1
+        else:
+            dict_t[i] += 1
+    if dict_s == dict_t:
+        print(True)
+    else:
+        print(False)
+
+
 if __name__ == '__main__':
     # list_sort()
     # list_search_two_part()
@@ -1646,4 +1663,5 @@ if __name__ == '__main__':
     # two_square()
     # four_square()
     # cont_sub_str()
-    list_period()
+    # list_period()
+    two_word_same_char()
