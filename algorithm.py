@@ -1538,6 +1538,39 @@ def four_square():
             break
 
 
+def cont_sub_str():
+    s = "abab"
+    t = s + s
+    t = t[1: len(t) - 1]
+    if s in t:
+        print(True)
+    else:
+        print(False)
+
+
+def list_period():
+    nums = [0, 2, 3, 4, 6, 8, 9]
+    list_res = []
+    c = 0
+
+    if len(nums) == 1:
+        list_res.append(str(nums[0]))
+        print(list_res)
+
+    nums = nums + [0]
+    for i in range(len(nums) - 1):
+        if nums[i] + 1 == nums[i + 1]:
+            c += 1
+            continue
+        if nums[i] + 1 != nums[i + 1]:
+            if c == 0:
+                list_res.append(str(nums[i]))
+            else:
+                list_res.append(str(nums[i - c]) + '->' + str(nums[i]))
+            c = 0
+    print(list_res)
+
+
 if __name__ == '__main__':
     # list_sort()
     # list_search_two_part()
@@ -1611,4 +1644,6 @@ if __name__ == '__main__':
     # list_bin_one_count()
     # three_square()
     # two_square()
-    four_square()
+    # four_square()
+    # cont_sub_str()
+    list_period()
