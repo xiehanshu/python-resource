@@ -1711,8 +1711,38 @@ def n_ele_in_2n():
             cc = 1
 
 
+def list_ele_square():
+    nums = [-4, -1, 0, 3, 10]
+    start = 0
+    end = len(nums) - 1
+    k = len(nums) - 1
+    res = [0] * len(nums)
+
+    while start <= end:
+        if nums[start] ** 2 > nums[end] ** 2:
+            res[k] = nums[start] ** 2
+            start += 1
+            k -= 1
+        else:
+            res[k] = nums[end] ** 2
+            end -= 1
+            k -= 1
+    print(res)
+
+    res01 = []
+
+    for i in nums:
+        res01.append(i * i)
+    for i in range(len(res01)):
+        for j in range(i + 1, len(res01)):
+            if res01[i] > res01[j]:
+                res01[i], res01[j] = res01[j], res01[i]
+    print(res01)
+
+
 if __name__ == '__main__':
-    n_ele_in_2n()
+    list_ele_square()
+    # n_ele_in_2n()
     # reformat_list()
     # make_of_str()
     # up_down_list()
