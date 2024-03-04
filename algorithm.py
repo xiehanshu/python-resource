@@ -1682,8 +1682,38 @@ def reformat_list():
     print(res)
 
 
+def n_ele_in_2n():
+    nums = [5, 1, 5, 2, 5, 3, 5, 4]
+    dict01 = {}
+    for i in nums:
+        if i not in dict01.keys():
+            dict01[i] = 1
+        else:
+            dict01[i] += 1
+    for i, j in dict01.items():
+        if j == len(nums) / 2:
+            print(i)
+
+    for i in range(len(nums)):
+        for j in range(i + 1, len(nums)):
+            if nums[i] > nums[j]:
+                nums[i], nums[j] = nums[j], nums[i]
+    cc = 1
+
+    for i in range(len(nums) - 1):
+        if nums[i] == nums[i + 1]:
+            target = nums[i]
+            cc += 1
+            if cc == (len(nums) / 2):
+                print(target)
+                break
+        else:
+            cc = 1
+
+
 if __name__ == '__main__':
-    reformat_list()
+    n_ele_in_2n()
+    # reformat_list()
     # make_of_str()
     # up_down_list()
     # bin_one_zero()
