@@ -1799,7 +1799,7 @@ def bin_rev_value():
 
 
 def list_len_sum_three_part():
-    arr = [0, 2, 1, -6, 6, -7, 9, 1, 2, 0, 1]
+    arr = [0, 0, 0, 0]
     sum01 = 0
     for i in arr:
         sum01 += i
@@ -1809,9 +1809,6 @@ def list_len_sum_three_part():
     tarSum = int(sum01 / 3)
     tmp = 0
     c = 0
-
-    if len(set(arr)) == 1 and list(set(arr))[0] == 0:
-        print(True)
 
     for i in range(len(arr)):
         tmp += arr[i]
