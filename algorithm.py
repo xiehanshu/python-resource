@@ -1740,8 +1740,26 @@ def list_ele_square():
     print(res01)
 
 
+def list_ele_add_list():
+    num = [1, 2, 0, 0]
+    k = 34
+    tmp = 0
+    num.reverse()
+
+    for i in range(len(num)):
+        tmp += num[i] * (10 ** i)
+    tmp += k
+
+    res = []
+
+    for i in str(tmp):
+        res.append(int(i))
+    print(res)
+
+
 if __name__ == '__main__':
-    list_ele_square()
+    list_ele_add_list()
+    # list_ele_square()
     # n_ele_in_2n()
     # reformat_list()
     # make_of_str()
