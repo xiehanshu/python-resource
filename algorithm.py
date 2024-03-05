@@ -1820,8 +1820,24 @@ def list_len_sum_three_part():
     print(False)
 
 
+def bin_list_five_div():
+    nums = [0, 1, 1, 1, 1, 1]
+    res = []
+
+    for i in range(len(nums)):
+        str01 = ''
+        for j in range(0, i + 1):
+            str01 += str(nums[j])
+        if int(str01, 2) % 5 == 0:
+            res.append(True)
+        else:
+            res.append(False)
+    print(res)
+
+
 if __name__ == '__main__':
-    list_len_sum_three_part()
+    bin_list_five_div()
+    # list_len_sum_three_part()
     # bin_rev_value()
     # list_rev_ele_max()
     # list_com_ele()
