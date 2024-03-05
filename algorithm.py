@@ -1757,8 +1757,23 @@ def list_ele_add_list():
     print(res)
 
 
+def list_com_ele():
+    words = ["bella", "label", "roller"]
+    tmp = collections.Counter(words[0])
+
+    for i in range(len(words)):
+        tmp = tmp & collections.Counter(words[i])
+
+    res = []
+    for i, j in tmp.items():
+        for k in range(j):
+            res.append(i)
+    print(res)
+
+
 if __name__ == '__main__':
-    list_ele_add_list()
+    list_com_ele()
+    # list_ele_add_list()
     # list_ele_square()
     # n_ele_in_2n()
     # reformat_list()
