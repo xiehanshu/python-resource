@@ -1771,8 +1771,37 @@ def list_com_ele():
     print(res)
 
 
+def list_rev_ele_max():
+    nums = [2, -3, -1, 5, -4]
+    k = 2
+
+    for i in range(k):
+        nums.sort()
+        nums[0] = -nums[0]
+    sum01 = 0
+
+    for i in nums:
+        sum01 += i
+    print(sum01)
+
+
+def bin_rev_value():
+    n = 5
+    bV = bin(n)[2:]
+    tmp = ''
+
+    for i in bV:
+        if i == '1':
+            tmp += '0'
+        elif i == '0':
+            tmp += '1'
+    print(int(tmp, 2))
+
+
 if __name__ == '__main__':
-    list_com_ele()
+    bin_rev_value()
+    # list_rev_ele_max()
+    # list_com_ele()
     # list_ele_add_list()
     # list_ele_square()
     # n_ele_in_2n()
