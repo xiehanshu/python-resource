@@ -1893,8 +1893,22 @@ def rm_dup_ele_str():
     print(resStr)
 
 
+def dif_ele_after_sort_list():
+    heights = [1, 1, 4, 2, 1, 3]
+    tmp = heights.copy()
+    tmp.sort()
+
+    c = 0
+
+    for i in range(len(tmp)):
+        if tmp[i] != heights[i]:
+            c += 1
+    print(c)
+
+
 if __name__ == '__main__':
-    rm_dup_ele_str()
+    dif_ele_after_sort_list()
+    # rm_dup_ele_str()
     # last_ele_list()
     # bin_list_five_div()
     # list_len_sum_three_part()
