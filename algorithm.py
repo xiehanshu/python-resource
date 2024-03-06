@@ -1835,8 +1835,32 @@ def bin_list_five_div():
     print(res)
 
 
+def last_ele_list():
+    stones = [10, 4, 2, 10]
+    stones.sort()
+
+    for i in range(len(stones) - 1, -1, -1):
+        stones.sort()
+        if len(stones) == 1:
+            print(stones[0])
+            break
+        elif len(stones) == 0:
+            print(0)
+            break
+        if i >= len(stones):
+            i -= 1
+            continue
+        if stones[i] == stones[i - 1]:
+            stones.pop(i)
+            stones.pop(i - 1)
+        else:
+            stones[i - 1] = stones[i] - stones[i - 1]
+            stones.pop(i)
+
+
 if __name__ == '__main__':
-    bin_list_five_div()
+    last_ele_list()
+    # bin_list_five_div()
     # list_len_sum_three_part()
     # bin_rev_value()
     # list_rev_ele_max()
