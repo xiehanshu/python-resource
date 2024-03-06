@@ -1858,8 +1858,44 @@ def last_ele_list():
             stones.pop(i)
 
 
+def rm_dup_ele_str():
+    s = "abbaca"
+    dup = 0
+
+    while True:
+        if len(s) == 0:
+            print('')
+            break
+        if len(s) == 1:
+            print(s[0])
+            break
+        for i in range(len(s) - 1):
+            if s[i] == s[i + 1]:
+                dup = 1
+                s = s.replace(s[i] + s[i + 1], '')
+                break
+            else:
+                dup = 0
+        if dup == 0:
+            break
+    print(s)
+
+    res = []
+    resStr = ''
+
+    for i in range(len(s)):
+        if len(res) >= 1:
+            if s[i] == res[-1]:
+                res.pop()
+                continue
+        res.append(s[i])
+    resStr = ''.join(res)
+    print(resStr)
+
+
 if __name__ == '__main__':
-    last_ele_list()
+    rm_dup_ele_str()
+    # last_ele_list()
     # bin_list_five_div()
     # list_len_sum_three_part()
     # bin_rev_value()
