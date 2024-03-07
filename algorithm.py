@@ -1947,8 +1947,33 @@ def rep_zero_in_list():
     # print(arr)
 
 
+def asc_list_ele():
+    candies = 7
+    num_people = 4
+    res = []
+    for i in range(num_people):
+        res.append(0)
+    i = 0
+    v = 1
+    s = 0
+
+    while s < candies:
+        if candies - s >= v:
+            res[i] += v
+            i += 1
+            s += v
+            v += 1
+        else:
+            res[i] += candies - s
+            break
+        if i > len(res) - 1:
+            i = 0
+    print(res)
+
+
 if __name__ == '__main__':
-    rep_zero_in_list()
+    asc_list_ele()
+    # rep_zero_in_list()
     # cont_two_next_word()
     # dif_ele_after_sort_list()
     # rm_dup_ele_str()
