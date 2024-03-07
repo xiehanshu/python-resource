@@ -1906,8 +1906,51 @@ def dif_ele_after_sort_list():
     print(c)
 
 
+def cont_two_next_word():
+    text = "we will we will rock you"
+    first = "we"
+    second = "will"
+    text = text.split(' ')
+    res = []
+
+    for i in range(len(text) - 1):
+        if i == (len(text) - 2):
+            break
+        if text[i] == first and text[i + 1] == second:
+            res.append(text[i + 2])
+    print(res)
+
+
+def rep_zero_in_list():
+    arr = [1, 0, 2, 3, 0, 4, 5, 0]
+    l = len(arr)
+    i = 0
+
+    while i < l:
+        if arr[i] == 0:
+            arr.insert(i + 1, 0)
+            arr.pop()
+            i += 2
+        else:
+            i += 1
+    print(arr)
+
+    # for i in range(len(arr)):
+    #     if arr[i] != 0:
+    #         listN.append(arr[i])
+    #     else:
+    #         listN.append(0)
+    #         listN.append(0)
+    #     if len(listN) == len(arr):
+    #         break
+    # arr = listN
+    # print(arr)
+
+
 if __name__ == '__main__':
-    dif_ele_after_sort_list()
+    rep_zero_in_list()
+    # cont_two_next_word()
+    # dif_ele_after_sort_list()
     # rm_dup_ele_str()
     # last_ele_list()
     # bin_list_five_div()
