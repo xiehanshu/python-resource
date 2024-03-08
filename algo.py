@@ -1971,8 +1971,28 @@ def asc_list_ele():
     print(res)
 
 
+def replace_dot_in_ip():
+    address = "1.1.1.1"
+    tmp = address.split('.')
+    res = '[.]'.join(tmp)
+    print(res)
+
+    resStr = ''
+
+    for i in address:
+        if i == '.':
+            resStr += '[.]'
+        else:
+            resStr += i
+    print(resStr)
+
+    address = address.replace('.', '[.]')
+    print(address)
+
+
 if __name__ == '__main__':
-    asc_list_ele()
+    replace_dot_in_ip()
+    # asc_list_ele()
     # rep_zero_in_list()
     # cont_two_next_word()
     # dif_ele_after_sort_list()
