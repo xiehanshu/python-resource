@@ -2044,8 +2044,36 @@ def dup_list_ele():
     print(res)
 
 
+def new_fib_num():
+    n = 31
+    if n == 0:
+        print(0)
+    if n == 1:
+        print(1)
+    if n == 2:
+        print(1)
+    a = 0
+    b = 1
+    c = 1
+    for i in range(2, n):
+        a, b, c = b, c, a + b + c
+    print(c)
+
+    def sub_new_fib_num(n):
+        if n == 0:
+            return 0
+        if n == 1:
+            return 1
+        if n == 2:
+            return 1
+        return sub_new_fib_num(n - 3) + sub_new_fib_num(n - 2) + sub_new_fib_num(n - 1)
+
+    print(sub_new_fib_num(n))
+
+
 if __name__ == '__main__':
-    dup_list_ele()
+    new_fib_num()
+    # dup_list_ele()
     # sort_two_list()
     # replace_dot_in_ip()
     # asc_list_ele()
