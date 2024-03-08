@@ -1990,8 +1990,40 @@ def replace_dot_in_ip():
     print(address)
 
 
+def sort_two_list():
+    arr1 = [2, 21, 43, 38, 0, 42, 33, 7, 24, 13, 12, 27, 12, 24, 5, 23, 29, 48, 30, 31]
+    arr2 = [2, 42, 38, 0, 43, 21]
+    dict01 = {}
+    l = len(arr2)
+    j = 0
+    res = []
+
+    for i in arr1:
+        if i not in dict01.keys():
+            dict01[i] = 1
+        else:
+            dict01[i] += 1
+
+    while j < l:
+        res.append(arr2[j])
+        dict01[arr2[j]] -= 1
+        if dict01[arr2[j]] == 0:
+            j += 1
+    print(res)
+
+    tmp = []
+
+    for i in arr1:
+        if i not in arr2:
+            tmp.append(i)
+    tmp.sort()
+    res = res + tmp
+    print(res)
+
+
 if __name__ == '__main__':
-    replace_dot_in_ip()
+    sort_two_list()
+    # replace_dot_in_ip()
     # asc_list_ele()
     # rep_zero_in_list()
     # cont_two_next_word()
