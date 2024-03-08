@@ -2022,8 +2022,31 @@ def sort_two_list():
     print(res)
 
 
+def dup_list_ele():
+    dominoes = [[1, 1], [2, 2], [1, 1], [1, 2], [1, 2], [1, 1]]
+    dict01 = {}
+
+    for i in range(len(dominoes)):
+        dominoes[i].sort()
+        dominoes[i] = [str(i) for i in dominoes[i]]
+        l = ''.join(dominoes[i])
+        if l not in dict01.keys():
+            dict01[l] = 1
+        else:
+            dict01[l] += 1
+    print(dict01)
+
+    res = 0
+
+    for i in dict01.values():
+        for j in range(0, i):
+            res += j
+    print(res)
+
+
 if __name__ == '__main__':
-    sort_two_list()
+    dup_list_ele()
+    # sort_two_list()
     # replace_dot_in_ip()
     # asc_list_ele()
     # rep_zero_in_list()
