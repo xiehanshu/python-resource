@@ -2098,8 +2098,28 @@ def day_in_year():
     print(res)
 
 
+def words_char():
+    words = ["cat", "bt", "hat", "tree"]
+    chars = "atach"
+    res = 0
+
+    for i in range(len(words)):
+        t = chars
+        label = True
+        for j in words[i]:
+            if j in t:
+                t = t.replace(j, '', 1)
+            else:
+                label = False
+                break
+        if label == True:
+            res += len(words[i])
+    print(res)
+
+
 if __name__ == '__main__':
-    day_in_year()
+    words_char()
+    # day_in_year()
     # new_fib_num()
     # dup_list_ele()
     # sort_two_list()
