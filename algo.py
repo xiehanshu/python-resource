@@ -2117,8 +2117,31 @@ def words_char():
     print(res)
 
 
+def join_words():
+    text = "nlaebolko"
+    tar = 'balloon'
+    s = ''
+    r = 0
+
+    while True:
+        for i in tar:
+            if i in text:
+                s += i
+                text = text.replace(i, '', 1)
+        if s == tar:
+            s = ''
+            r += 1
+        else:
+            break
+        list01 = list(set(text) & set(tar))
+        if list01 == []:
+            break
+    print(r)
+
+
 if __name__ == '__main__':
-    words_char()
+    join_words()
+    # words_char()
     # day_in_year()
     # new_fib_num()
     # dup_list_ele()
