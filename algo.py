@@ -2071,8 +2071,36 @@ def new_fib_num():
     print(sub_new_fib_num(n))
 
 
+def day_in_year():
+    date = "1900-05-02"
+    days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    year = date[0:4]
+    month = date[5:7]
+    day = date[8:10]
+    if month.startswith('0'):
+        month = int(month[1:2])
+    else:
+        month = int(month)
+    if day.startswith('0'):
+        day = int(day[1:2])
+    else:
+        day = int(day)
+    res = 0
+
+    for i in range(len(days)):
+        if i == (month - 1):
+            break
+        res += days[i]
+        if (year[2:4] == '00' and int(year) % 400 == 0) or (year[2:4] != '00' and int(year) % 4 == 0):
+            if i == 1:
+                res += 1
+    res += day
+    print(res)
+
+
 if __name__ == '__main__':
-    new_fib_num()
+    day_in_year()
+    # new_fib_num()
     # dup_list_ele()
     # sort_two_list()
     # replace_dot_in_ip()
