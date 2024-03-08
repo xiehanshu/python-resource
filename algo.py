@@ -1999,10 +1999,11 @@ def sort_two_list():
     res = []
 
     for i in arr1:
-        if i not in dict01.keys():
-            dict01[i] = 1
-        else:
-            dict01[i] += 1
+        if i in arr2:
+            if i not in dict01.keys():
+                dict01[i] = 1
+            else:
+                dict01[i] += 1
 
     while j < l:
         res.append(arr2[j])
