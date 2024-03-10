@@ -2339,8 +2339,33 @@ def list_ele_sum_zero():
     print(res)
 
 
+def nums_to_char():
+    s = "10#11#12"
+    dict01 = {}
+    s1 = 1
+    r = ''
+
+    for i in range(97, 97 + 26):
+        dict01[str(s1)] = chr(i)
+        s1 += 1
+
+    l = len(s)
+    i = l - 1
+
+    while i >= 0:
+        if s[i] == '#':
+            t = str(s[i - 2]) + str(s[i - 1])
+            r += dict01[t]
+            i -= 3
+        else:
+            r += dict01[s[i]]
+            i -= 1
+    print(r[::-1])
+
+
 if __name__ == '__main__':
-    list_ele_sum_zero()
+    nums_to_char()
+    # list_ele_sum_zero()
     # replace_ele_right_max()
     # list_ele_count_even()
     # ele_in_list_appear_25_percent()
