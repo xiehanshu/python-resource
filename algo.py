@@ -2139,8 +2139,46 @@ def join_words():
     print(r)
 
 
+def min_abs_dist():
+    arr = [3, 8, -10, 23, 19, -4, -14, 27]
+    res = []
+    m = abs(arr[0] - arr[1])
+
+    for i in range(len(arr)):
+        for j in range(i + 1, len(arr)):
+            if abs(arr[i] - arr[j]) <= m:
+                m = abs(arr[i] - arr[j])
+
+    for i in range(len(arr)):
+        for j in range(i + 1, len(arr)):
+            if abs(arr[i] - arr[j]) == m:
+                res.append([arr[i], arr[j]])
+
+    for i in res:
+        i.sort()
+    res.sort()
+    print(res)
+
+    arr.sort()
+    res01 = []
+    mm = abs(arr[0] - arr[1])
+    for i in range(len(arr) - 1):
+        if abs(arr[i] - arr[i + 1]) <= m:
+            mm = abs(arr[i] - arr[i + 1])
+
+    for i in range(len(arr) - 1):
+        if abs(arr[i] - arr[i + 1]) == m:
+            if arr[i] > arr[i + 1]:
+                res01.append([arr[i + 1], arr[i]])
+            else:
+                res01.append([arr[i], arr[i + 1]])
+    res01.sort()
+    print(res01)
+
+
 if __name__ == '__main__':
-    join_words()
+    min_abs_dist()
+    # join_words()
     # words_char()
     # day_in_year()
     # new_fib_num()
