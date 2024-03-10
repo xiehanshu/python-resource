@@ -2230,8 +2230,35 @@ def how_many_balance_str():
     print(r)
 
 
+def rotate_list_list():
+    grid = [[1], [2], [3], [4], [7], [6], [5]]
+    k = 23
+    t = []
+
+    for i in grid:
+        for j in i:
+            t.append(j)
+
+    if k > len(t):
+        k = k % len(t)
+    r = t[len(t) - k:len(t)] + t[0:len(t) - k]
+    res = []
+    resIn = []
+    la = len(grid)
+    li = len(grid[0])
+    print(r)
+
+    for i in r:
+        resIn.append(int(i))
+        if len(resIn) == li:
+            res.append(resIn)
+            resIn = []
+    print(res)
+
+
 if __name__ == '__main__':
-    how_many_balance_str()
+    rotate_list_list()
+    # how_many_balance_str()
     # odd_even_less()
     # list_ele_count_only_one()
     # min_abs_dist()
