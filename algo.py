@@ -2215,8 +2215,24 @@ def odd_even_less():
         print(odd)
 
 
+def how_many_balance_str():
+    s = "LLLLRRRR"
+    t = 0
+    r = 0
+
+    for i in s:
+        if i == 'L':
+            t += 1
+        if i == 'R':
+            t -= 1
+        if t == 0:
+            r += 1
+    print(r)
+
+
 if __name__ == '__main__':
-    odd_even_less()
+    how_many_balance_str()
+    # odd_even_less()
     # list_ele_count_only_one()
     # min_abs_dist()
     # join_words()
