@@ -1,4 +1,5 @@
 import collections
+import random
 import sys
 
 from ListNode import ListNode
@@ -2314,8 +2315,33 @@ def replace_ele_right_max():
     print(res)
 
 
+def list_ele_sum_zero():
+    n = 5
+    res = []
+    t = 1
+
+    if n % 2 == 0:
+        res = []
+        for i in range(int(n / 2)):
+            p = 0 - t
+            if t and p not in res:
+                res.append(t)
+                res.append(p)
+            t += 1
+    else:
+        res.append(0)
+        for i in range(int((n - 1) / 2)):
+            p = 0 - t
+            if t and p not in res:
+                res.append(t)
+                res.append(p)
+            t += 1
+    print(res)
+
+
 if __name__ == '__main__':
-    replace_ele_right_max()
+    list_ele_sum_zero()
+    # replace_ele_right_max()
     # list_ele_count_even()
     # ele_in_list_appear_25_percent()
     # plus_multi_dist()
