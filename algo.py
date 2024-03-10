@@ -2195,8 +2195,29 @@ def list_ele_count_only_one():
         print(False)
 
 
+def odd_even_less():
+    position = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28,
+                29, 30]
+    odd = 0
+    even = 0
+
+    for i in position:
+        if i % 2 == 0:
+            even += 1
+        else:
+            odd += 1
+
+    if odd > even:
+        print(even)
+    elif odd < even:
+        print(odd)
+    else:
+        print(odd)
+
+
 if __name__ == '__main__':
-    list_ele_count_only_one()
+    odd_even_less()
+    # list_ele_count_only_one()
     # min_abs_dist()
     # join_words()
     # words_char()
