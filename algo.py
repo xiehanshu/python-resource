@@ -2256,8 +2256,37 @@ def rotate_list_list():
     print(res)
 
 
+def plus_multi_dist():
+    n = 234
+    multi = 1
+    plus = 0
+
+    for i in str(n):
+        multi *= int(i)
+        plus += int(i)
+    res = multi - plus
+    print(res)
+
+
+def ele_in_list_appear_25_percent():
+    arr = [1, 2, 3, 3]
+    dict01 = {}
+
+    for i in arr:
+        if i not in dict01.keys():
+            dict01[i] = 1
+        else:
+            dict01[i] += 1
+
+    for i, j in dict01.items():
+        if j > len(arr) / 4:
+            print(i)
+
+
 if __name__ == '__main__':
-    rotate_list_list()
+    ele_in_list_appear_25_percent()
+    # plus_multi_dist()
+    # rotate_list_list()
     # how_many_balance_str()
     # odd_even_less()
     # list_ele_count_only_one()
