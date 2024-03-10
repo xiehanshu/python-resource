@@ -2176,8 +2176,28 @@ def min_abs_dist():
     print(res01)
 
 
+def list_ele_count_only_one():
+    arr = [1, 2, 2, 1, 1, 3]
+    dict01 = {}
+
+    for i in arr:
+        if i not in dict01.keys():
+            dict01[i] = 1
+        else:
+            dict01[i] += 1
+
+    listV = dict01.values()
+    listVS = set(listV)
+
+    if len(listV) == len(listVS):
+        print(True)
+    else:
+        print(False)
+
+
 if __name__ == '__main__':
-    min_abs_dist()
+    list_ele_count_only_one()
+    # min_abs_dist()
     # join_words()
     # words_char()
     # day_in_year()
