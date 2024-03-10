@@ -2283,8 +2283,41 @@ def ele_in_list_appear_25_percent():
             print(i)
 
 
+def list_ele_count_even():
+    nums = [12, 345, 2, 6, 7896]
+    even = 0
+
+    for i in nums:
+        if len(str(i)) % 2 == 0:
+            even += 1
+    print(even)
+
+
+def replace_ele_right_max():
+    arr = [17, 18, 5, 4, 6, 1]
+
+    # for i in range(len(arr)):
+    #     m = -1
+    #     for j in range(i + 1, len(arr)):
+    #         if arr[j] > m:
+    #             m = arr[j]
+    #     arr[i] = m
+    # print(arr)
+
+    res = [-1] * len(arr)
+
+    for i in range(len(res) - 2, -1, -1):
+        if res[i + 1] < arr[i + 1]:
+            res[i] = arr[i + 1]
+        else:
+            res[i] = res[i + 1]
+    print(res)
+
+
 if __name__ == '__main__':
-    ele_in_list_appear_25_percent()
+    replace_ele_right_max()
+    # list_ele_count_even()
+    # ele_in_list_appear_25_percent()
     # plus_multi_dist()
     # rotate_list_list()
     # how_many_balance_str()
