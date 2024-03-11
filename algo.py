@@ -2687,8 +2687,34 @@ def min_list_larger_than_rest():
     print(res)
 
 
+def str_sub_str_list():
+    words = ["blue", "green", "bu"]
+    res = []
+
+    for i in range(len(words)):
+        for j in range(len(words)):
+            if words[i] != words[j]:
+                if words[j].find(words[i]) != -1:
+                    if words[i] not in res:
+                        res.append(words[i])
+    print(res)
+
+
+def outer_min_ele_plus_list():
+    nums = [-3, 2, -3, 4, 2]
+    sV = 0
+    sMinV = 0
+
+    for i in nums:
+        sV += i
+        sMinV = min(sV, sMinV)
+    print(1 - sMinV)
+
+
 if __name__ == '__main__':
-    min_list_larger_than_rest()
+    outer_min_ele_plus_list()
+    # str_sub_str_list()
+    # min_list_larger_than_rest()
     # sub_num_plus()
     # value_count_same_ele_list()
     # create_new_list_by_two()
