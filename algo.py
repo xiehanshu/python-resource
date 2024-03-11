@@ -2596,8 +2596,25 @@ def row_col_max():
     print(res)
 
 
+def list_and_list_dist():
+    arr1 = [2, 1, 100, 3]
+    arr2 = [-5, -2, 10, -3, 7]
+    d = 6
+    res = 0
+
+    for i in range(len(arr1)):
+        c = True
+        for j in range(len(arr2)):
+            if abs(arr1[i] - arr2[j]) <= d:
+                c = False
+        if c == True:
+            res += 1
+    print(res)
+
+
 if __name__ == '__main__':
-    row_col_max()
+    list_and_list_dist()
+    # row_col_max()
     # char_str_odd_times()
     # reformat_list_ord()
     # less_ele_list()
