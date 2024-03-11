@@ -2612,8 +2612,19 @@ def list_and_list_dist():
     print(res)
 
 
+def create_new_list_by_two():
+    nums = [1]
+    index = [0]
+    target = []
+
+    for i in range(len(index)):
+        target.insert(index[i], nums[i])
+    print(target)
+
+
 if __name__ == '__main__':
-    list_and_list_dist()
+    create_new_list_by_two()
+    # list_and_list_dist()
     # row_col_max()
     # char_str_odd_times()
     # reformat_list_ord()
