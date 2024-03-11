@@ -2559,8 +2559,21 @@ def reformat_list_ord():
     print(res)
 
 
+def char_str_odd_times():
+    n = 4
+    res = ''
+
+    if n % 2 == 0:
+        res = 'a' * (n - 1) + 'b'
+    else:
+        res = 'a' * n
+
+    print(res)
+
+
 if __name__ == '__main__':
-    reformat_list_ord()
+    char_str_odd_times()
+    # reformat_list_ord()
     # less_ele_list()
     # bin_one_num_sort()
     # less_zero_num_in_list()
