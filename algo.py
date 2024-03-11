@@ -2458,8 +2458,24 @@ def num_trans_to_zero():
     print(t)
 
 
+def double_ele_in_list():
+    arr = [3, 1, 7, 11]
+    arr.sort()
+
+    for i in range(len(arr)):
+        for j in range(i + 1, len(arr)):
+            if arr[i] == arr[j] / 2:
+                print(True)
+                break
+            if arr[i] == arr[j] * 2:
+                print(True)
+                break
+    print(False)
+
+
 if __name__ == '__main__':
-    num_trans_to_zero()
+    double_ele_in_list()
+    # num_trans_to_zero()
     # dict_sort()
     # list_ele_num_in_sorted()
     # six_nine_max_num()
