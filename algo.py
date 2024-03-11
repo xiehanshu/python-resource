@@ -2622,8 +2622,55 @@ def create_new_list_by_two():
     print(target)
 
 
+def value_count_same_ele_list():
+    arr = [7, 7, 7, 7, 7, 7, 7]
+    dict01 = {}
+
+    for i in arr:
+        if i not in dict01.keys():
+            dict01[i] = 1
+        else:
+            dict01[i] += 1
+
+    res = []
+
+    for i, j in dict01.items():
+        if i == j:
+            res.append(i)
+
+    if len(res) == 0:
+        print(-1)
+    else:
+        res.sort(reverse=True)
+        print(res[0])
+
+
+def sub_num_plus():
+    n = 24
+    dict01 = {}
+
+    for i in range(1, n + 1):
+        s = 0
+        for j in str(i):
+            s += int(j)
+        if s not in dict01.keys():
+            dict01[s] = 1
+        else:
+            dict01[s] += 1
+    list01 = sorted(dict01.items(), key=lambda x: x[1], reverse=True)
+    c = 0
+    tar = list01[0][1]
+
+    for i in list01:
+        if i[1] == tar:
+            c += 1
+    print(c)
+
+
 if __name__ == '__main__':
-    create_new_list_by_two()
+    sub_num_plus()
+    # value_count_same_ele_list()
+    # create_new_list_by_two()
     # list_and_list_dist()
     # row_col_max()
     # char_str_odd_times()
