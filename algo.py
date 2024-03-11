@@ -2473,8 +2473,21 @@ def double_ele_in_list():
     print(False)
 
 
+def less_zero_num_in_list():
+    grid = [[3, 2], [1, 0]]
+    c = 0
+
+    for i in range(len(grid)):
+        for j in range(len(grid[i])):
+            if grid[i][j] < 0:
+                c += len(grid[i]) - j
+                break
+    print(c)
+
+
 if __name__ == '__main__':
-    double_ele_in_list()
+    less_zero_num_in_list()
+    # double_ele_in_list()
     # num_trans_to_zero()
     # dict_sort()
     # list_ele_num_in_sorted()
