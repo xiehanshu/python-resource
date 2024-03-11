@@ -2444,8 +2444,23 @@ def dict_sort():
     print(res)
 
 
+def num_trans_to_zero():
+    num = 123
+    t = 0
+
+    while num > 0:
+        if num % 2 == 0:
+            num = num / 2
+            t += 1
+        if num % 2 != 0:
+            num -= 1
+            t += 1
+    print(t)
+
+
 if __name__ == '__main__':
-    dict_sort()
+    num_trans_to_zero()
+    # dict_sort()
     # list_ele_num_in_sorted()
     # six_nine_max_num()
     # sub_num_without_zero()
