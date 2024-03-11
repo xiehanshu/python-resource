@@ -2667,8 +2667,29 @@ def sub_num_plus():
     print(c)
 
 
+def min_list_larger_than_rest():
+    nums = [4, 4, 7, 6, 7]
+    s = 0
+    for i in nums:
+        s += i
+
+    nums.sort(reverse=True)
+
+    t = 0
+    res = []
+
+    for i in range(len(nums)):
+        if t > s - t:
+            break
+        else:
+            t += nums[i]
+            res.append(nums[i])
+    print(res)
+
+
 if __name__ == '__main__':
-    sub_num_plus()
+    min_list_larger_than_rest()
+    # sub_num_plus()
     # value_count_same_ele_list()
     # create_new_list_by_two()
     # list_and_list_dist()
