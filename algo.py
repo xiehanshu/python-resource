@@ -2571,8 +2571,34 @@ def char_str_odd_times():
     print(res)
 
 
+def row_col_max():
+    matrix = [[1, 10, 4, 2], [9, 3, 8, 7], [15, 16, 17, 12]]
+    rotate = []
+
+    for i in range(len(matrix)):
+        for j in range(len(matrix[i])):
+            if len(rotate) < len(matrix[0]):
+                rotate.append([matrix[i][j]])
+            else:
+                rotate[j].append(matrix[i][j])
+    rowM = []
+    colM = []
+
+    for i in range(len(matrix)):
+        matrix[i].sort()
+        rowM.append(matrix[i][0])
+
+    for i in range(len(rotate)):
+        rotate[i].sort(reverse=True)
+        colM.append(rotate[i][0])
+
+    res = list(set(rowM) & set(colM))
+    print(res)
+
+
 if __name__ == '__main__':
-    char_str_odd_times()
+    row_col_max()
+    # char_str_odd_times()
     # reformat_list_ord()
     # less_ele_list()
     # bin_one_num_sort()
