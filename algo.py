@@ -2378,8 +2378,24 @@ def create_list_with_ele_in_list():
     print(res)
 
 
+def sub_num_without_zero():
+    n = 11
+    s = 1
+    p = n - s
+
+    while True:
+        if str(s).find('0') != -1 or str(p).find('0') != -1:
+            s += 1
+            p -= 1
+        if str(s).find('0') == -1 and str(p).find('0') == -1:
+            break
+
+    print([s, p])
+
+
 if __name__ == '__main__':
-    create_list_with_ele_in_list()
+    sub_num_without_zero()
+    # create_list_with_ele_in_list()
     # nums_to_char()
     # list_ele_sum_zero()
     # replace_ele_right_max()
