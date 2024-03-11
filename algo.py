@@ -2393,8 +2393,22 @@ def sub_num_without_zero():
     print([s, p])
 
 
+def six_nine_max_num():
+    num = 9996
+    t = list(str(num))
+
+    for i in range(len(t)):
+        if t[i] == '9':
+            continue
+        if t[i] == '6':
+            t[i] = '9'
+            break
+    print(int(''.join(t)))
+
+
 if __name__ == '__main__':
-    sub_num_without_zero()
+    six_nine_max_num()
+    # sub_num_without_zero()
     # create_list_with_ele_in_list()
     # nums_to_char()
     # list_ele_sum_zero()
