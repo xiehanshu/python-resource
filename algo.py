@@ -2363,8 +2363,24 @@ def nums_to_char():
     print(r[::-1])
 
 
+def create_list_with_ele_in_list():
+    nums = [65, 44, 72, 15]
+    res = []
+    i = 0
+
+    while i < len(nums) - 1:
+        if i % 2 == 0:
+            c = nums[i]
+            n = nums[i + 1]
+        for j in range(c):
+            res.append(n)
+        i += 2
+    print(res)
+
+
 if __name__ == '__main__':
-    nums_to_char()
+    create_list_with_ele_in_list()
+    # nums_to_char()
     # list_ele_sum_zero()
     # replace_ele_right_max()
     # list_ele_count_even()
