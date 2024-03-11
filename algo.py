@@ -2406,8 +2406,24 @@ def six_nine_max_num():
     print(int(''.join(t)))
 
 
+def list_ele_num_in_sorted():
+    arr = [37, 12, 28, 9, 100, 56, 80, 5, 12]
+    t = arr.copy()
+    t = list(set(t))
+    t.sort()
+    dict01 = {}
+
+    for i in range(len(t)):
+        dict01[t[i]] = i + 1
+
+    for i in range(len(arr)):
+        arr[i] = dict01[arr[i]]
+    print(arr)
+
+
 if __name__ == '__main__':
-    six_nine_max_num()
+    list_ele_num_in_sorted()
+    # six_nine_max_num()
     # sub_num_without_zero()
     # create_list_with_ele_in_list()
     # nums_to_char()
