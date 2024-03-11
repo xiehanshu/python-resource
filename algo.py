@@ -2485,8 +2485,35 @@ def less_zero_num_in_list():
     print(c)
 
 
+def bin_one_num_sort():
+    # arr = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+    arr = [10, 100, 1000, 10000]
+    dict01 = {}
+
+    for i in arr:
+        b = bin(i)[2:]
+        c = 0
+        for j in str(b):
+            if j == '1':
+                c += 1
+        if c not in dict01.keys():
+            dict01[c] = [i]
+        else:
+            dict01[c] += [i]
+
+    list01 = sorted(dict01.items(), key=lambda x: x[0])
+
+    res = []
+    for i in list01:
+        i[1].sort()
+        for j in i[1]:
+            res.append(j)
+    print(res)
+
+
 if __name__ == '__main__':
-    less_zero_num_in_list()
+    bin_one_num_sort()
+    # less_zero_num_in_list()
     # double_ele_in_list()
     # num_trans_to_zero()
     # dict_sort()
