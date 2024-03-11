@@ -2511,8 +2511,26 @@ def bin_one_num_sort():
     print(res)
 
 
+def less_ele_list():
+    nums = [7, 7, 7, 7]
+    dict01 = {}
+    t = nums.copy()
+    t.sort()
+    res = []
+
+    for i in range(len(t)):
+        if t[i] not in dict01.keys():
+            dict01[t[i]] = i
+
+    for i in range(len(nums)):
+        if nums[i] in dict01.keys():
+            res.append(dict01[nums[i]])
+    print(res)
+
+
 if __name__ == '__main__':
-    bin_one_num_sort()
+    less_ele_list()
+    # bin_one_num_sort()
     # less_zero_num_in_list()
     # double_ele_in_list()
     # num_trans_to_zero()
