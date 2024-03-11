@@ -2528,8 +2528,40 @@ def less_ele_list():
     print(res)
 
 
+def reformat_list_ord():
+    s = "aaaabbbbcccc"
+    ls = list(s)
+    res = ''
+
+    while len(ls) > 0:
+        t = ''
+        ls.sort(reverse=True)
+        for i in range(len(ls) - 1, -1, -1):
+            if t == '':
+                t += ls[i]
+                ls.pop(i)
+            else:
+                if ord(ls[i]) > ord(t[len(t) - 1:len(t)]):
+                    t += ls[i]
+                    ls.pop(i)
+        res += t
+        t = ''
+        ls.sort()
+        for j in range(len(ls) - 1, -1, -1):
+            if t == '':
+                t += ls[j]
+                ls.pop(j)
+            else:
+                if ord(ls[j]) < ord(t[len(t) - 1:len(t)]):
+                    t += ls[j]
+                    ls.pop(j)
+        res += t
+    print(res)
+
+
 if __name__ == '__main__':
-    less_ele_list()
+    reformat_list_ord()
+    # less_ele_list()
     # bin_one_num_sort()
     # less_zero_num_in_list()
     # double_ele_in_list()
