@@ -2421,8 +2421,32 @@ def list_ele_num_in_sorted():
     print(arr)
 
 
+def dict_sort():
+    mat = [[1, 0, 0, 0],
+           [1, 1, 1, 1],
+           [1, 0, 0, 0],
+           [1, 0, 0, 0]]
+    k = 2
+    dict01 = {}
+
+    for i in range(len(mat)):
+        o = 0
+        for j in mat[i]:
+            if j == 1:
+                o += 1
+        dict01[i] = o
+
+    list01 = sorted(dict01.items(), key=lambda x: x[1])
+    res = []
+
+    for i in range(k):
+        res.append(list01[i][0])
+    print(res)
+
+
 if __name__ == '__main__':
-    list_ele_num_in_sorted()
+    dict_sort()
+    # list_ele_num_in_sorted()
     # six_nine_max_num()
     # sub_num_without_zero()
     # create_list_with_ele_in_list()
