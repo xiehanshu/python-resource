@@ -2948,8 +2948,34 @@ def sub_list_contain_list():
     print(c)
 
 
+def diff_char_in_bin():
+    x = 3
+    y = 1
+    bx = bin(x)[2:]
+    by = bin(y)[2:]
+
+    if len(bx) < len(by):
+        bx = (len(by) - len(bx))*'0' + bx
+    if len(bx) > len(by):
+        by = (len(bx) - len(by))*'0' + by
+
+    c = 0
+    for i in range(len(bx)):
+        if bx[i] != by[i]:
+            c += 1
+    print(c)
+
+
+
+
+
+
+
+
+
 if __name__ == '__main__':
-    sub_list_contain_list()
+    diff_char_in_bin()
+    # sub_list_contain_list()
     # two_list_sub_list()
     # rev_ao_ele_in_list()
     # same_struct_str_s()
