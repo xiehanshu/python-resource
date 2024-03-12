@@ -2748,8 +2748,30 @@ def str_num_new_str():
     print(res)
 
 
+def sub_list_zero_one_count():
+    s = "1111"
+    list01 = list(s)
+    start = 0
+    end = len(list01) - 1
+    res = []
+
+    while start < end:
+        listF = list01[0:start + 1]
+        listB = list01[start + 1:len(list01)]
+        listF = [i for i in listF if i == '0']
+        listB = [i for i in listB if i == '1']
+        countF = len(listF)
+        countB = len(listB)
+        countS = countF + countB
+        res.append(countS)
+        start += 1
+    res.sort(reverse=True)
+    print(res[0])
+
+
 if __name__ == '__main__':
-    str_num_new_str()
+    sub_list_zero_one_count()
+    # str_num_new_str()
     # outer_min_ele_plus_list()
     # str_sub_str_list()
     # min_list_larger_than_rest()
