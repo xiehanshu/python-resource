@@ -2711,8 +2711,46 @@ def outer_min_ele_plus_list():
     print(1 - sMinV)
 
 
+def str_num_new_str():
+    s = "a12bcd"
+    list01 = []
+    res = ''
+
+    for i in s:
+        if i.isdigit():
+            list01.insert(0, i)
+        if i.isalpha():
+            list01.append(i)
+    print(list01)
+
+    start = 0
+    end = len(list01) - 1
+
+    while start <= end:
+        if len(list01) == 1:
+            print(list01[0])
+            break
+        if start == end:
+            if list01[start].isalpha() and res[0].isalpha():
+                res = res + list01[start]
+            else:
+                res = list01[start] + res
+            break
+        if start != end:
+            if (list01[start].isalpha() and list01[end].isalpha()) or (
+                    list01[start].isdigit() and list01[end].isdigit()):
+                print('')
+                break
+            res = list01[start] + res
+            res = list01[end] + res
+            start += 1
+            end -= 1
+    print(res)
+
+
 if __name__ == '__main__':
-    outer_min_ele_plus_list()
+    str_num_new_str()
+    # outer_min_ele_plus_list()
     # str_sub_str_list()
     # min_list_larger_than_rest()
     # sub_num_plus()
