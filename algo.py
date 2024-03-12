@@ -2807,9 +2807,72 @@ def tower_triangle_single():
     print(r)
 
 
+def same_struct_str():
+    s = "paper"
+    t = "title"
+    dict01 = {}
+
+    for i in range(len(s)):
+        if s[i] not in dict01.keys():
+            if t[i] not in dict01.values():
+                dict01[s[i]] = t[i]
+            elif t[i] in dict01.values():
+                print(False)
+                break
+        elif s[i] in dict01.keys():
+            if t[i] != dict01[s[i]]:
+                print(False)
+                break
+    print(True)
+
+
+def dup_ele_list():
+    nums = [1, 2, 3, 1, 2, 3]
+    k = 2
+    dict01 = {}
+
+    for i in range(len(nums)):
+        if nums[i] not in dict01.keys():
+            dict01[nums[i]] = [i]
+        else:
+            dict01[nums[i]].append(i)
+
+    for i, j in dict01.items():
+        if len(j) >= 2:
+            j.sort()
+            for l in range(len(j) - 1):
+                if abs(j[l] - j[l + 1]) <= k:
+                    print(True)
+                    break
+                else:
+                    continue
+    print(False)
+
+
+def num_build_in_ttf():
+    n = 1
+
+    if n == 0:
+        print(False)
+
+    while n % 2 == 0:
+        n /= 2
+
+    while n % 3 == 0:
+        n /= 3
+
+    while n % 5 == 0:
+        n /= 5
+
+    print(n == 1)
+
+
 if __name__ == '__main__':
+    num_build_in_ttf()
+    # dup_ele_list()
+    # same_struct_str()
     # tower_triangle()
-    tower_triangle_single()
+    # tower_triangle_single()
     # sub_list_zero_one_count()
     # str_num_new_str()
     # outer_min_ele_plus_list()
