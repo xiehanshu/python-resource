@@ -2867,8 +2867,31 @@ def num_build_in_ttf():
     print(n == 1)
 
 
+def same_struct_str_s():
+    pattern = "abba"
+    s = "dog dog dog dog"
+    s = s.split(' ')
+    dict01 = {}
+
+    if len(pattern) != len(s):
+        print(False)
+
+    for i in range(len(pattern)):
+        if pattern[i] not in dict01.keys():
+            if s[i] in dict01.values():
+                print(False)
+            else:
+                dict01[pattern[i]] = s[i]
+        else:
+            if s[i] != dict01[pattern[i]]:
+                print(False)
+                break
+    print(True)
+
+
 if __name__ == '__main__':
-    num_build_in_ttf()
+    same_struct_str_s()
+    # num_build_in_ttf()
     # dup_ele_list()
     # same_struct_str()
     # tower_triangle()
