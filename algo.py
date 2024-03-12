@@ -2889,8 +2889,46 @@ def same_struct_str_s():
     print(True)
 
 
+def rev_ao_ele_in_list():
+    s = "leetcode"
+    ao = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
+    list01 = []
+    s = list(s)
+
+    for i in range(len(s) - 1, -1, -1):
+        if s[i] in ao:
+            list01.append(s[i])
+            s[i] = '$'
+
+    for i in range(len(s)):
+        if s[i] == '$':
+            s[i] = list01[0]
+            list01.pop(0)
+    s = ''.join(s)
+    print(s)
+
+
+def two_list_sub_list():
+    s = "ab"
+    t = "baab"
+
+    n = len(s)
+    m = len(t)
+
+    i = 0
+    j = 0
+
+    while i < n and j < m:
+        if s[i] == t[j]:
+            i += 1
+        j += 1
+    print(i == n)
+
+
 if __name__ == '__main__':
-    same_struct_str_s()
+    two_list_sub_list()
+    # rev_ao_ele_in_list()
+    # same_struct_str_s()
     # num_build_in_ttf()
     # dup_ele_list()
     # same_struct_str()
