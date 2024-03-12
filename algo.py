@@ -1,4 +1,5 @@
 import collections
+import math
 import random
 import sys
 
@@ -2955,9 +2956,9 @@ def diff_char_in_bin():
     by = bin(y)[2:]
 
     if len(bx) < len(by):
-        bx = (len(by) - len(bx))*'0' + bx
+        bx = (len(by) - len(bx)) * '0' + bx
     if len(bx) > len(by):
-        by = (len(bx) - len(by))*'0' + by
+        by = (len(bx) - len(by)) * '0' + by
 
     c = 0
     for i in range(len(bx)):
@@ -2966,15 +2967,43 @@ def diff_char_in_bin():
     print(c)
 
 
+def str_in_keyboard():
+    s1 = set('qwertyuiop')
+    s2 = set('asdfghjkl')
+    s3 = set('zxcvbnm')
+    r = []
+
+    words = ["Hello", "Alaska", "Dad", "Peace"]
+
+    for i in range(len(words)):
+        seti = set(words[i].lower())
+        if seti <= s1 or seti <= s2 or seti <= s3:
+            r.append(words[i])
+    print(r)
 
 
+def num_sub_num_plus():
+    num = 28
+    r = []
+    i = 1
 
+    while i < math.sqrt(num):
+        if num % i == 0:
+            r.append(i)
+            if i != 1:
+                r.append(int(num / i))
+        i += 1
+    s = 0
 
-
+    for i in r:
+        s += i
+    print(s == num)
 
 
 if __name__ == '__main__':
-    diff_char_in_bin()
+    num_sub_num_plus()
+    # str_in_keyboard()
+    # diff_char_in_bin()
     # sub_list_contain_list()
     # two_list_sub_list()
     # rev_ao_ele_in_list()
