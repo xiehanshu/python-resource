@@ -3000,8 +3000,24 @@ def num_sub_num_plus():
     print(s == num)
 
 
+def sp_sub_list_in_two_list():
+    a = "aba"
+    b = "cdc"
+
+    if a == b:
+        print(-1)
+
+    if len(a) == len(b):
+        print(len(a))
+    if len(a) > len(b):
+        print(len(a))
+    if len(a) < len(b):
+        print(len(b))
+
+
 if __name__ == '__main__':
-    num_sub_num_plus()
+    sp_sub_list_in_two_list()
+    # num_sub_num_plus()
     # str_in_keyboard()
     # diff_char_in_bin()
     # sub_list_contain_list()
