@@ -2925,8 +2925,32 @@ def two_list_sub_list():
     print(i == n)
 
 
+def sub_list_contain_list():
+    g = [10, 9, 8, 7]
+    s = [5, 6, 7, 8]
+    g.sort()
+    s.sort()
+
+    i = 0
+    j = 0
+
+    n = len(g)
+    m = len(s)
+    c = 0
+
+    while i < n and j < m:
+        if i < n and s[j] < g[i]:
+            j += 1
+        elif s[j] >= g[i]:
+            c += 1
+            i += 1
+            j += 1
+    print(c)
+
+
 if __name__ == '__main__':
-    two_list_sub_list()
+    sub_list_contain_list()
+    # two_list_sub_list()
     # rev_ao_ele_in_list()
     # same_struct_str_s()
     # num_build_in_ttf()
