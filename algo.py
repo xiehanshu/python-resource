@@ -2769,8 +2769,48 @@ def sub_list_zero_one_count():
     print(res[0])
 
 
+def tower_triangle():
+    numRows = 1
+    res = [[1]]
+
+    for i in range(1, numRows):
+        t = []
+        for j in range(0, i + 1):
+            if j == 0:
+                t.append(res[i - 1][0])
+            elif j == i:
+                t.append(res[i - 1][len(res[i - 1]) - 1])
+                break
+            else:
+                s01 = res[i - 1][j - 1] + res[i - 1][j]
+                t.append(s01)
+        res.append(t)
+    print(res)
+
+
+def tower_triangle_single():
+    rowIndex = 3
+    res = [[1]]
+
+    for i in range(1, rowIndex + 1):
+        t = []
+        for j in range(0, i + 1):
+            if j == 0:
+                t.append(res[i - 1][0])
+            elif j == i:
+                t.append(res[i - 1][len(res[i - 1]) - 1])
+            else:
+                sum01 = res[i - 1][j - 1] + res[i - 1][j]
+                t.append(sum01)
+        res.append(t)
+    r = res[len(res) - 1]
+    print(r)
+
+
 if __name__ == '__main__':
-    sub_list_zero_one_count()
+    # tower_triangle()
+    tower_triangle_single()
+    # sub_list_zero_one_count()
     # str_num_new_str()
     # outer_min_ele_plus_list()
     # str_sub_str_list()
