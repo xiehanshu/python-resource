@@ -3086,8 +3086,53 @@ def mid_index_in_list():
     print(-1)
 
 
+def min_full_word():
+    licensePlate = "1s3 456"
+    words = ["looks", "pest", "stew", "show"]
+    dict01 = {}
+
+    for i in licensePlate:
+        i = i.lower()
+        if i.isalpha():
+            if i not in dict01.keys():
+                dict01[i] = 1
+            else:
+                dict01[i] += 1
+    res = ''
+
+    for i in range(len(words)):
+        dict02 = {}
+
+        for j in words[i]:
+            if j not in dict02.keys():
+                dict02[j] = 1
+            else:
+                dict02[j] += 1
+
+        label = True
+
+        for n, m in dict01.items():
+            if n not in dict02.keys():
+                label = False
+                break
+            else:
+                if m > dict02[n]:
+                    label = False
+                    break
+                else:
+                    label = True
+        if label == True:
+            if res == '':
+                res = words[i]
+            else:
+                if len(words[i]) < len(res):
+                    res = words[i]
+    print(res)
+
+
 if __name__ == '__main__':
-    mid_index_in_list()
+    min_full_word()
+    # mid_index_in_list()
     # bit_one_two_char()
     # gen_list_with_char()
     # sp_sub_list_in_two_list()
