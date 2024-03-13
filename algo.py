@@ -3038,8 +3038,35 @@ def gen_list_with_char():
     print(s)
 
 
+def bit_one_two_char():
+    bits = [0, 0]
+    # bits = [1, 0, 0]
+    # bits = [1, 1, 1, 0]
+    bits = [0, 1, 0]
+
+    i = 0
+    while i <= (len(bits) - 1):
+        if bits[i] == 0 and i == (len(bits) - 1):
+            print(True)
+            break
+        if bits[i] == 0 and bits[i + 1] == 0:
+            i += 1
+            continue
+        if bits[i] == 0 and bits[i + 1] == 1:
+            i += 1
+            continue
+        if bits[i] == 1 and i == (len(bits) - 1):
+            print(False)
+            break
+        if bits[i] == 1 and bits[i + 1] in [1, 0]:
+            i += 2
+            continue
+    print(False)
+
+
 if __name__ == '__main__':
-    gen_list_with_char()
+    bit_one_two_char()
+    # gen_list_with_char()
     # sp_sub_list_in_two_list()
     # num_sub_num_plus()
     # str_in_keyboard()
