@@ -3130,8 +3130,26 @@ def min_full_word():
     print(res)
 
 
+def pri_num_in_list():
+    left = 10
+    right = 15
+    r = 0
+    pn = [2, 3, 5, 7, 11, 13, 17, 19]
+
+    for i in range(left, right + 1):
+        b = bin(i)[2:]
+        t = 0
+        for j in b:
+            if j == '1':
+                t += int(j)
+        if t in pn:
+            r += 1
+    print(r)
+
+
 if __name__ == '__main__':
-    min_full_word()
+    pri_num_in_list()
+    # min_full_word()
     # mid_index_in_list()
     # bit_one_two_char()
     # gen_list_with_char()
