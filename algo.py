@@ -3178,8 +3178,27 @@ def char_in_str_dist():
     print(r)
 
 
+def big_interval_in_list():
+    s = "aaa"
+    r = []
+
+    l = 1
+
+    for i in range(len(s) - 1):
+        if s[i] != s[i + 1]:
+            if l >= 3:
+                r.append([i + 1 - l, i])
+            l = 1
+        else:
+            l += 1
+        if i == len(s)-2 and l >= 3:
+            r.append([len(s)-l, len(s) - 1])
+    print(r)
+
+
 if __name__ == '__main__':
-    char_in_str_dist()
+    big_interval_in_list()
+    # char_in_str_dist()
     # slash_in_rectangle()
     # pri_num_in_list()
     # min_full_word()
