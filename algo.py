@@ -3015,8 +3015,32 @@ def sp_sub_list_in_two_list():
         print(len(b))
 
 
+def gen_list_with_char():
+    # 整数x - 表示本回合新获得分数
+    # "+" - 表示本回合新获得的得分是前两次得分的总和。
+    # "D" - 表示本回合新获得的得分是前一次得分的两倍。
+    # "C" - 表示前一次得分无效，将其从记录中移除。
+    ops = ["5", "-2", "4", "C", "D", "9", "+", "+"]
+    res = []
+
+    for i in range(len(ops)):
+        if ops[i] not in ["C", "D", "+"]:
+            res.append(ops[i])
+        if ops[i] == 'C':
+            res.pop()
+        if ops[i] == 'D':
+            res.append(int(res[len(res) - 1]) * 2)
+        if ops[i] == '+':
+            res.append(int(res[len(res) - 1]) + int(res[len(res) - 2]))
+    s = 0
+    for i in res:
+        s += int(i)
+    print(s)
+
+
 if __name__ == '__main__':
-    sp_sub_list_in_two_list()
+    gen_list_with_char()
+    # sp_sub_list_in_two_list()
     # num_sub_num_plus()
     # str_in_keyboard()
     # diff_char_in_bin()
