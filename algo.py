@@ -3159,8 +3159,28 @@ def slash_in_rectangle():
     print(lable)
 
 
+def char_in_str_dist():
+    s = "loveleetcode"
+    c = "e"
+    r = []
+    t = []
+
+    for i in range(len(s)):
+        if s[i] == c:
+            t.append(i)
+
+    for i in range(len(s)):
+        p = []
+        for j in t:
+            p.append(abs(i - j))
+        p.sort()
+        r.append(p[0])
+    print(r)
+
+
 if __name__ == '__main__':
-    slash_in_rectangle()
+    char_in_str_dist()
+    # slash_in_rectangle()
     # pri_num_in_list()
     # min_full_word()
     # mid_index_in_list()
