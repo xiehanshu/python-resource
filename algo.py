@@ -3147,8 +3147,21 @@ def pri_num_in_list():
     print(r)
 
 
+def slash_in_rectangle():
+    matrix = [[1, 2], [2, 2]]
+    lable = True
+
+    for i in range(len(matrix) - 1):
+        if matrix[i][0:len(matrix[i]) - 1] == matrix[i + 1][1:len(matrix[i + 1])]:
+            continue
+        else:
+            lable = False
+    print(lable)
+
+
 if __name__ == '__main__':
-    pri_num_in_list()
+    slash_in_rectangle()
+    # pri_num_in_list()
     # min_full_word()
     # mid_index_in_list()
     # bit_one_two_char()
