@@ -3064,8 +3064,31 @@ def bit_one_two_char():
     print(False)
 
 
+def mid_index_in_list():
+    nums = [2, 1, -1]
+
+    i = -1
+    end = len(nums) - 1
+
+    while i < end:
+        s1 = 0
+        s2 = 0
+        # for j in nums[0:i + 1]:
+        #     s1 += j
+        s1 = sum(nums[0:i + 1])
+        # for k in nums[i + 2:len(nums)]:
+        #     s2 += k
+        s2 = sum(nums[i + 2:len(nums)])
+        if s1 == s2:
+            print(i + 1)
+            break
+        i += 1
+    print(-1)
+
+
 if __name__ == '__main__':
-    bit_one_two_char()
+    mid_index_in_list()
+    # bit_one_two_char()
     # gen_list_with_char()
     # sp_sub_list_in_two_list()
     # num_sub_num_plus()
