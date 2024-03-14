@@ -3336,8 +3336,27 @@ def remake_two_sub_list():
     print(res)
 
 
+def one_dist_list():
+    nums = [1, 0, 0, 0, 1, 0, 0, 1, 0]
+    k = 2
+    d = 0
+    l = True
+
+    for i in range(len(nums)):
+        if nums[i] == 1 and d != 0:
+            if d - 1 < k:
+                l = False
+            d = 1
+        elif nums[i] == 1:
+            d += 1
+        elif nums[i] == 0 and d != 0:
+            d += 1
+    print(l)
+
+
 if __name__ == '__main__':
-    remake_two_sub_list()
+    one_dist_list()
+    # remake_two_sub_list()
     # after_plus_ele_max_in_list()
     # sub_bracket()
     # list_plus_num()
