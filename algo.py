@@ -670,7 +670,7 @@ def most_third():
 
 
 def str_to_int():
-    sys.set_int_max_str_digits(10000)
+    # sys.set_int_max_str_digits(10000)
     num1 = "11"
     num2 = "123"
     len2 = len(num2)
@@ -3273,8 +3273,22 @@ def long_press_char_in_word():
     print(isP)
 
 
+def list_plus_num():
+    # sys.set_int_max_str_digits(10000000)
+    num = [1, 2, 0, 0]
+    k = 34
+
+    t = ''
+
+    for i in num:
+        t += str(i)
+    t = int(t) + k
+    print([i for i in str(t)])
+
+
 if __name__ == '__main__':
-    long_press_char_in_word()
+    list_plus_num()
+    # long_press_char_in_word()
     # rotate_rectangle()
     # big_interval_in_list()
     # char_in_str_dist()
