@@ -3210,8 +3210,72 @@ def rotate_rectangle():
     print(res)
 
 
+def long_press_char_in_word():
+    name = "leelee"
+    typed = "lleeelee"
+    list01 = []
+    list02 = []
+    key01 = []
+    key02 = []
+    dict01 = {}
+    dict02 = {}
+
+    for i in name:
+        if key01 == []:
+            key01.append(i)
+        else:
+            if i != key01[len(key01) - 1]:
+                key01.append(i)
+    for i in typed:
+        if key02 == []:
+            key02.append(i)
+        else:
+            if i != key02[len(key02) - 1]:
+                key02.append(i)
+
+    if key01 != key02 or len(key01) != len(key02):
+        print(False)
+
+    for i in range(len(name)):
+        if name[i] not in dict01.keys():
+            if dict01 == {}:
+                dict01[name[i]] = 1
+            elif dict01 != {}:
+                list01.append(list(dict01.values())[0])
+                dict01 = {}
+                dict01[name[i]] = 1
+        else:
+            dict01[name[i]] += 1
+    list01 = list01 + list(dict01.values())
+
+    for i in range(len(typed)):
+        if typed[i] not in dict02.keys():
+            if dict02 == {}:
+                dict02[typed[i]] = 1
+            elif dict02 != {}:
+                list02.append(list(dict02.values())[0])
+                dict02 = {}
+                dict02[typed[i]] = 1
+        else:
+            dict02[typed[i]] += 1
+    list02 = list02 + list(dict02.values())
+
+    if len(list01) != len(list02):
+        print(False)
+
+    isP = True
+    for i in range(len(list01)):
+        if list01[i] <= list02[i]:
+            continue
+        else:
+            isP = False
+            break
+    print(isP)
+
+
 if __name__ == '__main__':
-    rotate_rectangle()
+    long_press_char_in_word()
+    # rotate_rectangle()
     # big_interval_in_list()
     # char_in_str_dist()
     # slash_in_rectangle()
