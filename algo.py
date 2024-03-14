@@ -3305,8 +3305,25 @@ def sub_bracket():
     print(r)
 
 
+def after_plus_ele_max_in_list():
+    candies = [12, 1, 12]
+    extraCandies = 10
+    t = candies.copy()
+    t.sort(reverse=True)
+    maxV = t[0]
+    res = []
+
+    for i in range(len(candies)):
+        if candies[i] + extraCandies >= maxV:
+            res.append(True)
+        else:
+            res.append(False)
+    print(res)
+
+
 if __name__ == '__main__':
-    sub_bracket()
+    after_plus_ele_max_in_list()
+    # sub_bracket()
     # list_plus_num()
     # long_press_char_in_word()
     # rotate_rectangle()
