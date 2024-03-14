@@ -3286,8 +3286,28 @@ def list_plus_num():
     print([i for i in str(t)])
 
 
+def sub_bracket():
+    s = "()()"
+    t = []
+    l = 0
+    r = ''
+
+    for i in range(len(s)):
+        if s[i] == '(':
+            t.append(s[i])
+            l += 1
+        elif s[i] == ')':
+            t.pop()
+            l += 1
+            if len(t) == 0:
+                r += s[i - l + 2:i]
+                l = 0
+    print(r)
+
+
 if __name__ == '__main__':
-    list_plus_num()
+    sub_bracket()
+    # list_plus_num()
     # long_press_char_in_word()
     # rotate_rectangle()
     # big_interval_in_list()
