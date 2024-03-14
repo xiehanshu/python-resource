@@ -3321,8 +3321,24 @@ def after_plus_ele_max_in_list():
     print(res)
 
 
+def remake_two_sub_list():
+    paths = [["A", "Z"]]
+    t = []
+
+    for i in range(len(paths)):
+        for j in range(len(paths[i])):
+            if len(t) < len(paths[i]):
+                t.append([paths[i][j]])
+            else:
+                t[j].append(paths[i][j])
+    print(t)
+    res = list(set(t[1]) - set(t[0]))[0]
+    print(res)
+
+
 if __name__ == '__main__':
-    after_plus_ele_max_in_list()
+    remake_two_sub_list()
+    # after_plus_ele_max_in_list()
     # sub_bracket()
     # list_plus_num()
     # long_press_char_in_word()
