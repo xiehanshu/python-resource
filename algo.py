@@ -3191,13 +3191,28 @@ def big_interval_in_list():
             l = 1
         else:
             l += 1
-        if i == len(s)-2 and l >= 3:
-            r.append([len(s)-l, len(s) - 1])
+        if i == len(s) - 2 and l >= 3:
+            r.append([len(s) - l, len(s) - 1])
     print(r)
 
 
+def rotate_rectangle():
+    matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+    res = []
+
+    for i in range(len(matrix)):
+        for j in range(len(matrix[i])):
+            if len(res) < len(matrix[0]):
+                res.append([matrix[i][j]])
+            else:
+                res[j].append(matrix[i][j])
+    print(res)
+
+
 if __name__ == '__main__':
-    big_interval_in_list()
+    rotate_rectangle()
+    # big_interval_in_list()
     # char_in_str_dist()
     # slash_in_rectangle()
     # pri_num_in_list()
