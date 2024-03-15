@@ -3439,8 +3439,20 @@ def rotate_list_two_part():
     print(r)
 
 
+def list_ele_cut_min_ele():
+    prices = [10, 1, 1, 6]
+
+    for i in range(len(prices)):
+        for j in range(i + 1, len(prices)):
+            if prices[i] >= prices[j]:
+                prices[i] = prices[i] - prices[j]
+                break
+    print(prices)
+
+
 if __name__ == '__main__':
-    rotate_list_two_part()
+    list_ele_cut_min_ele()
+    # rotate_list_two_part()
     # ele_multi_max_in_list()
     # switch_same_list()
     # find_prefix_in_words()
