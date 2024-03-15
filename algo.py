@@ -3426,8 +3426,22 @@ def ele_multi_max_in_list():
     print(r)
 
 
+def rotate_list_two_part():
+    nums = [1, 1, 2, 2]
+    n = 2
+    r = []
+    i = 0
+
+    while i < n:
+        r.append(nums[i])
+        r.append(nums[i + n])
+        i += 1
+    print(r)
+
+
 if __name__ == '__main__':
-    ele_multi_max_in_list()
+    rotate_list_two_part()
+    # ele_multi_max_in_list()
     # switch_same_list()
     # find_prefix_in_words()
     # list_list_interval()
