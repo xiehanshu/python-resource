@@ -3450,8 +3450,108 @@ def list_ele_cut_min_ele():
     print(prices)
 
 
+def list_sub_list_sum():
+    nums = [3, 1, 2, 10, 1]
+    r = []
+
+    for i in range(len(nums)):
+        if r == []:
+            r.append(nums[i])
+        else:
+            r.append(nums[i] + r[len(r) - 1])
+    print(r)
+
+
+def list_ele_dig_multi():
+    n = 5
+    start = 0
+    t = []
+    res = 0
+
+    for i in range(n):
+        t.append(start + 2 * i)
+
+    for i in t:
+        res ^= i
+    print(res)
+
+
+def list_cut_max_min_avg():
+    salary = [4000, 3000, 1000, 2000]
+    salary.sort()
+    salary = salary[1:len(salary) - 1]
+    avg = sum(salary) / len(salary)
+    print(avg)
+
+
+def list_in_list_dup():
+    path = "NESWW"
+    l = False
+    start = [0, 0]
+    res = [start]
+    t = []
+
+    for i in path:
+        if i == "N":
+            t = [res[len(res) - 1][0], res[len(res) - 1][1] + 1]
+        if i == "S":
+            t = [res[len(res) - 1][0], res[len(res) - 1][1] - 1]
+        if i == "E":
+            t = [res[len(res) - 1][0] - 1, res[len(res) - 1][1]]
+        if i == "W":
+            t = [res[len(res) - 1][0] + 1, res[len(res) - 1][1]]
+        if t in res:
+            l = True
+        else:
+            res.append(t)
+    print(l)
+
+
+def list_ele_interval_same():
+    arr = [1, 2, 4]
+    arr.sort()
+    d = 0
+    l = True
+
+    for i in range(len(arr) - 1):
+        if i == 0:
+            d = arr[i + 1] - arr[i]
+        else:
+            if arr[i + 1] - arr[i] != d:
+                l = False
+    print(l)
+
+
+def conv_date_formate():
+    monthList = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    date = "6th Jun 1933"
+    date = date.split(' ')
+    r = ''
+
+    for i in range(len(date)):
+        if i == 0:
+            date[i] = date[i][:-2]
+            if len(date[i]) == 1:
+                date[i] = '0' + str(date[i])
+            r = '-' + date[i] + r
+        if i == 1:
+            v = monthList.index(date[i]) + 1
+            if len(str(v)) == 1:
+                v = '0' + str(v)
+            r = '-' + str(v) + r
+        if i == 2:
+            r = date[i] + r
+    print(r)
+
+
 if __name__ == '__main__':
-    list_ele_cut_min_ele()
+    conv_date_formate()
+    # list_ele_interval_same()
+    # list_in_list_dup()
+    # list_cut_max_min_avg()
+    # list_ele_dig_multi()
+    # list_sub_list_sum()
+    # list_ele_cut_min_ele()
     # rotate_list_two_part()
     # ele_multi_max_in_list()
     # switch_same_list()
