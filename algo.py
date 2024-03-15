@@ -3544,8 +3544,20 @@ def conv_date_formate():
     print(r)
 
 
+def same_value_index_larger():
+    nums = [1, 2, 3]
+    r = 0
+
+    for i in range(len(nums)):
+        for j in range(i + 1, len(nums)):
+            if nums[i] == nums[j]:
+                r += 1
+    print(r)
+
+
 if __name__ == '__main__':
-    conv_date_formate()
+    same_value_index_larger()
+    # conv_date_formate()
     # list_ele_interval_same()
     # list_in_list_dup()
     # list_cut_max_min_avg()
