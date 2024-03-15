@@ -3387,8 +3387,35 @@ def list_list_interval():
     print(r)
 
 
+def find_prefix_in_words():
+    sentence = "i am tired"
+    searchWord = "you"
+    sentence = sentence.split(' ')
+    r = -1
+
+    for i in range(len(sentence)):
+        if sentence[i].startswith(searchWord) == True:
+            r = i + 1
+            break
+    print(r)
+
+
+def switch_same_list():
+    target = [1, 2, 3, 4]
+    arr = [2, 4, 1, 3]
+    target.sort()
+    arr.sort()
+
+    if target == arr:
+        print(True)
+    else:
+        print(False)
+
+
 if __name__ == '__main__':
-    list_list_interval()
+    switch_same_list()
+    # find_prefix_in_words()
+    # list_list_interval()
     # max_conti_sub_str_in_str()
     # one_dist_list()
     # remake_two_sub_list()
