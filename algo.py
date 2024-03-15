@@ -3375,8 +3375,21 @@ def max_conti_sub_str_in_str():
     print(list01[0])
 
 
+def list_list_interval():
+    startTime = [9, 8, 7, 6, 5, 4, 3, 2, 1]
+    endTime = [10, 10, 10, 10, 10, 10, 10, 10, 10]
+    queryTime = 5
+    r = 0
+
+    for i in range(len(startTime)):
+        if startTime[i] <= queryTime and endTime[i] >= queryTime:
+            r += 1
+    print(r)
+
+
 if __name__ == '__main__':
-    max_conti_sub_str_in_str()
+    list_list_interval()
+    # max_conti_sub_str_in_str()
     # one_dist_list()
     # remake_two_sub_list()
     # after_plus_ele_max_in_list()
