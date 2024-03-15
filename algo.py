@@ -3586,8 +3586,24 @@ def re_gen_str_list():
     print(res)
 
 
+def list_three_asc():
+    arr = [3, 0, 1, 1, 9, 7]
+    a = 7
+    b = 2
+    c = 3
+    r = 0
+
+    for i in range(len(arr)):
+        for j in range(i + 1, len(arr)):
+            for k in range(j + 1, len(arr)):
+                if abs(arr[i] - arr[j]) <= a and abs(arr[j] - arr[k]) <= b and abs(arr[i] - arr[k]) <= c:
+                    r += 1
+    print(r)
+
+
 if __name__ == '__main__':
-    re_gen_str_list()
+    list_three_asc()
+    # re_gen_str_list()
     # three_bottle_one_new()
     # same_value_index_larger()
     # conv_date_formate()
