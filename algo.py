@@ -3354,8 +3354,30 @@ def one_dist_list():
     print(l)
 
 
+def max_conti_sub_str_in_str():
+    s = "abbcccddddeeeeedcba"
+    dict01 = {}
+    list01 = []
+
+    for i in range(len(s)):
+        if s[i] not in dict01.keys():
+            if list(dict01.keys()) != []:
+                list01.append(list(dict01.values())[0])
+                dict01 = {}
+            dict01[s[i]] = 1
+            if i == len(s) - 1:
+                list01.append(list(dict01.values())[0])
+        else:
+            dict01[s[i]] += 1
+            if i == len(s) - 1:
+                list01.append(list(dict01.values())[0])
+    list01.sort(reverse=True)
+    print(list01[0])
+
+
 if __name__ == '__main__':
-    one_dist_list()
+    max_conti_sub_str_in_str()
+    # one_dist_list()
     # remake_two_sub_list()
     # after_plus_ele_max_in_list()
     # sub_bracket()
