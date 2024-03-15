@@ -3555,8 +3555,41 @@ def same_value_index_larger():
     print(r)
 
 
+def three_bottle_one_new():
+    numBottles = 15
+    numExchange = 7
+    r = 0
+    rest = 0
+
+    while True:
+        r = r + numBottles - rest
+        rest = numBottles % numExchange
+        divdV = numBottles // numExchange
+        numBottles = rest + divdV
+        if numBottles < numExchange:
+            if divdV > 0 and rest == 0:
+                r += numBottles
+            if divdV != 0 and rest != 0:
+                r += divdV
+            break
+    print(r)
+
+
+def re_gen_str_list():
+    s = "codeleet"
+    indices = [4, 5, 6, 7, 0, 2, 1, 3]
+    r = [0] * len(indices)
+
+    for i in range(len(s)):
+        r[indices[i]] = s[i]
+    res = ''.join(r)
+    print(res)
+
+
 if __name__ == '__main__':
-    same_value_index_larger()
+    re_gen_str_list()
+    # three_bottle_one_new()
+    # same_value_index_larger()
     # conv_date_formate()
     # list_ele_interval_same()
     # list_in_list_dup()
