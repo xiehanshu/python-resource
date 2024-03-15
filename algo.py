@@ -3602,7 +3602,7 @@ def list_three_asc():
 
 
 def list_disappear_num():
-    arr = [1,2,3,4]
+    arr = [1, 2, 3, 4]
     k = 2
     l = 1
     r = []
@@ -3616,8 +3616,25 @@ def list_disappear_num():
             break
 
 
+def del_ele_in_list_up_low():
+    s = "s"
+    r = []
+
+    for i in range(len(s)):
+        r.append(s[i])
+        if r[-2:][0].islower() and s[i].isupper() and r[-2:][0] == s[i].lower():
+            r.pop()
+            r.pop()
+        elif r[-2:][0].isupper() and s[i].islower() and r[-2:][0] == s[i].upper():
+            r.pop()
+            r.pop()
+    res = ''.join(r)
+    print(res)
+
+
 if __name__ == '__main__':
-    list_disappear_num()
+    del_ele_in_list_up_low()
+    # list_disappear_num()
     # list_three_asc()
     # re_gen_str_list()
     # three_bottle_one_new()
