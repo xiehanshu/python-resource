@@ -3412,8 +3412,23 @@ def switch_same_list():
         print(False)
 
 
+def ele_multi_max_in_list():
+    nums = [3, 4, 5, 2, -7, -9]
+    nums.sort()
+    r = 0
+
+    if nums[0] > 0 and nums[1] > 0:
+        r = (nums[len(nums) - 2] - 1) * (nums[len(nums) - 1] - 1)
+    if nums[0] < 0 and nums[1] < 0 and nums[len(nums) - 2] > 0 and nums[len(nums) - 1] > 0:
+        r1 = (nums[len(nums) - 2] - 1) * (nums[len(nums) - 1] - 1)
+        r2 = (nums[0] - 1) * (nums[1] - 1)
+        r = max(r1, r2)
+    print(r)
+
+
 if __name__ == '__main__':
-    switch_same_list()
+    ele_multi_max_in_list()
+    # switch_same_list()
     # find_prefix_in_words()
     # list_list_interval()
     # max_conti_sub_str_in_str()
