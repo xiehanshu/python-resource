@@ -3382,7 +3382,7 @@ def list_list_interval():
     r = 0
 
     for i in range(len(startTime)):
-        if startTime[i] <= queryTime and endTime[i] >= queryTime:
+        if startTime[i] <= queryTime <= endTime[i]:
             r += 1
     print(r)
 
