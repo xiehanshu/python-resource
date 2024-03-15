@@ -3601,8 +3601,24 @@ def list_three_asc():
     print(r)
 
 
+def list_disappear_num():
+    arr = [1,2,3,4]
+    k = 2
+    l = 1
+    r = []
+
+    while True:
+        if l not in arr:
+            r.append(l)
+        l += 1
+        if len(r) == k:
+            print(r[-1:])
+            break
+
+
 if __name__ == '__main__':
-    list_three_asc()
+    list_disappear_num()
+    # list_three_asc()
     # re_gen_str_list()
     # three_bottle_one_new()
     # same_value_index_larger()
