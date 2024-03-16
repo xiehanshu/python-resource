@@ -3692,15 +3692,18 @@ def space_in_words():
         if i == ' ':
             space += 1
     text = text.split(' ')
+
     for i in text:
         if i != '':
             t.append(i)
+
     if len(t) == 1:
         s = space
         rest = 0
     else:
         s = space // (len(t) - 1)
         rest = space % (len(t) - 1)
+
     if len(t) == 1:
         r = r + t[0] + ' ' * s
     else:
