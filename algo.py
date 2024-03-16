@@ -3679,8 +3679,44 @@ def fill_two_cond_list():
     print(False)
 
 
+def space_in_words():
+    text = " practice   makes   perfect"
+    space = 0
+    t = []
+    r = ''
+
+    if ' ' not in text:
+        print(text)
+
+    for i in text:
+        if i == ' ':
+            space += 1
+    text = text.split(' ')
+    for i in text:
+        if i != '':
+            t.append(i)
+    if len(t) == 1:
+        s = space
+        rest = 0
+    else:
+        s = space // (len(t) - 1)
+        rest = space % (len(t) - 1)
+    if len(t) == 1:
+        r = r + t[0] + ' ' * s
+    else:
+        for i in range(len(t)):
+            if i == (len(t) - 1):
+                r = r + t[i]
+                r = r + ' ' * rest
+            else:
+                r = r + t[i]
+                r = r + ' ' * s
+    print(r)
+
+
 if __name__ == '__main__':
-    fill_two_cond_list()
+    space_in_words()
+    # fill_two_cond_list()
     # west_money_split()
     # conti_three_odd_ele_list()
     # del_ele_in_list_up_low()
