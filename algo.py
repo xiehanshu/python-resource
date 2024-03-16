@@ -3632,8 +3632,49 @@ def del_ele_in_list_up_low():
     print(res)
 
 
+def conti_three_odd_ele_list():
+    arr = [1, 1, 1]
+    # arr = [1, 2, 34, 3, 4, 5, 7, 23, 12]
+    last = 0
+    o = 0
+
+    for i in range(len(arr)):
+        if arr[i] % 2 != 0:
+            o += 1
+        else:
+            o = 0
+        if o >= 3:
+            print(True)
+            break
+    print(False)
+
+
+def west_money_split():
+    n = 0
+    n = str(n)
+    r = ''
+    p = 0
+
+    for i in range(len(n) - 1, -1, -1):
+        p += 1
+        if p == 3:
+            p = 0
+            r = r + n[i]
+            if i != 0:
+                r = r + '.'
+        else:
+            r = r + n[i]
+    print(r[::-1])
+
+
+
+
+
+
 if __name__ == '__main__':
-    del_ele_in_list_up_low()
+    west_money_split()
+    # conti_three_odd_ele_list()
+    # del_ele_in_list_up_low()
     # list_disappear_num()
     # list_three_asc()
     # re_gen_str_list()
