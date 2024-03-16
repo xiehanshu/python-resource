@@ -3667,12 +3667,21 @@ def west_money_split():
     print(r[::-1])
 
 
+def fill_two_cond_list():
+    arr = [1, 2, 4, 4, 4, 4]
+    m = 1
+    k = 3
 
-
+    for i in range(len(arr) + 1 - m * k):
+        if arr[i:i + m] * k == arr[i:m * k + i]:
+            print(True)
+            break
+    print(False)
 
 
 if __name__ == '__main__':
-    west_money_split()
+    fill_two_cond_list()
+    # west_money_split()
     # conti_three_odd_ele_list()
     # del_ele_in_list_up_low()
     # list_disappear_num()
