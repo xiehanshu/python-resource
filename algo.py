@@ -3691,6 +3691,7 @@ def space_in_words():
     for i in text:
         if i == ' ':
             space += 1
+
     text = text.split(' ')
 
     for i in text:
