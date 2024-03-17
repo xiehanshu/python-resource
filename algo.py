@@ -3950,6 +3950,7 @@ def two_str_list_same():
     else:
         print(False)
 
+
 def sub_str_times_string():
     sequence = "ababc"
     word = "ac"
@@ -3962,8 +3963,6 @@ def sub_str_times_string():
             i -= 1
             break
     print(i)
-
-
 
 
 if __name__ == '__main__':
