@@ -3822,8 +3822,35 @@ def list_ele_duration():
     print(res[0])
 
 
+def sort_list_times():
+    nums = [1, 1, 2, 2, 2, 3]
+    dict01 = {}
+    dict02 = {}
+    res = []
+
+    for i in nums:
+        if i not in dict01.keys():
+            dict01[i] = 1
+        else:
+            dict01[i] += 1
+    for i, j in dict01.items():
+        if j not in dict02.keys():
+            dict02[j] = [i]
+        else:
+            dict02[j].append(i)
+    list01 = sorted(dict02.items(), key=lambda x: x[0], reverse=False)
+
+    for i in list01:
+        i[1].sort(reverse=True)
+        for j in i[1]:
+            for k in range(i[0]):
+                res.append(j)
+    print(res)
+
+
 if __name__ == '__main__':
-    list_ele_duration()
+    sort_list_times()
+    # list_ele_duration()
     # dist_between_two_same_ele()
     # list_avg_after_del_ele()
     # max_bracket_dep()
