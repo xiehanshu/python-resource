@@ -3778,9 +3778,27 @@ def list_avg_after_del_ele():
     avg = sum(arr) / len(arr)
     print(avg)
 
+def dist_between_two_same_ele():
+    s = "cbzxy"
+    cl = []
+    r = []
+
+    for i in s:
+        if i not in cl:
+            cl.append(i)
+
+    for i in cl:
+        res = s.rfind(i) - s.find(i) - 1
+        r.append(res)
+    r.sort(reverse=True)
+    print(r[0])
+
+
+
 
 if __name__ == '__main__':
-    list_avg_after_del_ele()
+    dist_between_two_same_ele()
+    # list_avg_after_del_ele()
     # max_bracket_dep()
     # list_ele_larger_ele_count()
     # list_steps()
