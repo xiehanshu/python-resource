@@ -3778,6 +3778,7 @@ def list_avg_after_del_ele():
     avg = sum(arr) / len(arr)
     print(avg)
 
+
 def dist_between_two_same_ele():
     s = "cbzxy"
     cl = []
@@ -3792,8 +3793,6 @@ def dist_between_two_same_ele():
         r.append(res)
     r.sort(reverse=True)
     print(r[0])
-
-
 
 
 if __name__ == '__main__':
