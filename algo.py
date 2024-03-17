@@ -4029,8 +4029,29 @@ def cannot_change_list_ele():
     print(r)
 
 
+def list_two_part_oc():
+    oc = ['a', 'e', 'i', 'o', 'u']
+    s = "textbook"
+    p01 = s[0:int(len(s) / 2)]
+    p02 = s[int(len(s) / 2):len(s)]
+    l01 = 0
+    l02 = 0
+
+    for i in p01:
+        if i.lower() in oc:
+            l01 += 1
+    for i in p02:
+        if i.lower() in oc:
+            l02 += 1
+    if l01 == l02:
+        print(True)
+    else:
+        print(False)
+
+
 if __name__ == '__main__':
-    cannot_change_list_ele()
+    list_two_part_oc()
+    # cannot_change_list_ele()
     # div_value_sum()
     # same_contain_str_list()
     # short_for_full_str()
