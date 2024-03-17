@@ -3751,8 +3751,27 @@ def list_ele_larger_ele_count():
     print(-1)
 
 
+def max_bracket_dep():
+    s = "(1)+((2))+(((3)))"
+    b = []
+    r = []
+
+    for i in s:
+        if i == '(':
+            b.append(i)
+        if i == ')':
+            r.append(len(b))
+            b.pop()
+    r.sort(reverse=True)
+    if len(r) != 0:
+        print(r[0])
+    else:
+        print(0)
+
+
 if __name__ == '__main__':
-    list_ele_larger_ele_count()
+    max_bracket_dep()
+    # list_ele_larger_ele_count()
     # list_steps()
     # space_in_words()
     # fill_two_cond_list()
