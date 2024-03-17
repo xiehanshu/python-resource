@@ -3848,8 +3848,73 @@ def sort_list_times():
     print(res)
 
 
+def most_dist_in_two_value():
+    points = [[3, 1], [9, 0], [1, 0], [1, 4], [5, 3], [8, 8]]
+    points.sort()
+    d = 0
+
+    for i in range(len(points) - 1):
+        d = max(d, points[i + 1][0] - points[i][0])
+    print(d)
+
+
+def same_sort_two_list():
+    arr = [91, 2, 4, 64, 5, 78, 12, 9]
+    pieces = [[78, 12, 3], [4, 64, 5], [91, 2]]
+    dict01 = {}
+    l = True
+
+    for i in range(len(arr)):
+        if i == len(arr) - 1:
+            dict01[arr[i]] = -1
+        else:
+            dict01[arr[i]] = arr[i + 1]
+
+    for i in pieces:
+        if len(i) >= 2:
+            for j in range(len(i) - 1):
+                if i[j] not in dict01.keys():
+                    l = False
+                    break
+                if dict01[i[j]] == i[j + 1]:
+                    l = True
+                else:
+                    l = False
+                    break
+            if l == False:
+                break
+        else:
+            if i[0] not in arr:
+                l = False
+                break
+    print(l)
+
+
+def create_list_in_rules():
+    n = 0
+    nums = [0, 1]
+    i = 1
+
+    if n < 1:
+        print(0)
+
+    while i <= n:
+        if 2 <= 2 * i <= n:
+            t = nums[i]
+            nums.append(t)
+        if 2 <= 2 * i + 1 <= n:
+            t = nums[i + 1] + nums[i]
+            nums.append(t)
+        i += 1
+    nums.sort(reverse=True)
+    print(nums[0])
+
+
 if __name__ == '__main__':
-    sort_list_times()
+    create_list_in_rules()
+    # same_sort_two_list()
+    # most_dist_in_two_value()
+    # sort_list_times()
     # list_ele_duration()
     # dist_between_two_same_ele()
     # list_avg_after_del_ele()
