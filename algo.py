@@ -3965,8 +3965,77 @@ def sub_str_times_string():
     print(i)
 
 
+def max_value_sub_list():
+    accounts = [[1, 2, 3], [3, 2, 1]]
+    lv = 0
+
+    for i in accounts:
+        lv = max(lv, sum(i))
+    print(lv)
+
+
+def short_for_full_str():
+    command = "G()(al)"
+    r = command.replace('()', 'o').replace('(al)', 'al')
+    print(r)
+
+
+def same_contain_str_list():
+    allowed = "ab"
+    words = ["ad", "bd", "aaab", "baa", "badab"]
+    r = 0
+
+    for i in words:
+        c = True
+        for j in i:
+            if j not in allowed:
+                c = False
+                break
+        if c == True:
+            r += 1
+    print(r)
+
+
+def div_value_sum():
+    n = 14
+    r = 0
+
+    while n != 1:
+        value = n // 2
+        rest = n % 2
+        n = value + rest
+        r += value
+    print(r)
+
+
+def cannot_change_list_ele():
+    students = [1, 1, 0, 0]
+    sandwiches = [0, 1, 0, 1]
+    r = 0
+
+    while True:
+        if len(students) == 0:
+            print(r)
+            break
+        if students[0] == sandwiches[0]:
+            students = students[1:len(students)]
+            sandwiches = sandwiches[1:len(sandwiches)]
+        else:
+            if sandwiches[0] not in students:
+                r = len(students)
+                break
+            else:
+                students = students[1:len(students)] + students[0:1]
+    print(r)
+
+
 if __name__ == '__main__':
-    sub_str_times_string()
+    cannot_change_list_ele()
+    # div_value_sum()
+    # same_contain_str_list()
+    # short_for_full_str()
+    # max_value_sub_list()
+    # sub_str_times_string()
     # two_str_list_same()
     # conti_plus_min_list_ele()
     # create_list_in_rules()
