@@ -3910,8 +3910,67 @@ def create_list_in_rules():
     print(nums[0])
 
 
+def conti_plus_min_list_ele():
+    code = [2, 4, 9, 3]
+    k = 0
+    new_list = code * 3
+    res = []
+
+    if k == 0:
+        new_list = [0] * len(code)
+        print(new_list)
+
+    for i in range(0 + len(code), len(code) + len(code)):
+        t = 0
+        if k > 0:
+            for j in range(abs(k)):
+                t += new_list[i + j + 1]
+            res.append(t)
+        if k < 0:
+            for j in range(abs(k)):
+                t += new_list[i - j - 1]
+            res.append(t)
+    print(res)
+
+
+def two_str_list_same():
+    word1 = ["ab", "c"]
+    word2 = ["a", "bc"]
+    s01 = ''
+    s02 = ''
+
+    for i in word1:
+        s01 += i
+
+    for i in word2:
+        s02 += i
+
+    if s01 == s02:
+        print(True)
+    else:
+        print(False)
+
+def sub_str_times_string():
+    sequence = "ababc"
+    word = "ac"
+    i = 1
+
+    while True:
+        if word * i in sequence:
+            i += 1
+        else:
+            i -= 1
+            break
+    print(i)
+
+
+
+
 if __name__ == '__main__':
-    create_list_in_rules()
+    sub_str_times_string()
+    # two_str_list_same()
+    # conti_plus_min_list_ele()
+    # create_list_in_rules()
     # same_sort_two_list()
     # most_dist_in_two_value()
     # sort_list_times()
