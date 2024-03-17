@@ -3718,8 +3718,27 @@ def space_in_words():
     print(r)
 
 
+def list_steps():
+    logs = ["d1/", "../", "../", "../"]
+    step = 0
+    dict01 = {
+        '../': -1,
+        './': 0
+    }
+
+    for i in logs:
+        if i not in dict01.keys():
+            step += 1
+        else:
+            step += dict01[i]
+            if step < 0:
+                step = 0
+    print(step)
+
+
 if __name__ == '__main__':
-    space_in_words()
+    list_steps()
+    # space_in_words()
     # fill_two_cond_list()
     # west_money_split()
     # conti_three_odd_ele_list()
