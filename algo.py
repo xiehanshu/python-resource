@@ -3795,8 +3795,36 @@ def dist_between_two_same_ele():
     print(r[0])
 
 
+def list_ele_duration():
+    releaseTimes = [10, 19, 20, 21, 22, 32]
+    keysPressed = "abodzo"
+    pressTime = []
+    dict01 = {}
+    res = []
+
+    for i in range(len(releaseTimes)):
+        if i == 0:
+            pressTime.append(releaseTimes[i])
+        else:
+            t = releaseTimes[i] - releaseTimes[i - 1]
+            pressTime.append(t)
+
+    for i in range(len(keysPressed)):
+        if keysPressed[i] not in dict01.keys():
+            dict01[keysPressed[i]] = pressTime[i]
+        else:
+            dict01[keysPressed[i]] = max(dict01[keysPressed[i]], pressTime[i])
+    list01 = sorted(dict01.items(), key=lambda x: x[1], reverse=True)
+    for i in list01:
+        if i[1] == list01[0][1]:
+            res.append(i[0])
+    res.sort(reverse=True)
+    print(res[0])
+
+
 if __name__ == '__main__':
-    dist_between_two_same_ele()
+    list_ele_duration()
+    # dist_between_two_same_ele()
     # list_avg_after_del_ele()
     # max_bracket_dep()
     # list_ele_larger_ele_count()
