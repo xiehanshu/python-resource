@@ -3736,8 +3736,24 @@ def list_steps():
     print(step)
 
 
+def list_ele_larger_ele_count():
+    nums = [3, 6, 7, 7, 0]
+    nums.sort(reverse=True)
+
+    for i in range(len(nums)):
+        if nums[i] >= i + 1:
+            if i == len(nums) - 1:
+                print(i + 1)
+                break
+            if nums[i + 1] < i + 1:
+                print(i + 1)
+                break
+    print(-1)
+
+
 if __name__ == '__main__':
-    list_steps()
+    list_ele_larger_ele_count()
+    # list_steps()
     # space_in_words()
     # fill_two_cond_list()
     # west_money_split()
