@@ -4218,8 +4218,25 @@ def one_zero_appear_str():
     print(min(t01, t02))
 
 
+def choose_str_list():
+    word1 = "abcd"
+    word2 = "pq"
+    res = ''
+
+    for i in range(len(word1)):
+        if i <= len(word2) - 1:
+            res += word1[i]
+            res += word2[i]
+    if len(word2) > len(word1):
+        res += word2[len(word1):len(word2)]
+    if len(word2) < len(word1):
+        res += word1[len(word2):len(word1)]
+    print(res)
+
+
 if __name__ == '__main__':
-    one_zero_appear_str()
+    choose_str_list()
+    # one_zero_appear_str()
     # change_sort_list()
     # one_time_ele_list()
     # split_num_sub_plus()
