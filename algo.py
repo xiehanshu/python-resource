@@ -4070,8 +4070,50 @@ def sort_list_sub_list():
     print(res)
 
 
+def list_ele_seven_loop():
+    n = 20
+    week = 1
+    day = 1
+    res = 0
+
+    for i in range(n):
+        res += week + day - 1
+        day += 1
+        if day == 8:
+            week += 1
+            day = 1
+    print(res)
+
+
+def diff_or_decode():
+    encoded = [6, 2, 7, 3]
+    first = 4
+    res = [first]
+
+    for i in encoded:
+        res.append(i ^ res[len(res) - 1])
+    print(res)
+
+
+def max_square():
+    rectangles = [[2, 3], [3, 7], [4, 3], [3, 7]]
+    list01 = []
+
+    for i in rectangles:
+        list01.append(min(i))
+    dict01 = collections.Counter(list01)
+    list02 = sorted(dict01.items(), key=lambda x: x[0], reverse=True)
+    print(list02[0][1])
+
+    res = list01.count(max(list01))
+    print(res)
+
+
 if __name__ == '__main__':
-    sort_list_sub_list()
+    max_square()
+    # diff_or_decode()
+    # list_ele_seven_loop()
+    # sort_list_sub_list()
     # list_two_part_oc()
     # cannot_change_list_ele()
     # div_value_sum()
