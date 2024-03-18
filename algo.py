@@ -4049,8 +4049,30 @@ def list_two_part_oc():
         print(False)
 
 
+def sort_list_sub_list():
+    boxTypes = [[5, 10], [2, 5], [4, 7], [3, 9]]
+    truckSize = 10
+    list01 = sorted(boxTypes, key=lambda x: x[1], reverse=True)
+    res = 0
+    c = 0
+
+    for i in list01:
+        rest = truckSize - c
+        if rest > 0:
+            if rest > i[0]:
+                res += i[0] * i[1]
+                c += i[0]
+            else:
+                res += rest * i[1]
+                c += rest
+        else:
+            break
+    print(res)
+
+
 if __name__ == '__main__':
-    list_two_part_oc()
+    sort_list_sub_list()
+    # list_two_part_oc()
     # cannot_change_list_ele()
     # div_value_sum()
     # same_contain_str_list()
