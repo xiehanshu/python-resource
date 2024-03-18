@@ -4096,9 +4096,206 @@ def same_list_x_y():
     print(res)
 
 
+def sort_list_sub_list():
+    boxTypes = [[5, 10], [2, 5], [4, 7], [3, 9]]
+    truckSize = 10
+    list01 = sorted(boxTypes, key=lambda x: x[1], reverse=True)
+    res = 0
+    c = 0
+
+    for i in list01:
+        rest = truckSize - c
+        if rest > 0:
+            if rest > i[0]:
+                res += i[0] * i[1]
+                c += i[0]
+            else:
+                res += rest * i[1]
+                c += rest
+        else:
+            break
+    print(res)
+
+
+def list_ele_seven_loop():
+    n = 20
+    week = 1
+    day = 1
+    res = 0
+
+    for i in range(n):
+        res += week + day - 1
+        day += 1
+        if day == 8:
+            week += 1
+            day = 1
+    print(res)
+
+
+def diff_or_decode():
+    encoded = [6, 2, 7, 3]
+    first = 4
+    res = [first]
+
+    for i in encoded:
+        res.append(i ^ res[len(res) - 1])
+    print(res)
+
+
+def max_square():
+    rectangles = [[2, 3], [3, 7], [4, 3], [3, 7]]
+    list01 = []
+
+    for i in rectangles:
+        list01.append(min(i))
+    dict01 = collections.Counter(list01)
+    list02 = sorted(dict01.items(), key=lambda x: x[0], reverse=True)
+    print(list02[0][1])
+
+    res = list01.count(max(list01))
+    print(res)
+
+
+def create_list_use_dist():
+    gain = [-4, -3, -2, -1, 4, 3, 2]
+    res = [0]
+
+    for i in range(len(gain)):
+        res.append(res[i] + gain[i])
+    res.sort(reverse=True)
+    print(res[0])
+
+
+def question_time_str():
+    time = "?4:03"
+    time_list = []
+    for i in time:
+        time_list.append(i)
+
+    if time_list[0] == '?':
+        if time_list[1] == '?':
+            time_list[0] = '2'
+            time_list[1] = '3'
+        if int(time_list[1]) >= 4:
+            time_list[0] = '1'
+        else:
+            time_list[0] = '2'
+    if time_list[1] == '?' and time_list[0] != '?':
+        if time_list[0] in ['0', '1']:
+            time_list[1] = '9'
+        else:
+            time_list[1] = '3'
+    if time_list[3] == '?':
+        time_list[3] = '5'
+    if time_list[4] == '?' and time_list[3] != '?':
+        time_list[4] = '9'
+    time_str = ''.join(time_list)
+    print(time_str)
+
+
+def split_num_sub_plus():
+    lowLimit = 1
+    highLimit = 10
+    dict01 = {}
+    res = 0
+
+    for i in range(lowLimit, highLimit + 1):
+        v = 0
+        for j in str(i):
+            v += int(j)
+        if v not in dict01.keys():
+            dict01[v] = 1
+        else:
+            dict01[v] += 1
+    list01 = sorted(dict01.items(), key=lambda x: x[1], reverse=True)
+    print(list01[0][1])
+
+
+def one_time_ele_list():
+    nums = [1, 2, 3, 2]
+    dict01 = {}
+
+    for i in nums:
+        if i not in dict01.keys():
+            dict01[i] = 1
+        else:
+            dict01[i] += 1
+    list01 = []
+
+    for i, j in dict01.items():
+        if j == 1:
+            list01.append(i)
+    res = sum(list01)
+    print(res)
+
+
+def change_sort_list():
+    nums = [2, 1, 3, 4]
+    # list01 = [i for i in range(1, len(nums) + 1)]
+    list01 = nums.copy()
+    list01.sort()
+    i = 0
+    t = 0
+
+    while t < len(nums):
+        nums = nums[i + 1:len(nums)] + nums[0:i + 1]
+        t += 1
+        if nums == list01:
+            print(True)
+            break
+    print(False)
+
+
+def one_zero_appear_str():
+    s = "0100"
+    t01 = 0
+    t02 = 0
+
+    for i in range(len(s)):
+        if i % 2 == 0:
+            if s[i] != '0':
+                t01 += 1
+            if s[i] != '1':
+                t02 += 1
+        if i % 2 == 1:
+            if s[i] != '1':
+                t01 += 1
+            if s[i] != '0':
+                t02 += 1
+    print(min(t01, t02))
+
+
+def choose_str_list():
+    word1 = "abcd"
+    word2 = "pq"
+    res = ''
+
+    for i in range(len(word1)):
+        if i <= len(word2) - 1:
+            res += word1[i]
+            res += word2[i]
+    if len(word2) > len(word1):
+        res += word2[len(word1):len(word2)]
+    if len(word2) < len(word1):
+        res += word1[len(word2):len(word1)]
+    print(res)
+
+
 if __name__ == '__main__':
     same_list_x_y()
     # list_count_rule()
+    # list_two_part_oc()
+    choose_str_list()
+    # one_zero_appear_str()
+    # change_sort_list()
+    # one_time_ele_list()
+    # split_num_sub_plus()
+    # question_time_str()
+    # create_list_use_dist()
+    # max_square()
+    # diff_or_decode()
+    # list_ele_seven_loop()
+    # sort_list_sub_list()
     # list_two_part_oc()
     # cannot_change_list_ele()
     # div_value_sum()
