@@ -4062,40 +4062,6 @@ def list_count_rule():
     print(c)
 
 
-def same_list_x_y():
-    x = 3
-    y = 4
-    points = [[2, 3]]
-    tmp = []
-    tV = []
-
-    for i in points:
-        if i[0] == x:
-            tmp.append(i)
-        if i[1] == y:
-            tmp.append(i)
-    print(tmp)
-
-    if len(tmp) == 0:
-        print(-1)
-
-    for i in tmp:
-        v = abs(i[0] - x) + abs(i[1] - y)
-        tV.append(v)
-    ts = zip(tV, tmp)
-    tsS = sorted(ts, reverse=False)
-    tV, tmp = zip(*tsS)
-    minV = tV[0]
-    res = points.index(tmp[0])
-
-    for i in range(len(tV)):
-        if tV[i] != minV:
-            break
-        else:
-            res = min(res, points.index(tmp[i]))
-    print(res)
-
-
 def sort_list_sub_list():
     boxTypes = [[5, 10], [2, 5], [4, 7], [3, 9]]
     truckSize = 10
@@ -4281,11 +4247,45 @@ def choose_str_list():
     print(res)
 
 
+def same_list_x_y():
+    x = 3
+    y = 4
+    points = [[2, 3]]
+    tmp = []
+    tV = []
+
+    for i in points:
+        if i[0] == x:
+            tmp.append(i)
+        if i[1] == y:
+            tmp.append(i)
+    print(tmp)
+
+    if len(tmp) == 0:
+        print(-1)
+
+    for i in tmp:
+        v = abs(i[0] - x) + abs(i[1] - y)
+        tV.append(v)
+    ts = zip(tV, tmp)
+    tsS = sorted(ts, reverse=False)
+    tV, tmp = zip(*tsS)
+    minV = tV[0]
+    res = points.index(tmp[0])
+
+    for i in range(len(tV)):
+        if tV[i] != minV:
+            break
+        else:
+            res = min(res, points.index(tmp[i]))
+    print(res)
+
+
 if __name__ == '__main__':
     same_list_x_y()
     # list_count_rule()
     # list_two_part_oc()
-    choose_str_list()
+    # choose_str_list()
     # one_zero_appear_str()
     # change_sort_list()
     # one_time_ele_list()
