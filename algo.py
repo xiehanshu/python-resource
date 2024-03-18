@@ -4109,8 +4109,123 @@ def max_square():
     print(res)
 
 
+def create_list_use_dist():
+    gain = [-4, -3, -2, -1, 4, 3, 2]
+    res = [0]
+
+    for i in range(len(gain)):
+        res.append(res[i] + gain[i])
+    res.sort(reverse=True)
+    print(res[0])
+
+
+def question_time_str():
+    time = "?4:03"
+    time_list = []
+    for i in time:
+        time_list.append(i)
+
+    if time_list[0] == '?':
+        if time_list[1] == '?':
+            time_list[0] = '2'
+            time_list[1] = '3'
+        if int(time_list[1]) >= 4:
+            time_list[0] = '1'
+        else:
+            time_list[0] = '2'
+    if time_list[1] == '?' and time_list[0] != '?':
+        if time_list[0] in ['0', '1']:
+            time_list[1] = '9'
+        else:
+            time_list[1] = '3'
+    if time_list[3] == '?':
+        time_list[3] = '5'
+    if time_list[4] == '?' and time_list[3] != '?':
+        time_list[4] = '9'
+    time_str = ''.join(time_list)
+    print(time_str)
+
+
+def split_num_sub_plus():
+    lowLimit = 1
+    highLimit = 10
+    dict01 = {}
+    res = 0
+
+    for i in range(lowLimit, highLimit + 1):
+        v = 0
+        for j in str(i):
+            v += int(j)
+        if v not in dict01.keys():
+            dict01[v] = 1
+        else:
+            dict01[v] += 1
+    list01 = sorted(dict01.items(), key=lambda x: x[1], reverse=True)
+    print(list01[0][1])
+
+
+def one_time_ele_list():
+    nums = [1, 2, 3, 2]
+    dict01 = {}
+
+    for i in nums:
+        if i not in dict01.keys():
+            dict01[i] = 1
+        else:
+            dict01[i] += 1
+    list01 = []
+
+    for i, j in dict01.items():
+        if j == 1:
+            list01.append(i)
+    res = sum(list01)
+    print(res)
+
+
+def change_sort_list():
+    nums = [2, 1, 3, 4]
+    # list01 = [i for i in range(1, len(nums) + 1)]
+    list01 = nums.copy()
+    list01.sort()
+    i = 0
+    t = 0
+
+    while t < len(nums):
+        nums = nums[i + 1:len(nums)] + nums[0:i + 1]
+        t += 1
+        if nums == list01:
+            print(True)
+            break
+    print(False)
+
+
+def one_zero_appear_str():
+    s = "0100"
+    t01 = 0
+    t02 = 0
+
+    for i in range(len(s)):
+        if i % 2 == 0:
+            if s[i] != '0':
+                t01 += 1
+            if s[i] != '1':
+                t02 += 1
+        if i % 2 == 1:
+            if s[i] != '1':
+                t01 += 1
+            if s[i] != '0':
+                t02 += 1
+    print(min(t01, t02))
+
+
 if __name__ == '__main__':
-    max_square()
+    one_zero_appear_str()
+    # change_sort_list()
+    # one_time_ele_list()
+    # split_num_sub_plus()
+    # question_time_str()
+    # create_list_use_dist()
+    # max_square()
     # diff_or_decode()
     # list_ele_seven_loop()
     # sort_list_sub_list()
