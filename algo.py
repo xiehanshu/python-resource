@@ -4281,8 +4281,119 @@ def same_list_x_y():
     print(res)
 
 
+def bin_str_one_c():
+    s = "110"
+    c = 0
+    last = ''
+
+    for i in range(len(s)):
+        if i == 0:
+            last = s[i]
+        else:
+            if s[i] == last:
+                continue
+            else:
+                c += 1
+                last = s[i]
+    if c > 1:
+        print(False)
+    else:
+        print(True)
+
+
+def change_once_two_str():
+    s1 = "bankb"
+    s2 = "kannb"
+    c = 0
+    t = []
+
+    for i in range(len(s1)):
+        if s1[i] != s2[i]:
+            c += 1
+            t.append(s1[i])
+            t.append(s2[i])
+        if s1[i] not in s2 or s2[i] not in s1:
+            print(False)
+            break
+    if len(set(t)) > 2:
+        print(False)
+    if c in [0, 2]:
+        print(True)
+    else:
+        print(False)
+
+
+def common_ele_list():
+    edges = [[1, 2], [5, 1], [1, 3], [1, 4]]
+    res = set(edges[0])
+
+    for i in edges:
+        res = res & set(i)
+    print(list(res)[0])
+
+
+def sec_num():
+    s = "dfa12321afd"
+    t = []
+
+    for i in s:
+        if i.isdigit() and int(i) not in t:
+            t.append(int(i))
+
+    if len(t) >= 2:
+        t.sort(reverse=True)
+        print(t[1])
+    else:
+        print(-1)
+
+
+def most_value_asc_sub_list():
+    nums = [100, 10, 1]
+    t = []
+    v = 0
+    last = 0
+
+    for i in range(len(nums)):
+        if nums[i] > last:
+            last = nums[i]
+            v += nums[i]
+        else:
+            t.append(v)
+            v = 0
+            v += nums[i]
+            last = nums[i]
+        if i == len(nums) - 1:
+            t.append(v)
+    t.sort(reverse=True)
+    print(t[0])
+
+
+def str_only_keep_num():
+    word = "a1b01c001"
+    list01 = []
+    t = ''
+
+    for i in range(len(word)):
+        if word[i].isalpha() and t != '':
+            list01.append(t)
+            t = ''
+        if word[i].isdigit():
+            t += word[i]
+        if i == len(word) - 1 and t != '':
+            list01.append(t)
+    list01 = [int(i) for i in list01]
+    c = len(set(list01))
+    print(c)
+
+
 if __name__ == '__main__':
-    same_list_x_y()
+    str_only_keep_num()
+    # most_value_asc_sub_list()
+    # sec_num()
+    # common_ele_list()
+    # change_once_two_str()
+    # bin_str_one_c()
+    # same_list_x_y()
     # list_count_rule()
     # list_two_part_oc()
     # choose_str_list()
