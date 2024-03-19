@@ -4386,8 +4386,72 @@ def str_only_keep_num():
     print(c)
 
 
+def str_char_char_odd_even():
+    coordinates = "c7"
+    dict01 = {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f': 6, 'g': 7, 'h': 8}
+
+    if int(coordinates[1]) % 2 == 1:
+        if dict01[coordinates[0]] % 2 == 0:
+            print(True)
+    if int(coordinates[1]) % 2 == 0:
+        if dict01[coordinates[0]] % 2 == 1:
+            print(True)
+    print(False)
+
+
+def cut_sentence_space():
+    s = "chopper is not a tanuki"
+    k = 5
+    p = 0
+    t = 0
+
+    for i in range(len(s)):
+        if s[i] == ' ':
+            p += 1
+        if p == k:
+            t = i
+            break
+        if i == len(s) - 1 and p < k:
+            t = i
+            print(s)
+            break
+    print(s[0:i])
+
+
+def multi_list_ele():
+    nums = [-1, -2, -3, -4, 3, 2, 1]
+    mr = 1
+    for i in nums:
+        mr *= i
+
+    if mr > 0:
+        return 1
+    elif mr < 0:
+        return -1
+    else:
+        return 0
+
+
+def step_increase_ele_list():
+    nums = [4881, 2593, 6819, 9256, 4135]
+    step = 0
+    v = 0
+
+    for i in range(1, len(nums)):
+        if nums[i] - nums[i - 1] - v < 1:
+            v = nums[i - 1] + v - nums[i] + 1
+            step += v
+        else:
+            v = 0
+    print(step)
+
+
 if __name__ == '__main__':
-    str_only_keep_num()
+    step_increase_ele_list()
+    # multi_list_ele()
+    # cut_sentence_space()
+    # str_char_char_odd_even()
+    # str_only_keep_num()
     # most_value_asc_sub_list()
     # sec_num()
     # common_ele_list()
