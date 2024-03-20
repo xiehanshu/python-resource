@@ -4446,8 +4446,50 @@ def step_increase_ele_list():
     print(step)
 
 
+def sentence_char_once():
+    sentence = "jwtucoucmdfwxxqnxzkaxoglszmfrcvjoiunqqausaxxaaijyqdqgvdnqcaihwilqkpivenpnekioyqujrdrovqrlxovcucjqzjsxmllfgndfprctxvxwlzjtciqxgsxfwhmuzqvlksyuztoetyjugmswfjtawwaqmwyxmvo"
+    list01 = []
+
+    for i in sentence:
+        if i not in list01:
+            list01.append(i)
+
+    if len(list01) < 26:
+        print(False)
+    else:
+        print(True)
+
+
+def num_new_rule():
+    n = 68
+    k = 2
+    res = 0
+
+    while n > 0:
+        res += n % k
+        n = n // k
+    print(res)
+
+
+def replace_num_str():
+    s = "a1b2c3d4e"
+    list01 = []
+
+    for i in s:
+        list01.append(i)
+
+    for i in range(len(list01)):
+        if i % 2 == 1:
+            list01[i] = chr(ord(list01[i - 1]) + int(list01[i]))
+    s = ''.join(list01)
+    print(s)
+
+
 if __name__ == '__main__':
-    step_increase_ele_list()
+    replace_num_str()
+    # num_new_rule()
+    # sentence_char_once()
+    # step_increase_ele_list()
     # multi_list_ele()
     # cut_sentence_space()
     # str_char_char_odd_even()
