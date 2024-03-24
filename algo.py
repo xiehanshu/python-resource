@@ -4508,8 +4508,53 @@ def gen_sentence_with_str():
     print(res)
 
 
+def one_zero_sub_str_longer():
+    s = "110100010"
+    oneS = 0
+    oneT = 0
+    zeroS = 0
+    zeroT = 0
+
+    for i in range(len(s)):
+        if s[i] == '1':
+            zeroS = max(zeroS, zeroT)
+            zeroT = 0
+            oneT += 1
+        if s[i] == '0':
+            oneS = max(oneS, oneT)
+            oneT = 0
+            zeroT += 1
+        if i == len(s) - 1:
+            zeroS = max(zeroS, zeroT)
+            oneS = max(oneS, oneT)
+
+    if oneS > zeroS:
+        print(True)
+    else:
+        print(False)
+
+
+def three_conti_diff_sub_str():
+    s = "aababcabc"
+    t = []
+
+    for i in range(len(s) - 2):
+        inList = True
+        tt = ''
+        for j in s[i:i + 3]:
+            if j in tt:
+                inList = False
+                continue
+            tt += j
+        if inList == True:
+            t.append(s[i:i + 3])
+    print(len(t))
+
+
 if __name__ == '__main__':
-    gen_sentence_with_str()
+    three_conti_diff_sub_str()
+    # one_zero_sub_str_longer()
+    # gen_sentence_with_str()
     # min_abs_dist_value_list()
     # replace_num_str()
     # num_new_rule()
