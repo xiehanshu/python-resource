@@ -4497,8 +4497,20 @@ def min_abs_dist_value_list():
     print(res)
 
 
+def gen_sentence_with_str():
+    s = "is2 sentence4 This1 a3"
+    list01 = s.split(' ')
+    list02 = [''] * len(list01)
+
+    for i in range(len(list01)):
+        list02[int(list01[i][-1]) - 1] = list01[i][:-1]
+    res = ' '.join(list02)
+    print(res)
+
+
 if __name__ == '__main__':
-    min_abs_dist_value_list()
+    gen_sentence_with_str()
+    # min_abs_dist_value_list()
     # replace_num_str()
     # num_new_rule()
     # sentence_char_once()
