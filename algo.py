@@ -4485,8 +4485,21 @@ def replace_num_str():
     print(s)
 
 
+def min_abs_dist_value_list():
+    nums = [2202, 9326, 1034, 4180, 1932, 8118, 7365, 7738, 6220, 3440]
+    target = 3440
+    start = 0
+    res = abs(nums.index(target) - start)
+
+    for i in range(len(nums)):
+        if nums[i] == target:
+            res = min(res, abs(i - start))
+    print(res)
+
+
 if __name__ == '__main__':
-    replace_num_str()
+    min_abs_dist_value_list()
+    # replace_num_str()
     # num_new_rule()
     # sentence_char_once()
     # step_increase_ele_list()
