@@ -4551,8 +4551,30 @@ def three_conti_diff_sub_str():
     print(len(t))
 
 
+def word_asc_value():
+    firstWord = "aaa"
+    secondWord = "a"
+    targetWord = "aab"
+    fv = ''
+    sv = ''
+    tv = ''
+
+    for i in firstWord:
+        fv += str(ord(i) - 97)
+    for i in secondWord:
+        sv += str(ord(i) - 97)
+    for i in targetWord:
+        tv += str(ord(i) - 97)
+
+    if int(fv) + int(sv) == int(tv):
+        print(True)
+    else:
+        print(False)
+
+
 if __name__ == '__main__':
-    three_conti_diff_sub_str()
+    word_asc_value()
+    # three_conti_diff_sub_str()
     # one_zero_sub_str_longer()
     # gen_sentence_with_str()
     # min_abs_dist_value_list()
