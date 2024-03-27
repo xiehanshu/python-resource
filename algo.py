@@ -4593,8 +4593,19 @@ def after_move_str_len_same():
     print(label)
 
 
+def max_odd_num_str():
+    num = "4206"
+
+    for i in range(len(num) - 1, -1, -1):
+        if int(num[i]) % 2 == 1:
+            print(num[:i + 1])
+            break
+    print('')
+
+
 if __name__ == '__main__':
-    after_move_str_len_same()
+    max_odd_num_str()
+    # after_move_str_len_same()
     # word_asc_value()
     # three_conti_diff_sub_str()
     # one_zero_sub_str_longer()
