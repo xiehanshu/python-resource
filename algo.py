@@ -4572,8 +4572,30 @@ def word_asc_value():
         print(False)
 
 
+def after_move_str_len_same():
+    words = ["asdf"]
+    dict01 = {}
+    label = True
+
+    for i in words:
+        for j in i:
+            if j not in dict01.keys():
+                dict01[j] = 1
+            else:
+                dict01[j] += 1
+
+    for i in dict01.values():
+        if i % len(words) == 0:
+            continue
+        else:
+            label = False
+            break
+    print(label)
+
+
 if __name__ == '__main__':
-    word_asc_value()
+    after_move_str_len_same()
+    # word_asc_value()
     # three_conti_diff_sub_str()
     # one_zero_sub_str_longer()
     # gen_sentence_with_str()
