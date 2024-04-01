@@ -4610,8 +4610,18 @@ def max_multi_cut_value():
     print(res)
 
 
+def remake_list():
+    nums = [5, 0, 1, 2, 3, 4]
+    res = []
+
+    for i in range(len(nums)):
+        res.append(nums[nums[i]])
+    print(res)
+
+
 if __name__ == '__main__':
-    max_multi_cut_value()
+    remake_list()
+    # max_multi_cut_value()
     # max_odd_num_str()
     # after_move_str_len_same()
     # word_asc_value()
