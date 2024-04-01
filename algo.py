@@ -4603,8 +4603,16 @@ def max_odd_num_str():
     print('')
 
 
+def max_multi_cut_value():
+    nums = [5, 6, 2, 7, 4]
+    nums.sort(reverse=True)
+    res = nums[0] * nums[1] - nums[-1] * nums[-2]
+    print(res)
+
+
 if __name__ == '__main__':
-    max_odd_num_str()
+    max_multi_cut_value()
+    # max_odd_num_str()
     # after_move_str_len_same()
     # word_asc_value()
     # three_conti_diff_sub_str()
