@@ -4619,8 +4619,21 @@ def remake_list():
     print(res)
 
 
+def three_ele_list_multi_sum():
+    n = 10
+    res = 0
+
+    for i in range(1, n + 1):
+        for j in range(i + 1, n + 1):
+            for k in range(j + 1, n + 1):
+                if i * i + j * j == k * k:
+                    res += 1
+    print(res * 2)
+
+
 if __name__ == '__main__':
-    remake_list()
+    three_ele_list_multi_sum()
+    # remake_list()
     # max_multi_cut_value()
     # max_odd_num_str()
     # after_move_str_len_same()
