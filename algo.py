@@ -268,8 +268,8 @@ def binary_plus():
     res = bin(int(a, 2) + int(b, 2))[2:]
     print(res)
 
-
-def plus_plus():
+# 平方根
+def square_root():
     x = 8
     if x == 0:
         print(0)
@@ -287,6 +287,7 @@ def plus_plus():
             end = mid - 1
         else:
             start = mid + 1
+    # 因為start 一直在加1，所以最後的start要減一來獲取正確的結果
     print(start - 1)
 
 
@@ -4819,9 +4820,9 @@ if __name__ == '__main__':
     # find_first_index()
     # search_insert_index()
     # last_word_length()
-    plus_one()
+    # plus_one()
     # binary_plus()
-    # plus_plus()
+    square_root()
     # climb_stairs()
     # list_node_conn()
     # max_income()
