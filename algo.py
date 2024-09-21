@@ -11,15 +11,17 @@ def list_sort():
     list01 = [8, 7, 1, 2, 5, 4, 0, 9]
 
     for i in range(len(list01)):
-        for j in range(len(list01) - 1):
-            if list01[j] > list01[j + 1]:
-                list01[j], list01[j + 1] = list01[j + 1], list01[j]
-
+        # 從列表的第二個開始循環
+        for j in range(1, len(list01)):
+            # 如果前一個比後一個大，則交換順序
+            if list01[j - 1] > list01[j]:
+                list01[j], list01[j - 1] = list01[j - 1], list01[j]
     print(list01)
 
 
 def list_search_two_part():
     list01 = [11, 8, 7, 1, 2, 5, 4, 0, 9, 12]
+    # 首先，冒泡排序
     for i in range(len(list01)):
         for j in range(len(list01) - 1):
             if list01[j] > list01[j + 1]:
@@ -28,17 +30,21 @@ def list_search_two_part():
     print(list01)
 
     target = 8
+    # 設定首尾
     start = 0
     end = len(list01) - 1
     while start <= end:
+        # 設定中間值
         index = (start + end) // 2
         if list01[index] == target:
             print(index)
             break
+        # 目標值比中間值大，移動start
         elif target > list01[index]:
-            end = index - 1
-        else:
             start = index + 1
+        # 目標值比中間值小，移動end
+        else:
+            end = index - 1
 
 
 def list_dis_dup():
@@ -4632,7 +4638,7 @@ def three_ele_list_multi_sum():
 
 
 if __name__ == '__main__':
-    three_ele_list_multi_sum()
+    # three_ele_list_multi_sum()
     # remake_list()
     # max_multi_cut_value()
     # max_odd_num_str()
@@ -4798,7 +4804,7 @@ if __name__ == '__main__':
     # up_down_list()
     # bin_one_zero()
     # list_sort()
-    # list_search_two_part()
+    list_search_two_part()
     # list_dis_dup()
     # two_sum()
     # rev_num()
