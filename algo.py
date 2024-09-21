@@ -1,12 +1,11 @@
 import collections
 import math
-import random
-import sys
 
 from ListNode import ListNode
 from TreeNode import TreeNode
 
 
+# 冒泡排序
 def list_sort():
     list01 = [8, 7, 1, 2, 5, 4, 0, 9]
 
@@ -19,6 +18,7 @@ def list_sort():
     print(list01)
 
 
+# 二分查找
 def list_search_two_part():
     list01 = [11, 8, 7, 1, 2, 5, 4, 0, 9, 12]
     # 首先，冒泡排序
@@ -49,6 +49,7 @@ def list_search_two_part():
             end = mid - 1
 
 
+# 列表去重
 def list_dis_dup():
     list01 = [11, 11, 7, 12, 2, 5, 4, 0, 9, 12]
     list02 = []
@@ -60,12 +61,12 @@ def list_dis_dup():
 
 
 def two_sum():
-    nums = [3, 3]
-    target = 6
+    nums = [2,7,11,15]
+    target = 9
     for i in range(len(nums) - 1):
         for j in range(i + 1, len(nums)):
             if nums[i] + nums[j] == target:
-                print('{}-{}'.format(i, j))
+                print(i, j)
 
 
 def rev_num():
@@ -4806,9 +4807,9 @@ if __name__ == '__main__':
     # up_down_list()
     # bin_one_zero()
     # list_sort()
-    list_search_two_part()
+    # list_search_two_part()
     # list_dis_dup()
-    # two_sum()
+    two_sum()
     # rev_num()
     # roma_num()
     # most_prefix()
