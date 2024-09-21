@@ -183,7 +183,7 @@ def del_dup_list():
             nums.pop(i)
     print(len(nums), nums)
 
-
+# 刪除指定元素
 def rem_ele_list():
     nums = [0, 1, 2, 2, 3, 0, 4, 2]
     val = 2
