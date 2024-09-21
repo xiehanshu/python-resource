@@ -212,7 +212,7 @@ def find_first_index():
             return
     print(-1)
 
-
+# 搜索插入位置
 def search_insert_index():
     nums = [1, 3, 5, 6]
     target = 7
@@ -229,6 +229,7 @@ def search_insert_index():
             start = mid + 1
         elif nums[mid] > target:
             end = mid - 1
+    # 每次都挪動start，一直找不到，就一直挪動，最後start的值就是插入的位置
     print(start)
 
 
@@ -4811,8 +4812,8 @@ if __name__ == '__main__':
     # available_bracket()
     # del_dup_list()
     # rem_ele_list()
-    find_first_index()
-    # search_insert_index()
+    # find_first_index()
+    search_insert_index()
     # find_last_word()
     # plus_one()
     # binary_plus()
