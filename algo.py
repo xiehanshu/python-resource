@@ -94,12 +94,12 @@ def roma_num():
         'M': 1000
     }
 
-    s = "MCMXCIV"
+    s = "LVIII"
     sum = 0
     for i in range(len(s) - 1):
         if dict01[s[i]] >= dict01[s[i + 1]]:
             sum += dict01[s[i]]
-        elif dict01[s[i]] < dict01[s[i + 1]]:
+        else:
             sum -= dict01[s[i]]
     sum += dict01[s[len(s) - 1]]
     print(sum)
@@ -4809,9 +4809,9 @@ if __name__ == '__main__':
     # list_sort()
     # list_search_two_part()
     # list_dis_dup()
-    two_sum()
+    # two_sum()
     # rev_num()
-    # roma_num()
+    roma_num()
     # most_prefix()
     # bracket()
     # del_dup_list()
