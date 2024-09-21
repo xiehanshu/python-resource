@@ -248,15 +248,17 @@ def last_word_length():
 
 
 def plus_one():
-    digits = [0]
+    digits = [9, 6, 3, 1]
     str01 = ''
     for i in range(len(digits)):
-        str01 = str01 + str(digits[i])
+        str01 += str(digits[i])
     int01 = int(str01) + 1
-    list01 = []
-    for i in str(int01):
-        list01.append(int(i))
-    print(list01)
+    for i in range(len(str(int01))):
+        if int(str(int01)[i]) == digits[i]:
+            continue
+        else:
+            digits[i] = int(str(int01)[i])
+    print(digits)
 
 
 def binary_plus():
@@ -4816,8 +4818,8 @@ if __name__ == '__main__':
     # rem_ele_list()
     # find_first_index()
     # search_insert_index()
-    last_word_length()
-    # plus_one()
+    # last_word_length()
+    plus_one()
     # binary_plus()
     # plus_plus()
     # climb_stairs()
