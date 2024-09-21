@@ -29,22 +29,24 @@ def list_search_two_part():
 
     print(list01)
 
-    target = 8
-    # 設定首尾
+    target = 5
+    # 確定首尾
     start = 0
     end = len(list01) - 1
+
     while start <= end:
-        # 設定中間值
-        index = (start + end) // 2
-        if list01[index] == target:
-            print(index)
+        # 確定中間值
+        mid = (start + end) // 2
+        # 命中則輸出
+        if list01[mid] == target:
+            print(mid)
             break
-        # 目標值比中間值大，移動start
-        elif target > list01[index]:
-            start = index + 1
-        # 目標值比中間值小，移動end
+        # 目標值比中間值大，移動start，縮小範圍
+        elif list01[mid] < target:
+            start = mid + 1
+        # 目標值比中間值小，移動end，縮小範圍
         else:
-            end = index - 1
+            end = mid - 1
 
 
 def list_dis_dup():
