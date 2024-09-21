@@ -121,6 +121,7 @@ def most_prefix():
         print(firstStr)
 
 
+# 有效的闊號
 def available_bracket():
     s = "()[]{}"
     list01 = []
@@ -174,6 +175,7 @@ def list_node_conn():
         node.next = list2
     print(res.next)
 
+
 # 刪除重複元素
 def del_dup_list():
     nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
@@ -182,6 +184,7 @@ def del_dup_list():
         if nums[i] in nums[0:i]:
             nums.pop(i)
     print(len(nums), nums)
+
 
 # 刪除指定元素
 def rem_ele_list():
@@ -193,24 +196,20 @@ def rem_ele_list():
     print(nums)
 
 
+# 字符串首次出現的位置
 def find_first_index():
     haystack = "mississippi"
     needle = "pi"
-
-    res = haystack.find(needle, 0)
-    # print(res)
-
-    for i in range(len(haystack)):
-        if haystack[0:i + 1] == needle:
-            print(0)
-            break
-        if haystack[len(haystack) - 1:len(haystack)] == needle:
-            print(len(haystack) - 1)
-            break
-        for j in range(i + 1, len(haystack)):
-            if haystack[i:j + 1] == needle:
-                print(i)
-                break
+    # 如果為空
+    if len(needle) == 0:
+        print(0)
+        return
+    # 只遍歷到haystack的長度減去needle長度，再加1的長度，加1是為了能遍歷到最後的字符串
+    for i in range(len(haystack) - len(needle) + 1):
+        # 獲取到的數組切片，是否等於期待值
+        if haystack[i:i + len(needle)] == needle:
+            print(i)
+            return
     print(-1)
 
 
@@ -4810,9 +4809,9 @@ if __name__ == '__main__':
     # roma_num()
     # most_prefix()
     # available_bracket()
-    del_dup_list()
+    # del_dup_list()
     # rem_ele_list()
-    # find_first_index()
+    find_first_index()
     # search_insert_index()
     # find_last_word()
     # plus_one()
