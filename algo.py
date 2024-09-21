@@ -174,14 +174,14 @@ def list_node_conn():
         node.next = list2
     print(res.next)
 
-
+# 刪除重複元素
 def del_dup_list():
     nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
 
     for i in range(len(nums) - 1, -1, -1):
         if nums[i] in nums[0:i]:
             nums.pop(i)
-    print(len(nums))
+    print(len(nums), nums)
 
 
 def rem_ele_list():
@@ -4809,8 +4809,8 @@ if __name__ == '__main__':
     # rev_num()
     # roma_num()
     # most_prefix()
-    available_bracket()
-    # del_dup_list()
+    # available_bracket()
+    del_dup_list()
     # rem_ele_list()
     # find_first_index()
     # search_insert_index()
