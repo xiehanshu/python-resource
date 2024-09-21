@@ -212,6 +212,7 @@ def find_first_index():
             return
     print(-1)
 
+
 # 搜索插入位置
 def search_insert_index():
     nums = [1, 3, 5, 6]
@@ -233,7 +234,8 @@ def search_insert_index():
     print(start)
 
 
-def find_last_word():
+# 最後一個單詞的長度
+def last_word_length():
     s = "luffy is still joyboy"
 
     list01 = s.split(' ')
@@ -4813,8 +4815,8 @@ if __name__ == '__main__':
     # del_dup_list()
     # rem_ele_list()
     # find_first_index()
-    search_insert_index()
-    # find_last_word()
+    # search_insert_index()
+    last_word_length()
     # plus_one()
     # binary_plus()
     # plus_plus()
