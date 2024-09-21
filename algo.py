@@ -61,7 +61,7 @@ def list_dis_dup():
 
 
 def two_sum():
-    nums = [2,7,11,15]
+    nums = [2, 7, 11, 15]
     target = 9
     for i in range(len(nums) - 1):
         for j in range(i + 1, len(nums)):
@@ -111,7 +111,9 @@ def most_prefix():
         return ''
     firstStr = strs[0]
     for i in range(len(strs)):
+        # 找到firstStr在strs[i]的起始位置，不是0，就報錯
         while strs[i].find(firstStr, 0) != 0:
+            # 減少firstStr的長度，從後往前減少
             firstStr = firstStr[0:len(firstStr) - 1]
     if firstStr == '':
         return ''
@@ -119,36 +121,30 @@ def most_prefix():
         print(firstStr)
 
 
-def bracket():
-    s = "(])"
+def available_bracket():
+    s = "()[]{}"
     list01 = []
 
     for i in range(len(s)):
-        if s[i] in ['(', '{', '[']:
+        if s[i] in ['(', '[', '{']:
             list01.append(s[i])
+        if len(list01) == 0:
+            print(False)
+            break
         if s[i] == ')':
-            if len(list01) == 0:
-                print(False)
-                break
             if list01[len(list01) - 1] == '(':
                 list01.pop()
             else:
                 print(False)
                 break
-        if s[i] == '}':
-            if len(list01) == 0:
-                print(False)
-                break
-            if list01[len(list01) - 1] == '{':
+        if s[i] == ']':
+            if list01[len(list01) - 1] == '[':
                 list01.pop()
             else:
                 print(False)
                 break
-        if s[i] == ']':
-            if len(list01) == 0:
-                print(False)
-                break
-            if list01[len(list01) - 1] == '[':
+        if s[i] == '}':
+            if list01[len(list01) - 1] == '{':
                 list01.pop()
             else:
                 print(False)
@@ -4811,9 +4807,9 @@ if __name__ == '__main__':
     # list_dis_dup()
     # two_sum()
     # rev_num()
-    roma_num()
+    # roma_num()
     # most_prefix()
-    # bracket()
+    available_bracket()
     # del_dup_list()
     # rem_ele_list()
     # find_first_index()
