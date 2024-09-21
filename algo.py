@@ -268,6 +268,7 @@ def binary_plus():
     res = bin(int(a, 2) + int(b, 2))[2:]
     print(res)
 
+
 # 平方根
 def square_root():
     x = 8
@@ -292,14 +293,16 @@ def square_root():
 
 
 def climb_stairs():
-    n = 3
+    n = 4
 
-    if n == 1:
+    if n == 0:
+        print(0)
+    elif n == 1:
         print(1)
     elif n == 2:
         print(2)
-    a, b = 1, 2
 
+    a, b = 1, 2
     for i in range(3, n + 1):
         a, b = b, a + b
     print(b)
@@ -4822,8 +4825,8 @@ if __name__ == '__main__':
     # last_word_length()
     # plus_one()
     # binary_plus()
-    square_root()
-    # climb_stairs()
+    # square_root()
+    climb_stairs()
     # list_node_conn()
     # max_income()
     # back_to_end_str()
