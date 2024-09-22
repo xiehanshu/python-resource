@@ -92,7 +92,7 @@ def long_common_substring():
     print(s1[end_index - max_len:end_index])
 
 
-# 最長公共子串
+# 最長公共子序列
 def long_common_subsequence():
     s1 = "abcde"
     s2 = "ace"
