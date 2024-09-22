@@ -292,40 +292,6 @@ def square_root():
     print(start - 1)
 
 
-def climb_stairs():
-    n = 4
-
-    if n == 0:
-        print(0)
-    elif n == 1:
-        print(1)
-    elif n == 2:
-        print(2)
-
-    a, b = 1, 2
-    for i in range(3, n + 1):
-        a, b = b, a + b
-    print(b)
-
-
-def fb_list():
-    n = 10
-    if n == 0:
-        print([])
-    elif n == 1:
-        print([0])
-    elif n == 2:
-        print([0, 1])
-
-    fb = [0] * n
-    fb[0] = 0
-    fb[1] = 1
-
-    for i in range(2, n):
-        fb[i] = fb[i - 1] + fb[i - 2]
-    print(fb)
-
-
 def list_node_del_dup():
     head = ListNode()
     if head is None:
@@ -4843,9 +4809,7 @@ if __name__ == '__main__':
     # last_word_length()
     # plus_one()
     # binary_plus()
-    # square_root()
-    # climb_stairs()
-    fb_list()
+    square_root()
     # list_node_conn()
     # max_income()
     # back_to_end_str()
