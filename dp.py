@@ -92,6 +92,38 @@ def long_common_substring():
     print(s1[end_index - max_len:end_index])
 
 
+# 最長公共子串
+def long_common_subsequence():
+    s1 = "abcde"
+    s2 = "ace"
+
+    # 以兩個字符串長度為維度，創建二維數組
+    dp = [[0] * (len(s2) + 1) for _ in range(len(s1) + 1)]
+
+    # 最長長度、結束索引
+    max_len = 0
+    res = ''
+
+    # 雙重循環，因為要保留上一個的狀態，所以從1開始循環
+    for i in range(1, len(s1) + 1):
+        for j in range(1, len(s2) + 1):
+            # 如果相等
+            if s1[i - 1] == s2[j - 1]:
+                # 在前一個長度值基礎上加1
+                dp[i][j] = dp[i - 1][j - 1] + 1
+                # 記錄和附條件的字符
+                res += s1[i - 1]
+                # 更新最大長度
+                if dp[i][j] > max_len:
+                    max_len = dp[i][j]
+            # 如果不等，長度重置為上一個中較長的值
+            else:
+                dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])
+    # 打印最大長度和最大長度序列
+    print(max_len)
+    print(res)
+
+
 def max_sublist():
     nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
 
@@ -115,4 +147,5 @@ if __name__ == '__main__':
     # fb_list()
     # dp_bag()
     # long_common_substring()
-    max_sublist()
+    # max_sublist()
+    long_common_subsequence()
