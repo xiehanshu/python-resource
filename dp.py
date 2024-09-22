@@ -92,8 +92,27 @@ def long_common_substring():
     print(s1[end_index - max_len:end_index])
 
 
+def max_sublist():
+    nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+
+    if not nums:
+        print([])
+
+    # 初始化
+    current_sum = nums[0]
+    max_sum = nums[0]
+
+    for i in range(1, len(nums)):
+        # 截至目前最大和加上下一個，比下一個大，則不變，比下一個小，說明當前為負，則取下一個
+        current_sum = max(current_sum + nums[i], nums[i])
+        # 當前和與總的最大和進行比較
+        max_sum = max(max_sum, current_sum)
+    print(max_sum)
+
+
 if __name__ == '__main__':
     # climb_stairs()
     # fb_list()
     # dp_bag()
-    long_common_substring()
+    # long_common_substring()
+    max_sublist()
