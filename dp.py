@@ -14,6 +14,7 @@ def climb_stairs():
     print(b)
 
 
+# 斐波那契數列
 def fb_list():
     n = 10
     if n == 0:
