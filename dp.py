@@ -123,8 +123,8 @@ def long_common_subsequence():
     print(max_len)
     print(res)
 
-
-def max_sublist():
+# 最大子數組和
+def max_sublist_sum():
     nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
 
     if not nums:
@@ -147,5 +147,5 @@ if __name__ == '__main__':
     # fb_list()
     # dp_bag()
     # long_common_substring()
-    # max_sublist()
-    long_common_subsequence()
+    # long_common_subsequence()
+    max_sublist_sum()
