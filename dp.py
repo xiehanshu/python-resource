@@ -74,6 +74,7 @@ def long_common_substring():
     end_index = 0
 
     # 雙重循環
+    # 不用保留上一個的狀態，所以不用從1開始
     for i in range(len(s1) + 1):
         for j in range(len(s2) + 1):
             # 如果相等
