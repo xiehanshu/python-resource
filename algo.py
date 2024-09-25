@@ -320,6 +320,7 @@ def tree_mid():
         cur = cur.right
     return res
 
+
 # 最大收益
 def max_income():
     prices = [2, 4, 1]
@@ -335,6 +336,7 @@ def max_income():
     print(maxIncome)
 
 
+# 判斷是不是回文串
 def back_to_end_str():
     s = "0P"
     s = s.lower()
@@ -351,16 +353,23 @@ def back_to_end_str():
         print(False)
 
 
+# 只出現一次的元素
 def only_one():
-    nums = [2, 2, 1]
-    list01 = []
+    nums = [2, 2, 1, 2]
+    res = []
+    dict01 = {}
 
     for i in nums:
-        if i not in list01:
-            list01.append(i)
-        elif i in list01:
-            list01.remove(i)
-    print(list01)
+        if i not in dict01.keys():
+            dict01[i] = 1
+        else:
+            dict01[i] += 1
+
+    for i in dict01.items():
+        if i[1] == 1:
+            res.append(i[0])
+
+    print(res)
 
 
 def appear_half():
@@ -4806,9 +4815,9 @@ if __name__ == '__main__':
     # binary_plus()
     # square_root()
     # list_node_conn()
-    max_income()
+    # max_income()
     # back_to_end_str()
-    # only_one()
+    only_one()
     # appear_half()
     # happy_num()
     # if_dup_ele_list()
