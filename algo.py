@@ -320,7 +320,7 @@ def tree_mid():
         cur = cur.right
     return res
 
-
+# 最大收益
 def max_income():
     prices = [2, 4, 1]
     minPrice = prices[0]
@@ -4799,14 +4799,14 @@ if __name__ == '__main__':
     # available_bracket()
     # del_dup_list()
     # rem_ele_list()
-    find_first_index()
+    # find_first_index()
     # search_insert_index()
     # last_word_length()
     # plus_one()
     # binary_plus()
     # square_root()
     # list_node_conn()
-    # max_income()
+    max_income()
     # back_to_end_str()
     # only_one()
     # appear_half()
