@@ -75,8 +75,8 @@ def long_common_substring():
 
     # 雙重循環
     # 不用保留上一個的狀態，所以不用從1開始
-    for i in range(len(s1) + 1):
-        for j in range(len(s2) + 1):
+    for i in range(1, len(s1) + 1):
+        for j in range(1, len(s2) + 1):
             # 如果相等
             if s1[i - 1] == s2[j - 1]:
                 # 在前一個長度值基礎上加1
@@ -124,6 +124,7 @@ def long_common_subsequence():
     print(max_len)
     print(res)
 
+
 # 最大子數組和
 def max_sublist_sum():
     nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
@@ -147,6 +148,6 @@ if __name__ == '__main__':
     # climb_stairs()
     # fb_list()
     # dp_bag()
-    # long_common_substring()
+    long_common_substring()
     # long_common_subsequence()
-    max_sublist_sum()
+    # max_sublist_sum()
