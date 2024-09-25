@@ -323,21 +323,16 @@ def tree_mid():
 
 def max_income():
     prices = [2, 4, 1]
-    # dist = 0
-    #
-    # for i in range(len(prices)):
-    #     for j in range(i + 1, len(prices)):
-    #         if prices[j] - prices[i] > dist:
-    #             dist = prices[j] - prices[i]
-    # print(dist)
-    minV = prices[0]
-    maxV = 0
+    minPrice = prices[0]
+    maxIncome = 0
 
     for i in range(1, len(prices)):
-        maxV = max(maxV, prices[i] - minV)
-        minV = min(minV, prices[i])
+        # 每天的最大收益
+        maxIncome = max(maxIncome, prices[i] - minPrice)
+        # 每天的最低價格
+        minPrice = min(minPrice, prices[i])
 
-    print(maxV)
+    print(maxIncome)
 
 
 def back_to_end_str():
