@@ -117,7 +117,7 @@ def long_common_subsequence():
                 # 更新最大長度
                 if dp[i][j] > max_len:
                     max_len = dp[i][j]
-            # 如果不等，長度重置為上一個中較長的值
+            # 如果不等，長度重置為上一個中較長的公共子序列的长度值
             else:
                 dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])
     # 打印最大長度和最大長度序列
