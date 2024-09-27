@@ -372,6 +372,7 @@ def only_one():
     print(res)
 
 
+# 出現次數超過一半
 def appear_half():
     nums = [2, 2, 1, 1, 1, 2, 2]
     times = len(nums) / 2
