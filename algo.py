@@ -1,9 +1,6 @@
 import collections
 import math
 
-from ListNode import ListNode
-from TreeNode import TreeNode
-
 
 # 冒泡排序
 def list_sort():
@@ -156,26 +153,6 @@ def available_bracket():
         print(False)
 
 
-def list_node_conn():
-    res = ListNode()
-    node = res
-    list1 = ListNode()
-    list2 = ListNode()
-    while list1 and list2:
-        if list1.val < list2.val:
-            node.next = list1
-            list1 = list1.next
-        else:
-            node.next = list2
-            list2 = list2.next
-        node = node.next
-    if list1:
-        node.next = list1
-    else:
-        node.next = list2
-    print(res.next)
-
-
 # 刪除重複元素
 def del_dup_list():
     nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
@@ -290,35 +267,6 @@ def square_root():
             start = mid + 1
     # 因為start 一直在加1，所以最後的start要減一來獲取正確的結果
     print(start - 1)
-
-
-def list_node_del_dup():
-    head = ListNode()
-    if head is None:
-        return None
-    cur = head
-    while cur.next:
-        if cur.val == cur.next.val:
-            cur.next = cur.next.next
-        else:
-            cur = cur.next
-    return head
-
-
-def tree_mid():
-    root = TreeNode()
-    cur = root
-    tmp = []
-    res = []
-
-    while cur or tmp:
-        while cur:
-            tmp.append(cur)
-            cur = cur.left
-        cur = tmp.pop()
-        res.append(cur.val)
-        cur = cur.right
-    return res
 
 
 # 最大收益
@@ -4815,7 +4763,6 @@ if __name__ == '__main__':
     # plus_one()
     # binary_plus()
     # square_root()
-    # list_node_conn()
     # max_income()
     # back_to_end_str()
     only_one()
